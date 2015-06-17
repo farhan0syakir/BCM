@@ -43,16 +43,7 @@
                                     </thead>
                                    
 								   <tbody>
-                                     <?php for ($i = 1; $i <= count($bia); $i++ )  : ?>
-									   <tr>
-									   
-                                            <td><?php echo $bia['id'][$i];?></td>
-                                            <td><?php echo $bia['name'][$i];?></td>
-                                            <td><a class="crud" href="<?php echo base_url('index.php/bia_controller/view/id')?>">View</a></td>
-                                            <td><a class="crud" href="<?php echo base_url('index.php/bia_controller/edit/id')?>">Edit</a></td>
-                                        
-										</tr>
-										<?php endfor; ?>
+                                    <?php echo $bia;?>
                                     </tbody>
 									
                                 </table>

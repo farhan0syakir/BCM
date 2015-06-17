@@ -27,6 +27,7 @@
                                             <th><a class="crud">Create New</a></th>
                                         </tr>
                                     </thead>
+
 								   	<tbody>
 										<?php for ($i = 0; $i < count($bia); $i++ )  : ?>
 									   <tr>

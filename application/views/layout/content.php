@@ -1,6 +1,5 @@
 
-		<div id="page-content-wrapper">
-            <div class="container-fluid">
+		
                 <!--div class="row">
                     <div class="col-lg-12">
                         <a href="#menu-toggle" class="btn top-margin btn-default" id="menu-toggle"><</a>
@@ -57,6 +56,3 @@
 			</div>
 				
 				<!-- List BIA -->
-				
-            </div>
-        </div>

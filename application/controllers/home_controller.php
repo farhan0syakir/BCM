@@ -9,8 +9,8 @@ class Home_controller extends CI_Controller {
 			array("id"=>"3" ,"name"=>"BA 3")
 		);
 
-		// $this->load->template('layout/content',$bia);
-		$this->load->template('pages/bia/index',$bia);
+		 $this->load->template('pages/bia/index',$bia);
+		//$this->load->template('pages/bia/layout/content',$bia);
 
 	}
 

@@ -1,3 +1,4 @@
+
 <div class="row">
                 <div class=" col-lg-12">
                     <h3 class="title page-header">Business Impact Analysis</h3>
@@ -26,29 +27,17 @@
                                             <th><a class="crud">Create New</a></th>
                                         </tr>
                                     </thead>
-                                   
-								   <tbody>
-                                     <?php for ($i = 1; $i <= count($bia); $i++ )  : ?>
+
+								   	<tbody>
+										<?php for ($i = 0; $i < count($bia); $i++ )  : ?>
 									   <tr>
-									   
-                                            <td><?php echo $bia['id'][$i];?></td>
-                                            <td><?php echo $bia['name'][$i];?></td>
-                                            <td><a class="crud" href="<?php echo base_url('index.php/bia_controller/view/id')?>">View</a></td>
-                                            <td><a class="crud" href="<?php echo base_url('index.php/bia_controller/edit/id')?>">Edit</a></td>
-                                        
+									       <td><?php echo $i+1?></td>
+									       <td><?php echo $bia[$i]['name'];?></td>
+									       <td><a class="crud" href="<?php echo base_url('index.php/bia_controller/view/').'/'.$bia[$i]['id'];?>">View</a></td>
+											<td><a class="crud" href="<?php echo base_url('index.php/bia_controller/edit/').'/'.$bia[$i]['id'];?>">Edit</a></td>
 										</tr>
 										<?php endfor; ?>
-										
-										<tr>
-									   
-                                            <td>1</td>
-                                            <td>Business Activity 1</td>
-                                            <td><a class="crud" href="<?php echo base_url('index.php/bia_controller/view/id')?>">View</a></td>
-                                            <td><a class="crud" href="<?php echo base_url('index.php/bia_controller/edit/id')?>">Edit</a></td>
-                                        
-										</tr>
-										
-                                    </tbody>
+									</tbody>
 									
                                 </table>
                             </div>

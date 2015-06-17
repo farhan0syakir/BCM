@@ -41,26 +41,20 @@
                                             <th><a class="crud">Create New</a></th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>BA 1</td>
+                                   
+								   <tbody>
+                                     <?php for ($i = 1; $i <= count($bia); $i++ )  : ?>
+									   <tr>
+									   
+                                            <td><?php echo $bia['id'][$i];?></td>
+                                            <td><?php echo $bia['name'][$i];?></td>
                                             <td><a class="crud" href="<?php echo base_url('index.php/bia_controller/view/id')?>">View</a></td>
-                                            <td><a class="crud">Edit</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>BA 2</td>
-                                            <td><a class="crud">View</a></td>
-                                            <td><a class="crud">Edit</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>BA 3</td>
-                                            <td><a class="crud">View</a></td>
-                                            <td><a class="crud">Edit</a></td>
-                                        </tr>
+                                            <td><a class="crud" href="<?php echo base_url('index.php/bia_controller/edit/id')?>">Edit</a></td>
+                                        
+										</tr>
+										<?php endfor; ?>
                                     </tbody>
+									
                                 </table>
                             </div>
                             <!-- /.table-responsive -->

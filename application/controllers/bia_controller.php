@@ -1,27 +1,51 @@
 <?php
 class Bia_controller extends CI_Controller {
 
-	public function index(){
-		$bia = array	(
-			array("id"=>"1" ,"name"=>"BA 1"),
-			array("id"=>"2" ,"name"=>"BA 2"),
-
-			array("id"=>"12" ,"name"=>"BA 232"),
-			array("id"=>"24" ,"name"=>"BA 1233"),
-			array("id"=>"21" ,"name"=>"BAv 11"),
-			array("id"=>"233" ,"name"=>"BA 22"),
-			array("id"=>"21" ,"name"=>"BA 1111"),
-			array("id"=>"3" ,"name"=>"BA 3")
-		);
-		$data['bia'] = $bia;
-		// $this->load->template('layout/content',$bia);
+	public function index()
+	{
+		$data['bia'] = $this->get();
 		$this->load->template('pages/bia/index',$data);
 	}
 
-	public function view($id){
-		
+	public function view($id)
+	{
 		$this->load->template('pages/bia/view',$id);
 	}
+
+	function get(){
+		$ba = new BA_Model();
+		$result = $ba->getAll();
+		// print_r($result);
+		return $result;
+	}
 	
+	function add(){
+		$ba = new BA_Model();
+		$data['number'] = $this->input->get('number');
+		$data['name'] = $this->input->get('name');
+		$data['description'] = $this->input->get('description');
+		$data['cto'] = $this->input->get('cto');
+        $data['rto'] = $this->input->get('rto');
+        $data['less_4h'] = $this->input->get('less_4h');
+        $data['less_1d'] = $this->input->get('less_1d');
+        $data['less_2d'] = $this->input->get('less_2d');
+        $data['less_3d'] = $this->input->get('less_3d');
+        $data['less_7d'] = $this->input->get('');
+        $data['more_7d'] = $this->input->get('');
+        $data['type_less_4h'] = $this->input->get('');
+        $data['type_less_1d'] = $this->input->get('');
+        $data['type_less_2d'] = $this->input->get('');
+        $data['type_less_3d'] = $this->input->get('');
+        $data['type_less_7d'] = $this->input->get('');
+        $data['type_more_7d'] = $this->input->get('');
+        $data['non_type_less_4h'] = $this->input->get('');
+        $data['non_type_less_1d'] = $this->input->get('');
+        $data['non_type_less_2d'] = $this->input->get('');
+        $data['non_type_less_3d'] = $this->input->get('');
+        $data['non_type_less_7d'] = $this->input->get('');
+        $data['non_type_more_7d'] = $this->input->get('');
+
+		echo $ba->add($data);
+	}
 	
 }

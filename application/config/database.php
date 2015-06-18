@@ -49,9 +49,14 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = $_ENV['DB_USERNAME'];
-$db['default']['password'] = $_ENV['DB_PASSWORD'];
-$db['default']['database'] = $_ENV['DB_NAME'];
+// $db['default']['username'] = $_ENV['DB_USERNAME'];
+// $db['default']['password'] = $_ENV['DB_PASSWORD'];
+// $db['default']['database'] = $_ENV['DB_NAME'];
+
+$db['default']['username'] = 'root';
+$db['default']['password'] = '123';
+$db['default']['database'] = 'db_bcm';
+
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;

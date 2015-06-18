@@ -29,12 +29,13 @@
                                     </thead>
 
 								   	<tbody>
-										<?php for ($i = 0; $i < count($bia); $i++ )  : ?>
+										<?php
+                                        for ($i = 0; $i < count($bia); $i++ )  : ?>
 									   <tr>
 									       <td><?php echo $i+1?></td>
-									       <td><?php echo $bia[$i]['name'];?></td>
-									       <td><a class="crud" href="<?php echo base_url('index.php/bia_controller/view/').'/'.$bia[$i]['id'];?>">View</a></td>
-											<td><a class="crud" href="<?php echo base_url('index.php/bia_controller/edit/').'/'.$bia[$i]['id'];?>">Edit</a></td>
+									       <td><?php echo $bia[$i]->name;?></td>
+									       <td><a class="crud" href="<?php echo base_url('index.php/bia_controller/view/').'/'.$bia[$i]->id;?>">View</a></td>
+											<td><a class="crud" href="<?php echo base_url('index.php/bia_controller/edit/').'/'.$bia[$i]->id;?>">Edit</a></td>
 										</tr>
 										<?php endfor; ?>
 									</tbody>

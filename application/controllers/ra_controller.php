@@ -2,26 +2,35 @@
 class Ra_controller extends CI_Controller {
 
 	public function index(){
-		$ra = array	(
-			array("id"=>"1" ,"name"=>"RA 1"),
-			array("id"=>"2" ,"name"=>"RA 2"),
-
-			array("id"=>"12" ,"name"=>"RA 232"),
-			array("id"=>"24" ,"name"=>"RA 1233"),
-			array("id"=>"21" ,"name"=>"RAv 11"),
-			array("id"=>"233" ,"name"=>"RA 22"),
-			array("id"=>"21" ,"name"=>"RA 1111"),
-			array("id"=>"3" ,"name"=>"RA 3")
-		);
-		$data['ra'] = $ra;
-		// $this->load->template('layout/content',$bia);
+		$data['ra'] = $this->get();
 		$this->load->template('pages/ra/index',$data);
 	}
 
 	public function view($id){
 		
-		$this->load->template('pages/bia/view',$id);
+		$this->load->template('pages/ra/view',$id);
 	}
 	
+	public function create(){
+		$this->load->template('pages/ra/form');
+	}
+
+	function get(){
+		$ra = new RA_Model();
+		$result = $ra->getAll();
+		// print_r($result);
+		return $result;
+	}
 	
+	function add(){
+		$ra = new RA_Model();
+		$data['threat'] = $this->input->post('threat');
+		$data['p'] = $this->input->post('P');
+		$data['i'] = $this->input->post('I');
+		$data['pm'] = $this->input->post('P');
+		$data['im'] = $this->input->post('Im');
+		$isSuccessAddToDatabase = $ra->add($data);
+		$this->index();
+		// print_r($data);
+	}
 }

@@ -12,6 +12,16 @@ class Bia_controller extends CI_Controller {
 		$this->load->template('pages/bia/view',$id);
 	}
 
+	public function edit($id)
+	{
+		$this->load->template('pages/bia/edit',$id);
+	}
+
+	public function delete($id)
+	{
+		// $this->load->template('pages/bia/edit',$id);
+	}
+
 	function get(){
 		$ba = new BA_Model();
 		$result = $ba->getAll();

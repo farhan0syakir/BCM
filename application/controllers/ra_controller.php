@@ -12,7 +12,10 @@ class Ra_controller extends CI_Controller {
 	}
 	
 	public function create(){
-		$this->load->template('pages/ra/form');
+		$ra = new RA_Model();
+		$data['raImpact'] = $ra->getRaImpact();
+		$data['raProbability'] = $ra->getRaProbability();
+		$this->load->template('pages/ra/form',$data);
 	}
 
 	function get(){
@@ -27,8 +30,10 @@ class Ra_controller extends CI_Controller {
 		$data['threat'] = $this->input->post('threat');
 		$data['p'] = $this->input->post('P');
 		$data['i'] = $this->input->post('I');
-		$data['pm'] = $this->input->post('P');
+		$data['pm'] = $this->input->post('Pm');
 		$data['im'] = $this->input->post('Im');
+		// print_r($this->input->post('threat'));
+		// die();
 		$isSuccessAddToDatabase = $ra->add($data);
 		$this->index();
 		// print_r($data);

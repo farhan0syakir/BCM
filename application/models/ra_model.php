@@ -55,4 +55,16 @@ class RA_Model extends DataMapper {
         $ra->im = $data['im'];
         return $ra;
     }
+
+    function getRaImpact(){
+        $ra_impact = new RAImpact_Model();
+        $result = $ra_impact->getAll();
+        return $result;
+    }
+
+    function getRaProbability(){
+        $ra_probability = new RA_Probability_Model();
+        $result = $ra_probability->getAll();
+        return $result;
+    }
 }

@@ -20,10 +20,12 @@ class Ra_controller extends CI_Controller {
 	}
 
 	public function create(){
-		$ra = new RA_Model();
-		$data['raImpact'] = $ra->getRaImpact();
-		$data['raProbability'] = $ra->getRaProbability();
-		$this->load->template('pages/ra/form',$data);
+		$this->load->template('pages/ra/create');
+		// die();
+		// $ra = new RA_Model();
+		// $data['raImpact'] = $ra->getRaImpact();
+		// $data['raProbability'] = $ra->getRaProbability();
+		// $this->load->template('pages/ra/form',$data);
 	}
 
 	function get(){

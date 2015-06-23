@@ -5,10 +5,10 @@
             <ul class="sidebar-nav">
              
                 <li >
-                    <a href="<?php echo base_url('index.php/bia_controller')?>"><img class="menu" src="<?php echo base_url('assets/images/bia.png')?>">BUSINESS IMPACT ANALYSIS</a>
+                    <a href="<?php echo base_url('index.php/bia')?>"><img class="menu" src="<?php echo base_url('assets/images/bia.png')?>">BUSINESS IMPACT ANALYSIS</a>
                 </li>
                 <li class="ganjil">
-                    <a href="<?php echo base_url('index.php/ra_controller')?>"><img class="menu" src="<?php echo base_url('assets/images/ra.png')?>">RISK ASSESSMENT</a>
+                    <a href="<?php echo base_url('index.php/ra')?>"><img class="menu" src="<?php echo base_url('assets/images/ra.png')?>">RISK ASSESSMENT</a>
                 </li>
                 <li >
                     <a href="#"><img class="menu" src="<?php echo base_url('assets/images/dm.png')?>">DISASTER MANAGEMENT</a>

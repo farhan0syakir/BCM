@@ -1,5 +1,5 @@
 <?php
-class Bia_controller extends CI_Controller {
+class Bia extends CI_Controller {
 
 	public function index()
 	{

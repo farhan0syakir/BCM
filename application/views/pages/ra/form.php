@@ -3,7 +3,7 @@
 </br>
 <?php
 	//todo silahkan buat form disini
-	echo form_open('ra_controller/add');
+	echo form_open('ra/add');
 	echo form_label('threat')."</br>";
 	echo form_input(array('name'=>'threat','required'=>'true'))."</br>";
 ?>

@@ -1,5 +1,5 @@
 <?php
-class Ra_controller extends CI_Controller {
+class Ra extends CI_Controller {
 
 	public function index(){
 		$data['ra'] = $this->get();

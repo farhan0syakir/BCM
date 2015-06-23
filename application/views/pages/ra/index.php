@@ -20,7 +20,7 @@
                                 <th>#</th>
                                 <th>Risk Assesment</th>
                                 <th></th>
-                                <th><a class="crud" href="<?php echo base_url('index.php/ra_controller/create')?>">Create New</a></th>
+                                <th><a class="crud" href="<?php echo base_url('index.php/ra/create')?>">Create New</a></th>
                             </tr>
                         </thead>
 
@@ -29,8 +29,8 @@
 						   <tr>
 						       <td><?php echo $i+1?></td>
 						       <td><?php echo $ra[$i]->threat;?></td>
-						       <td><a class="crud" href="<?php echo base_url('index.php/ra_controller/view/').'/'.$ra[$i]->id;?>">View</a></td>
-								<td><a class="crud" href="<?php echo base_url('index.php/ra_controller/edit/').'/'.$ra[$i]->id;?>">Edit</a></td>
+						       <td><a class="crud" href="<?php echo base_url('index.php/ra/view/').'/'.$ra[$i]->id;?>">View</a></td>
+								<td><a class="crud" href="<?php echo base_url('index.php/ra/edit/').'/'.$ra[$i]->id;?>">Edit</a></td>
 							</tr>
 							<?php endfor; ?>
 						</tbody>

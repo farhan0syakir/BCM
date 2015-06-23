@@ -172,6 +172,7 @@ aside {
         color: #fff;
     }
 
+	/*
     .navbar-default.affix {
         border-color: rgba(34,34,34,.05);
         background-color: #fff;
@@ -195,7 +196,7 @@ aside {
     .navbar-default.affix .nav > li>a:hover,
     .navbar-default.affix .nav>li>a:focus:hover {
         color: #f39c12;
-    }
+    }*/
 }
 
 header {
@@ -1385,6 +1386,7 @@ a
 
 .learntab a 
 {
+  text-transform:uppercase;
   color: black;
 }
 
@@ -1973,8 +1975,8 @@ li.ganjil
 .title
 {
 	background-color:transparent;
+	color: #16a085;
 	
-
 }
 
 
@@ -1995,7 +1997,6 @@ li.ganjil
 
 .title-header {
   padding-bottom: 9px;
-  color: black;
   border-bottom: 1px solid #eee;
 }
 
@@ -2027,15 +2028,24 @@ li.ganjil
 	border-bottom:1pt solid #bdc3c7;
 }
 
+.tr-gap-upper
+{
+	margin-top:100px;
+}
+
+th .th-gap
+{
+	padding-bottom:100px;
+}
 
 .gap
 {
 	margin-top:3px;
 	margin-bottom:3px;
     padding:10px;
-	background-color:#16a085;
+	background-color:#f7f7f7;
 	border-radius:5px;
-	color:white;
+	color:#2c3e50;
 
 }
 
@@ -2058,6 +2068,79 @@ li.ganjil
 
 }
 
+.button-gap
+{
+	margin-top:3px;
+	margin-bottom:0px;
+    padding:10px;
+	background-color:#3498db;
+	border-radius:5px;
+	color:white;
+
+}
+
+.button-gap:hover
+{
+	background-color:#1abc9c;
+	color:#ecf0f1;
+	text-decoration:none;
+}
+
+.view-button-gap
+{
+	margin-top:3px;
+	margin-bottom:0px;
+    padding:10px;
+	background-color:#2ecc71;
+	border-radius:5px;
+	color:white;
+
+}
+
+.view-button-gap:hover
+{
+	background-color:#27ae60;
+	color:#ecf0f1;
+	text-decoration:none;
+}
+
+.edit-button-gap
+{
+	margin-top:3px;
+	margin-bottom:0px;
+    padding:10px;
+	background-color:#9b59b6;
+	border-radius:5px;
+	color:white;
+
+}
+
+.edit-button-gap:hover
+{
+	background-color:#8e44ad;
+	color:#ecf0f1;
+	text-decoration:none;
+}
+
+.delete-button-gap
+{
+	margin-top:3px;
+	margin-bottom:0px;
+    padding:10px;
+	background-color:#e74c3c;
+	border-radius:5px;
+	color:white;
+
+}
+
+.delete-button-gap:hover
+{
+	background-color:#c0392b;
+	color:#ecf0f1;
+	text-decoration:none;
+}
+
+
 .tab-switch
 {
 	height:125px;
@@ -2068,8 +2151,9 @@ li.ganjil
 
 .tab-gap
 {
-
+	background-color:transparent;
 	max-height:70px;
+	text-decoration:none;
 }
 
 .num
@@ -2077,7 +2161,9 @@ li.ganjil
 {
 	margin-top:3px;
 	padding:5px;
-	background-color:#1abc9c;
+	background-color:#bdc3c7;
 	border-radius:3px;
 	
 }
+
+

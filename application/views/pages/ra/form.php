@@ -49,5 +49,6 @@
 </select>
 </br>
 <?php
+$this->load->view('pages/ra/dynamicForm');
 echo form_submit('mysubmit', 'Submit Post!');
 echo form_close();

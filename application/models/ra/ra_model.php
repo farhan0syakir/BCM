@@ -38,7 +38,6 @@ class RA_Model extends DataMapper {
         if(is_array($data)){
             $ra = $this->addDetailsRiskAssestment($data);
             if($isSuccess = $ra->save_as_new()){
-                $this->addVulnerabilities($data);
                 return TRUE;
             } else {
                 return FALSE;
@@ -63,22 +62,9 @@ class RA_Model extends DataMapper {
         return $result;
     }
 
-    function getRaProbability(){
-        $ra_probability = new RA_Probability_Model();
+    function getProbability(){
+        $ra_probability = new RAProbability_Model();
         $result = $ra_probability->getAll();
         return $result;
-    }
-
-    function addVulnerabilities($data){
-        $isSuccess = TRUE;
-        foreach ($data['vulnerabilities'] as $vulnerability) {
-            $ra_vulnerability = new RA_Vulnerability_Model();
-            $ra = new RA_Model();
-            $ra_vulnerability->ra_id = $ra->where('threat', $data['threat'])->get()->id;
-            $ra_vulnerability->vulnerability = $vulnerability;
-            $isSuccess &= $ra_vulnerability->save_as_new();
-        }
-
-        return $isSuccess;
     }
 }

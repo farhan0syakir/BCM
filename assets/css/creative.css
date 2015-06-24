@@ -2085,11 +2085,18 @@ th .th-gap
 .top-gap
 {
 	margin-top:40px;
+
+}
+
+.top-padding
+{
+    padding-top: 10%;
 }
 
 .bottom-gap
 {
 	margin-bottom:40px;
+    padding-bottom: 5px;
 }
 
 .bottom-gap-narrow
@@ -2260,5 +2267,17 @@ tr
 	min-width:200px;
 }
 
+.modal-dialog
+{
+    z-index: 9999999;
+}
 
+.padding-right-narrow
+{
+    padding-right: 0px;
+}
 
+.padding-left-narrow
+{
+    padding-left: 0px;
+}

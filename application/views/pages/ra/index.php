@@ -19,8 +19,10 @@
                             <tr>
                                 <th>#</th>
                                 <th>Risk Assesment</th>
-                                <th></th>
-                                <th><a class="crud" href="<?php echo base_url('ra/create')?>">Create New</a></th>
+                                 <th class="td-button"></th>
+                                 <th class="td-button"></th>
+                                 <th class="td-button th-gap text-right"><a href="<?php echo base_url('ra/create') ?>" class="button-gap crud">
+                                 New <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></th>
                             </tr>
                         </thead>
 
@@ -29,9 +31,14 @@
 						   <tr>
 						       <td><?php echo $i+1?></td>
 						       <td><?php echo $ra[$i]->threat;?></td>
-						       <td><a class="crud" href="<?php echo base_url('ra/view/').'/'.$ra[$i]->id;?>">View</a></td>
-								<td><a class="crud" href="<?php echo base_url('ra/edit/').'/'.$ra[$i]->id;?>">Edit</a></td>
-							</tr>
+
+                               <td  class="td-button text-right"><a class="view-button-gap crud" href="<?php echo base_url('ra/view/').'/'.$ra[$i]->id;?>">
+                               View <span class="glyphicon glyphicon-check" aria-hidden="true"></span></a></td>
+                               <td  class="td-button text-center"><a class="edit-button-gap crud" href="<?php echo base_url('ra/edit/').'/'.$ra[$i]->id;?>">
+                               Edit <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></td>
+                               <td  class="td-button text-right"><a class="delete-button-gap crud" href="<?php echo base_url('ra/delete/').'/'.$ra[$i]->id;?>">
+                               Delete <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
+						      </tr>
 							<?php endfor; ?>
 						</tbody>
 						

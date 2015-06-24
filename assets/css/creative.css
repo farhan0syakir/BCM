@@ -1984,7 +1984,7 @@ li.ganjil
 {
 	margin-left:20px;
 	color:white;
-	margin-top:60px;
+	margin-top:30px;
 }
 
 
@@ -1996,7 +1996,9 @@ li.ganjil
 
 
 .title-header {
-  padding-bottom: 9px;
+  padding-bottom: 20px;
+  width:100%;
+  float:center;
   border-bottom: 1px solid #eee;
 }
 
@@ -2011,14 +2013,17 @@ li.ganjil
 {
 	color: #16a085;
 	font-size:14px;
+	margin-bottom:10px;
+}
+
+.label-normal
+{
+	color: #1dd2af;
+	font-size:12px;
+	margin-bottom:5px;
 }
 
 .bia-detail
-{
-	min-width:960px;
-}
-
-.ra-detail
 {
 	min-width:960px;
 }
@@ -2031,11 +2036,15 @@ li.ganjil
 .tr-gap
 {
 	border-bottom:1pt solid #bdc3c7;
+	padding:100px;
+	
 }
 
 .tr-gap-upper
 {
 	margin-top:100px;
+	padding-top:100px;
+	padding-bottom:100px;
 }
 
 th .th-gap
@@ -2073,14 +2082,43 @@ th .th-gap
 
 }
 
+.top-gap
+{
+	margin-top:40px;
+}
+
+.bottom-gap
+{
+	margin-bottom:40px;
+}
+
+.bottom-gap-narrow
+{
+	margin-bottom:20px;
+}
+
+
+.left-gap
+{
+	margin-left:20px;
+}
+
+.right-gap
+{
+	margin-right:20px;
+}
+
+
 .button-gap
 {
 	margin-top:3px;
-	margin-bottom:0px;
+	margin:10px;
+
     padding:10px;
 	background-color:#3498db;
 	border-radius:5px;
 	color:white;
+	font-size:12pt;
 
 }
 
@@ -2093,13 +2131,14 @@ th .th-gap
 
 .view-button-gap
 {
-	margin-top:3px;
-	margin-bottom:0px;
+	margin:10px;
     padding:10px;
 	background-color:#2ecc71;
 	border-radius:5px;
 	color:white;
-
+	min-height:500px;
+	min-width:500px;
+	font-size:12pt;
 }
 
 .view-button-gap:hover
@@ -2111,12 +2150,12 @@ th .th-gap
 
 .edit-button-gap
 {
-	margin-top:3px;
-	margin-bottom:0px;
+	margin:10px;
     padding:10px;
 	background-color:#9b59b6;
 	border-radius:5px;
 	color:white;
+	font-size:12pt;
 
 }
 
@@ -2127,14 +2166,36 @@ th .th-gap
 	text-decoration:none;
 }
 
+
+.back-button-gap
+{
+	margin-left:15px;
+	margin-right:10px;
+	margin-botttom:10px;
+    padding:10px;
+	background-color:#1dd2af;
+	border-radius:1000px;
+	color:white;
+	font-size:12pt;
+
+}
+
+.back-button-gap:hover
+{
+	background-color:#16a085;
+	color:#ecf0f1;
+	text-decoration:none;
+}
+
+
 .delete-button-gap
 {
-	margin-top:3px;
-	margin-bottom:0px;
+	margin:10px;
     padding:10px;
 	background-color:#e74c3c;
 	border-radius:5px;
 	color:white;
+	font-size:12pt;
 
 }
 
@@ -2143,25 +2204,6 @@ th .th-gap
 	background-color:#c0392b;
 	color:#ecf0f1;
 	text-decoration:none;
-}
-
-.login-button-gap
-{
-	margin-top:3px;
-	margin-bottom:0px;
-    padding:10px;
-	background-color:#4aa3df;
-	border-radius:5px;
-	color:white;
-
-}
-
-.login-button-gap:hover
-{
-	background-color:#2980b9;
-	color:#ecf0f1;
-	text-decoration:none;
-	
 }
 
 
@@ -2185,49 +2227,38 @@ th .th-gap
 {
 	margin-top:3px;
 	padding:5px;
-	background-color:#bdc3c7;
+	background-color:white;
 	border-radius:3px;
-	
-}
-.center-text
-{
-	text-align: center;
+	max-width:60px;
 	
 }
 
 
-      body {
-        padding-top: 40px;
-        padding-bottom: 40px;
-        background-color: #f5f5f5;
-		
-      }
-
-      .form-signin {
-        max-width: 400px;
-        padding: 20px 80px 50px;
-        margin: 0 auto 10px;
-        background-color: #fff;
-        border: 2px solid #e5e5e5;
-		font-size: 18px;
-	 
-      }
-      .form-signin .form-signin-heading
-	 {
-        margin-bottom: 10px;
-		
-      }
-      .form-signin input[type="text"],
-      .form-signin input[type="password"] {
-        font-size: 20px;
-        height: auto;
-        margin-bottom: 20px;
-        padding: 7px 9px
-		
-      }
-.left-margin
+.numb
 {
-	margin-left : 25px;
+	width:25%;
 }
-    
+
+
+.table-gap
+{
+	min-width:100%
+}
+
+tr
+{
+	padding:100px;
+}
+
+.td-button
+{
+	max-width:60px;
+}
+
+.td-title
+{
+	min-width:200px;
+}
+
+
 

@@ -20,7 +20,7 @@
                     <a href="#"><img class="menu" src="<?php echo base_url('assets/images/notif.png')?>">NOTIFICATION</a>
                 </li>
                 <li class="ganjil">
-                    <a href="#"><img class="menu" src="<?php echo base_url('assets/images/role.png')?>">ROLE ASSIGNMENT</a>
+                    <a href="<?php echo base_url('role')?>"><img class="menu" src="<?php echo base_url('assets/images/role.png')?>">ROLE ASSIGNMENT</a>
                 </li>
             
             </ul>

@@ -1,6 +1,6 @@
 <div class="row">
     <div class=" col-lg-12">
-        <h3 class="title page-header">Risk Assesment</h3>
+        <h3 class="title page-header">Risk Assessment</h3>
     </div>
  </div>
 <!-- /.row -->
@@ -9,7 +9,7 @@
 	<div class="col-lg-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h4>List of Risk Assesment</h4>
+                <h4>List of Risk Assessment</h4>
             </div>
             <!-- /.panel-heading -->
             <div class="panel-body">
@@ -18,7 +18,7 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Risk Assesment</th>
+                                <th>Risk Assessment</th>
                                  <th class="td-button"></th>
                                  <th class="td-button"></th>
                                  <th class="td-button th-gap text-right"><a href="<?php echo base_url('ra/create') ?>" class="button-gap crud">

@@ -1,4 +1,4 @@
-<div class="row" >
+<div class="row top-space" >
 	<div  class="content-wrapper">
 		<h3 class="title title-header">Create New Risk Assesment</h3>
 		<div class="col-lg-12">
@@ -6,24 +6,24 @@
 				<div class="panel-body">
 					<div class="row">
 						<div class="col-lg-12">
-							<form role="form" action="<?php echo base_url('ra/add')?>" method="post" >
+							<form role="form">
 								<div class="form-group">
 									<label class="label-bold">Business Activity</label>
 										<input class="form-control" placeholder="Input the name of business activity here!">
 								</div>
 								<div class="form-group">
 									<label class="label-bold">Threat</label>
-									<input class="form-control" placeholder="Enter text" name="threat">
+									<input class="form-control" placeholder="Enter text">
 								</div>
 															
-								<div id= "dynamicFormVulnerability" class="form-group">
+								<div class="form-group">
 									<label class="label-bold">Vulnerabilities</label>
-									<input  class="form-control" placeholder="Enter text" name='vulnerabilities[]'>
+									<input class="form-control" placeholder="Enter text">
 								</div>
 												   
 								<div class="top-gap row">
 									<div class="col-lg-12 text-right" >
-										<a class="button-gap" onClick="addInput('dynamicFormVulnerability','vulnerabilities')">Add
+										<a class="button-gap">Add
 											<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
 										</a>
 									</div>
@@ -62,13 +62,13 @@
 								</div>
 																	
 																					
-							<div id="dynamicFormExistingMeasure" class="form-group">
+							<div class="form-group">
 								<label class="label-bold">Exiting Measure</label>
-								<input class="form-control" placeholder="Enter text" name="existingMeasures[]">
+								<input class="form-control" placeholder="Enter text">
 							</div>
 							<div class="top-gap row">
 								<div class="col-lg-12 text-right" >
-									<a class="button-gap" onClick="addInput('dynamicFormExistingMeasure','existingMeasures')">Add
+									<a class="button-gap">Add
 										<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
 									</a>
 								</div>
@@ -106,25 +106,25 @@
 									</div>
 								</div>
 							
-							<div id="dynamicFormProposedMeasures" class="form-group">
+							<div class="form-group">
 								<label class="label-bold">Proposed Measure</label>
-								<input class="form-control" placeholder="Enter text" name="proposedMeasures[]">
+								<input class="form-control" placeholder="Enter text">
 							</div>
 							<div class="top-gap row">
 								<div class="col-lg-12 text-right" >
-									<a class="button-gap" onClick="addInput('dynamicFormProposedMeasures','proposedMeasures')">Add
+									<a class="button-gap">Add
 										<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
 									</a>
 								</div>
-							</div>
+							</div
+						</form>
 					</div>
 				</div>
 				
-					<div class="col-lg-12 text-center" >
-						<button class="button-gap" type="submit" >Submit
-							<i class="glyphicon glyphicon-ok" aria-hidden="true"></i>
-						</button>
-					</div>
-				</form>
+				<div class="col-lg-12 text-center" >
+					<a class="button-gap">Create
+						<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+					</a>
+				</div>
 			</div>
 </div>

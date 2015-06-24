@@ -12,20 +12,20 @@ class Ra extends CI_Controller {
 	}
 	
 	public function edit($id){
-		$this->load->template('pages/ra/view',$id);
+		$this->load->template('pages/ra/edit',$id);
 	}
 
 	public function delete($id){	
-		$this->load->template('pages/ra/view',$id);
+		$this->load->template('pages/ra/delete',$id);
 	}
 
 	public function create(){
-		$this->load->template('pages/ra/create');
+		// $this->load->template('pages/ra/create');
 		// die();
-		// $ra = new RA_Model();
-		// $data['raImpact'] = $ra->getRaImpact();
-		// $data['raProbability'] = $ra->getRaProbability();
-		// $this->load->template('pages/ra/form',$data);
+		$ra = new RA_Model();
+		$data['raImpact'] = $ra->getRaImpact();
+		$data['raProbability'] = $ra->getRaProbability();
+		$this->load->template('pages/ra/form',$data);
 	}
 
 	function get(){
@@ -43,8 +43,8 @@ class Ra extends CI_Controller {
 		$data['pm'] = $this->input->post('Pm');
 		$data['im'] = $this->input->post('Im');
 		$data['vulnerabilities'] = $this->input->post('vulnerabilities');
-		// print_r($data);
-		// die();
+		print_r($data);
+		die();
 		$isSuccessAddToDatabase = $ra->add($data);
 		$this->index();
 		// print_r($data);

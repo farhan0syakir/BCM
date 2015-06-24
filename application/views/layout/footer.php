@@ -23,13 +23,13 @@
 <script>
     var counter = 0;
     var limit = 10;
-    function addInput(divName, labelName , nameForInput){
+    function addInput(divName, nameForInput){
          if (counter == limit)  {
               alert("You have reached the limit of adding " + counter + " inputs");
          }
          else {
               var newdiv = document.createElement('div');
-              newdiv.innerHTML = labelName+" " + (counter + 1) + " <br><input type='text' name='"+nameForInput +"[]'>";
+              newdiv.innerHTML = " <br><input class='form-control' placeholder='Enter text' name='"+nameForInput +"[]'>";
               document.getElementById(divName).appendChild(newdiv);
               // document.getElementById(buttonId).attr("onClick","addInput("+buttonId+", "+(counter+1)+", "+divName+", "+labelName+" ,"+nameForInput+")");
               // $(#btnTambahVulnerability).attr("onClick","farhan");

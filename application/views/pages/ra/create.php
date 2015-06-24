@@ -1,4 +1,4 @@
-<div class="row top-space" >
+<div class="row" >
 	<div  class="content-wrapper">
 		<h3 class="title title-header">Create New Risk Assesment</h3>
 		<div class="col-lg-12">
@@ -6,7 +6,7 @@
 				<div class="panel-body">
 					<div class="row">
 						<div class="col-lg-12">
-							<form role="form">
+							<form role="form" action="<?php echo base_url('ra/add')?>" method="post" >
 								<div class="form-group">
 									<label class="label-bold">Business Activity</label>
 										<input class="form-control" placeholder="Input the name of business activity here!">
@@ -16,14 +16,14 @@
 									<input class="form-control" placeholder="Enter text">
 								</div>
 															
-								<div class="form-group">
+								<div id= "dynamicFormVulnerability" class="form-group">
 									<label class="label-bold">Vulnerabilities</label>
-									<input class="form-control" placeholder="Enter text">
+									<input  class="form-control" placeholder="Enter text">
 								</div>
 												   
 								<div class="top-gap row">
 									<div class="col-lg-12 text-right" >
-										<a class="button-gap">Add
+										<a class="button-gap" onClick="addInput('dynamicFormVulnerability','vulnerabilities')">Add
 											<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
 										</a>
 									</div>
@@ -99,13 +99,13 @@
 									</tr>
 							</table>
 																					
-							<div class="form-group">
+							<div id="dynamicFormExistingMeasure" class="form-group">
 								<label class="label-bold">Exiting Measure</label>
 								<input class="form-control" placeholder="Enter text">
 							</div>
 							<div class="top-gap row">
 								<div class="col-lg-12 text-right" >
-									<a class="button-gap">Add
+									<a class="button-gap" onClick="addInput('dynamicFormExistingMeasure','existingMeasures')">Add
 										<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
 									</a>
 								</div>
@@ -181,25 +181,25 @@
 									</tr>
 							</table>
 							
-							<div class="form-group">
+							<div id="dynamicFormProposedMeasures" class="form-group">
 								<label class="label-bold">Proposed Measure</label>
 								<input class="form-control" placeholder="Enter text">
 							</div>
 							<div class="top-gap row">
 								<div class="col-lg-12 text-right" >
-									<a class="button-gap">Add
+									<a class="button-gap" onClick="addInput('dynamicFormProposedMeasures','proposedMeasures')">Add
 										<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
 									</a>
 								</div>
-							</div
-						</form>
+							</div>
 					</div>
 				</div>
 				
-				<div class="col-lg-12 text-center" >
-					<a class="button-gap">Create
-						<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-					</a>
-				</div>
+					<div class="col-lg-12 text-center" >
+						<button class="button-gap" type="submit" >Submit
+							<i class="glyphicon glyphicon-ok" aria-hidden="true"></i>
+						</button>
+					</div>
+				</form>
 			</div>
 </div>

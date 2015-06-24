@@ -2,7 +2,7 @@
             <div class="row top-space" >
 				<div  class="content-wrapper">
 				        <h3 class="title title-header">	
-						 <a class="back-button-gap" href="<?php echo base_url('index.php/role_controller') ?>">
+						 <a class="back-button-gap" href="<?php echo base_url('role') ?>">
 						<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
 						</a>Assign New Role</h3>
 								     <!-- /.col-lg-6 -->

@@ -24,6 +24,9 @@
 										<div class="gap row-md-12  ">
 											Vulnerabiliies ini heheheeeeeehehehehee
 										</div>
+										<div class="gap row-md-12  ">
+											Vulnerabiliies ini heheheeeeeehehehehee
+										</div>
 									</td>
 								</tr>
 								<tr class="tr-gap">
@@ -46,11 +49,15 @@
 										</div>
 									</td>
 								</tr>
-								<tr>
+								
+								<tr class="tr-gap">
 									<td class="td-label">
 										<label class="label-bold">Existing Measures</label>
 									</td>
 									<td>
+										<div class="gap row-md-12  ">
+											Existing Measures ini heheheeeeeehehehehee
+										</div>
 										<div class="gap row-md-12  ">
 											Existing Measures ini heheheeeeeehehehehee
 										</div>
@@ -67,7 +74,7 @@
 										</div>
 									</td>
 								</tr>
-								<tr >
+								<tr class="tr-gap">
 									<td class="td-label">
 										<label class="label-bold">IM</label>
 									</td>
@@ -77,12 +84,14 @@
 										</div>
 									</td>
 								</tr>
-								</tr>
-								<tr >
+								<tr class="tr-gap">
 									<td class="td-label">
 										<label class="label-bold">Proposed Measures</label>
 									</td>
 									<td>
+										<div class="gap row-md-12  ">
+											Proposed ini heheheeeeeehehehehee
+										</div>
 										<div class="gap row-md-12  ">
 											Proposed ini heheheeeeeehehehehee
 										</div>

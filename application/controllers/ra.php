@@ -20,7 +20,7 @@ class Ra extends CI_Controller {
 	}
 
 	public function create(){
-		// $this->load->template('pages/ra/create');
+		$this->load->template('pages/ra/create');
 		// die();
 		$ra = new RA_Model();
 		$data['raImpact'] = $ra->getRaImpact();
@@ -37,12 +37,15 @@ class Ra extends CI_Controller {
 	
 	function add(){
 		$ra = new RA_Model();
+		$data['bia'] = $this->input->post('bia');
 		$data['threat'] = $this->input->post('threat');
 		$data['p'] = $this->input->post('P');
 		$data['i'] = $this->input->post('I');
 		$data['pm'] = $this->input->post('Pm');
 		$data['im'] = $this->input->post('Im');
 		$data['vulnerabilities'] = $this->input->post('vulnerabilities');
+		$data['existingMeasures'] = $this->input->post('existingMeasures');
+		$data['proposedMeasures'] = $this->input->post('proposedMeasures');
 		print_r($data);
 		die();
 		$isSuccessAddToDatabase = $ra->add($data);

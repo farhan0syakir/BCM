@@ -13,12 +13,12 @@
 								</div>
 								<div class="form-group">
 									<label class="label-bold">Threat</label>
-									<input class="form-control" placeholder="Enter text">
+									<input class="form-control" placeholder="Enter text" name="threat">
 								</div>
 															
 								<div id= "dynamicFormVulnerability" class="form-group">
 									<label class="label-bold">Vulnerabilities</label>
-									<input  class="form-control" placeholder="Enter text">
+									<input  class="form-control" placeholder="Enter text" name='vulnerabilities[]'>
 								</div>
 												   
 								<div class="top-gap row">
@@ -101,7 +101,7 @@
 																					
 							<div id="dynamicFormExistingMeasure" class="form-group">
 								<label class="label-bold">Exiting Measure</label>
-								<input class="form-control" placeholder="Enter text">
+								<input class="form-control" placeholder="Enter text" name="existingMeasures[]">
 							</div>
 							<div class="top-gap row">
 								<div class="col-lg-12 text-right" >
@@ -183,7 +183,7 @@
 							
 							<div id="dynamicFormProposedMeasures" class="form-group">
 								<label class="label-bold">Proposed Measure</label>
-								<input class="form-control" placeholder="Enter text">
+								<input class="form-control" placeholder="Enter text" name="proposedMeasures[]">
 							</div>
 							<div class="top-gap row">
 								<div class="col-lg-12 text-right" >

@@ -1,4 +1,4 @@
-
+<div class="row top-space" >
 	<div  class="content-wrapper">
 		<h3 class="title title-header">Create New Risk Assesment</h3>
 		<div class="col-lg-12">
@@ -9,16 +9,22 @@
 							<form role="form">
 								<div class="form-group">
 									<label class="label-bold">Business Activity</label>
-										<input class="form-control" placeholder="Input the name of business activity here!">
+										<select class="form-control"> 
+											<option value="biology">Business Activity 1</option>
+											<option value="chemestry">Business Activity 2</option>
+											<option value="physic">Business Activity 3</option>
+											<option value="math">Business Activity 4</option>     
+											<option value="math">Business Activity 5</option> 
+										</select>
 								</div>
 								<div class="form-group">
 									<label class="label-bold">Threat</label>
-									<input class="form-control" placeholder="Enter text">
+									<input class="form-control" >
 								</div>
 															
 								<div class="form-group">
 									<label class="label-bold">Vulnerabilities</label>
-									<input class="form-control" placeholder="Enter text">
+									<input class="form-control" >
 								</div>
 												   
 								<div class="top-gap row">
@@ -28,80 +34,33 @@
 										</a>
 									</div>
 								</div>
+										
+								<div class="form-group">
+									<label class="label-bold">P</label>
+										<select class="form-control"> 
+											<option value="biology">likely</option>
+											<option value="chemestry">unlikely</option>
+											<option value="physic">most likely</option>
+											<option value="math">good</option>     
+											<option value="math">better</option> 
+										</select>
+								</div>
+								
+								<div class="form-group">
+									<label class="label-bold">I</label>
+										<select class="form-control"> 
+											<option value="biology">likely</option>
+											<option value="chemestry">unlikely</option>
+											<option value="physic">most likely</option>
+											<option value="math">good</option>     
+											<option value="math">better</option> 
+										</select>
+								</div>
 																	
-								<table class="table-gap">
-									<tr class="tr-gap">
-										<td class="td-label">
-											<label class="label-bold">P</label>
-										</td>
-										<td>
-											<div class="gap col-md-12  ">
-												<div class="gap col-md-2 ">
-													<label class="gap-narrow"> 1  </label>
-													<input type="checkbox" value="">
-												</div>
-																								
-												<div class="gap col-md-2 ">
-													<label class="gap-narrow">2 </label>
-													<input type="checkbox" value="">
-												</div>
-												
-												<div class="gap col-md-2 ">
-													<label class="gap-narrow">3 </label>
-													<input type="checkbox" value="">
-												</div>
-																										
-												<div class="gap col-md-2 ">
-													<label class="gap-narrow"> 4 </label>
-													<input type="checkbox" value="">
-												</div>
-																										
-												<div class="gap col-md-2 ">
-													<label class="gap-narrow"> 5  </label>
-													<input type="checkbox" value="">
-												</div>
-											</div>
-										</td>
-									</tr>
-																						
-									<tr class="tr-gap">
-										<td class="td-label">
-											<label class="label-bold">I</label>
-										</td>
-										<td>
-											<div class="gap col-md-12  ">
-												<div class="gap col-md-2 ">
-													<label class="gap-narrow"> 1  </label>
-													<input type="checkbox" value="">
-												</div>
-																								
-												<div class="gap col-md-2 ">
-													<label class="gap-narrow">2 </label>
-													<input type="checkbox" value="">
-												</div>
-												
-												<div class="gap col-md-2 ">
-													<label class="gap-narrow">3 </label>
-													<input type="checkbox" value="">
-												</div>
-																										
-												<div class="gap col-md-2 ">
-													<label class="gap-narrow"> 4 </label>
-													<input type="checkbox" value="">
-												</div>
-																										
-												<div class="gap col-md-2 ">
-													<label class="gap-narrow"> 5  </label>
-													<input type="checkbox" value="">
-												</div>
-											</div>
-										</td>
-									</tr>
-							</table>
 																					
 							<div class="form-group">
 								<label class="label-bold">Exiting Measure</label>
-								<input class="form-control" placeholder="Enter text">
+								<input class="form-control" >
 							</div>
 							<div class="top-gap row">
 								<div class="col-lg-12 text-right" >
@@ -111,79 +70,31 @@
 								</div>
 							</div>
 
-							<table class="table-gap">
-									<tr class="tr-gap">
-										<td class="td-label">
-											<label class="label-bold">PM</label>
-										</td>
-										<td>
-											<div class="gap col-md-12  ">
-												<div class="gap col-md-2 ">
-													<label class="gap-narrow"> 1  </label>
-													<input type="checkbox" value="">
-												</div>
-																								
-												<div class="gap col-md-2 ">
-													<label class="gap-narrow">2 </label>
-													<input type="checkbox" value="">
-												</div>
-												
-												<div class="gap col-md-2 ">
-													<label class="gap-narrow">3 </label>
-													<input type="checkbox" value="">
-												</div>
-																										
-												<div class="gap col-md-2 ">
-													<label class="gap-narrow"> 4 </label>
-													<input type="checkbox" value="">
-												</div>
-																										
-												<div class="gap col-md-2 ">
-													<label class="gap-narrow"> 5  </label>
-													<input type="checkbox" value="">
-												</div>
-											</div>
-										</td>
-									</tr>
-																						
-									<tr class="tr-gap">
-										<td class="td-label">
-											<label class="label-bold">IM</label>
-										</td>
-										<td>
-											<div class="gap col-md-12  ">
-												<div class="gap col-md-2 ">
-													<label class="gap-narrow"> 1  </label>
-													<input type="checkbox" value="">
-												</div>
-																								
-												<div class="gap col-md-2 ">
-													<label class="gap-narrow">2 </label>
-													<input type="checkbox" value="">
-												</div>
-												
-												<div class="gap col-md-2 ">
-													<label class="gap-narrow">3 </label>
-													<input type="checkbox" value="">
-												</div>
-																										
-												<div class="gap col-md-2 ">
-													<label class="gap-narrow"> 4 </label>
-													<input type="checkbox" value="">
-												</div>
-																										
-												<div class="gap col-md-2 ">
-													<label class="gap-narrow"> 5  </label>
-													<input type="checkbox" value="">
-												</div>
-											</div>
-										</td>
-									</tr>
-							</table>
+							<div class="form-group">
+									<label class="label-bold">PM</label>
+										<select class="form-control"> 
+											<option value="biology">likely</option>
+											<option value="chemestry">unlikely</option>
+											<option value="physic">most likely</option>
+											<option value="math">good</option>     
+											<option value="math">better</option> 
+										</select>
+								</div>
+								
+								<div class="form-group">
+									<label class="label-bold">IM</label>
+										<select class="form-control"> 
+											<option value="biology">likely</option>
+											<option value="chemestry">unlikely</option>
+											<option value="physic">most likely</option>
+											<option value="math">good</option>     
+											<option value="math">better</option> 
+										</select>
+								</div>
 							
 							<div class="form-group">
 								<label class="label-bold">Proposed Measure</label>
-								<input class="form-control" placeholder="Enter text">
+								<input class="form-control">
 							</div>
 							<div class="top-gap row">
 								<div class="col-lg-12 text-right" >
@@ -202,4 +113,4 @@
 					</a>
 				</div>
 			</div>
-
+</div>

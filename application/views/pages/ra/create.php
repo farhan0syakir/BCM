@@ -9,7 +9,13 @@
 							<form role="form">
 								<div class="form-group">
 									<label class="label-bold">Business Activity</label>
-										<input class="form-control" placeholder="Input the name of business activity here!">
+										<select class="form-control"> 
+											<option value="biology">Business Activity 1</option>
+											<option value="chemestry">Business Activity 2</option>
+											<option value="physic">Business Activity 3</option>
+											<option value="math">Business Activity 4</option>     
+											<option value="math">Business Activity 5</option> 
+										</select>
 								</div>
 								<div class="form-group">
 									<label class="label-bold">Threat</label>
@@ -31,34 +37,24 @@
 										
 								<div class="form-group">
 									<label class="label-bold">P</label>
-									<div class="dropdown">
-										<input class="form-control dropdown-toggle" type="input" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" placeholder="Enter text">
-										<span class="caret"></span>
-										</input>
-											 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-												<li><a href="#">unlikely</a></li>
-												<li><a href="#">likely</a></li>
-												<li><a href="#">less likely</a></li>
-												<li><a href="#">most likely</a></li>
-												<li><a href="#">most good</a></li>
-											</ul>
-									</div>
+										<select class="form-control"> 
+											<option value="biology">likely</option>
+											<option value="chemestry">unlikely</option>
+											<option value="physic">most likely</option>
+											<option value="math">good</option>     
+											<option value="math">better</option> 
+										</select>
 								</div>
 								
 								<div class="form-group">
 									<label class="label-bold">I</label>
-									<div class="dropdown">
-										<input class="form-control dropdown-toggle" type="input" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" placeholder="Enter text">
-										<span class="caret"></span>
-										</input>
-											 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-												<li><a href="#">unlikely</a></li>
-												<li><a href="#">likely</a></li>
-												<li><a href="#">less likely</a></li>
-												<li><a href="#">most likely</a></li>
-												<li><a href="#">most good</a></li>
-											</ul>
-									</div>
+										<select class="form-control"> 
+											<option value="biology">likely</option>
+											<option value="chemestry">unlikely</option>
+											<option value="physic">most likely</option>
+											<option value="math">good</option>     
+											<option value="math">better</option> 
+										</select>
 								</div>
 																	
 																					
@@ -76,34 +72,24 @@
 
 							<div class="form-group">
 									<label class="label-bold">PM</label>
-									<div class="dropdown">
-										<input class="form-control dropdown-toggle" type="input" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" placeholder="Enter text">
-										<span class="caret"></span>
-										</input>
-											 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-												<li><a href="#">unlikely</a></li>
-												<li><a href="#">likely</a></li>
-												<li><a href="#">less likely</a></li>
-												<li><a href="#">most likely</a></li>
-												<li><a href="#">most good</a></li>
-											</ul>
-									</div>
+										<select class="form-control"> 
+											<option value="biology">likely</option>
+											<option value="chemestry">unlikely</option>
+											<option value="physic">most likely</option>
+											<option value="math">good</option>     
+											<option value="math">better</option> 
+										</select>
 								</div>
 								
 								<div class="form-group">
 									<label class="label-bold">IM</label>
-									<div class="dropdown">
-										<input class="form-control dropdown-toggle" type="input" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" placeholder="Enter text">
-										<span class="caret"></span>
-										</input>
-											 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-												<li><a href="#">unlikely</a></li>
-												<li><a href="#">likely</a></li>
-												<li><a href="#">less likely</a></li>
-												<li><a href="#">most likely</a></li>
-												<li><a href="#">most good</a></li>
-											</ul>
-									</div>
+										<select class="form-control"> 
+											<option value="biology">likely</option>
+											<option value="chemestry">unlikely</option>
+											<option value="physic">most likely</option>
+											<option value="math">good</option>     
+											<option value="math">better</option> 
+										</select>
 								</div>
 							
 							<div class="form-group">

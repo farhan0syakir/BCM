@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>BCM | Business Continuity Management</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="../bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Timeline CSS -->
+    <link href="../dist/css/timeline.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="../bower_components/morrisjs/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body >
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><img class="logo" src="../img/logo.png"/></a>
+				
+				
+            </div>
+			
+            <!-- /.navbar-collapse -->
+			
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+                <li>
+					<a>
+					Login
+					</a>
+				</li>
+				<li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        Account <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-messages">
+                        <li>
+                            <a href="#">
+                                Profile
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                Logout 
+							</a>
+                        </li>
+                        
+                    </ul>
+                    <!-- /.dropdown-messages -->
+                </li>
+				</ul>
+                <!-- /.dropdown -->
+                <!--li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-tasks fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-tasks">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 1</strong>
+                                        <span class="pull-right text-muted">40% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                            <span class="sr-only">40% Complete (success)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 2</strong>
+                                        <span class="pull-right text-muted">20% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                            <span class="sr-only">20% Complete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 3</strong>
+                                        <span class="pull-right text-muted">60% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                                            <span class="sr-only">60% Complete (warning)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <p>
+                                        <strong>Task 4</strong>
+                                        <span class="pull-right text-muted">80% Complete</span>
+                                    </p>
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                            <span class="sr-only">80% Complete (danger)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>See All Tasks</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-tasks -->
+                <!--/li-->
+                <!-- /.dropdown -->
+                <!--li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-alerts">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-comment fa-fw"></i> New Comment
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-twitter fa-fw"></i> 3 New Followers
+                                    <span class="pull-right text-muted small">12 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-envelope fa-fw"></i> Message Sent
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-tasks fa-fw"></i> New Task
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>See All Alerts</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-alerts -->
+                <!--/li>
+                <!-- /.dropdown -->
+                <!--li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                <!--/li>
+                <!-- /.dropdown -->
+            <!--/ul-->
+            <!-- /.navbar-top-links -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li>
+                            <a class="ikon" href="index.html"><img class="ikon" src="../img/bia.png"/>  Business Impact Analysis</a>
+                        </li>
+                        <li>
+                            <a class="ikon" href="#"><img class="ikon" src="../img/ra.png"/>  Risk Assessment</a>
+                                                        <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a class="ikon" href="#"><img class="ikon" src="../img/tcm.png"/>  Strategy TCM</a>
+                        </li>
+                        <li class="leftbar">
+                            <a class="ikon" href="#"><img class="ikon" src="../img/approve.png"/>  Approval</a>
+                        </li>
+                        <li>
+                            <a class="ikon" href="#"><img class="ikon" src="../img/notif.png"/> Notifications</a>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a class="ikon" href="#"><img class="ikon" src="../img/role.png"/>  Role Assignment</a>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <div id="page-wrapper">
+            <div class="row">
+				<br><br>
+                <div class="top-margin col-lg-12">
+                    <h1 class="page-header">Business Impact Analysis</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            
+                <!-- /.col-lg-4 -->
+             </div>
+            <!-- /.row -->
+			
+			<div class="row">
+				<div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            List of BIA
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>BIA Title</th>
+                                            <th></th>
+                                            <th><a class="crud">Create New</a></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>BIA 1</td>
+                                            <td><a class="crud">View</a></td>
+                                            <td><a class="crud">Edit</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>BIA 2</td>
+                                            <td><a class="crud">View</a></td>
+                                            <td><a class="crud">Edit</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>BIA 3</td>
+                                            <td><a class="crud">View</a></td>
+                                            <td><a class="crud">Edit</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.table-responsive -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+				<div class="detail col-lg-12">
+					<div class="detail">
+						<ul class="detail nav nav-tabs">
+							<li class="active"><a class="learntab" data-toggle="tab" href="#sectionA">Alternative Methods</a></li>
+							<li><a data-toggle="tab" href="#sectionB">Dependencies</a></li>
+							<li class="tab">
+								<a  data-toggle="tab" href="#sectionC">MOR </a>
+							</li>
+							<li class="tab">
+								<a  data-toggle="tab" href="#sectionD">IT Requirements</a>
+							</li>
+							<li class="tab">
+								<a  data-toggle="tab" href="#sectionE">Non-IT Requirements</a>
+							</li>
+							<li class="tab">
+								<a  data-toggle="tab" href="#sectionF">Records/Items/Clerical Requirements</a>
+							</li>
+							
+						</ul>
+						<div class="tab-content">
+							<div id="sectionA" class="tab-pane fade in active">
+								A
+							</div>
+							<div id="sectionB" class="tab-pane fade">
+								B
+							</div>
+							<div id="sectionC" class="tab-pane fade">
+								C
+							</div>
+							<div id="sectionD" class="tab-pane fade">
+								D
+							</div>
+							<div id="sectionE" class="tab-pane fade">
+								E
+							</div>
+							<div id="sectionF" class="tab-pane fade">
+								F
+							</div>
+							
+						</div>
+					</div>				
+		
+				</div>
+				
+				
+                <!-- /.col-lg-6 -->
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Create New BIA
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <form role="form">
+                                        <div class="form-group">
+                                            <label>Business Activity</label>
+                                            <input class="form-control" placeholder="Input the name of business activity here!">
+                                            <p class="help-block">Example block-level help text here.</p>
+                                        </div>
+										<div class="form-group">
+                                            <label>Description</label>
+                                            <textarea class="form-control" rows="3"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Financial Impact</label>
+                                            <input class="form-control" placeholder="Enter text">
+                                        </div>
+										<div class="form-group">
+                                            <label>Non Financial Impact</label>
+                                            <input class="form-control" placeholder="Enter text">
+                                        </div>
+										<div class="form-group">
+                                            <label>Critical Time Period</label>
+                                            <input class="form-control" placeholder="Enter text">
+                                        </div>
+										<div class="form-group">
+                                            <label>RTO</label>
+                                            <input class="form-control" placeholder="Enter text">
+                                        </div>
+                                        <!--div class="form-group">
+                                            <label>Non Financial Impact</label>
+                                            <p class="form-control-static">email@example.com</p>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>File input</label>
+                                            <input type="file">
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label>Checkboxes</label>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" value="">Checkbox 1
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" value="">Checkbox 2
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" value="">Checkbox 3
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Inline Checkboxes</label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox">1
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox">2
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox">3
+                                            </label>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Radio Buttons</label>
+                                            <div class="radio">
+                                                <label>
+                                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>Radio 1
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label>
+                                                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">Radio 2
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label>
+                                                    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">Radio 3
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Inline Radio Buttons</label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline1" value="option1" checked>1
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline2" value="option2">2
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline3" value="option3">3
+                                            </label>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Selects</label>
+                                            <select class="form-control">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Multiple Selects</label>
+                                            <select multiple class="form-control">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                            </select>
+                                        </div-->
+                                        <button type="submit" class="btn btn-default">Create</button>
+                                        <button type="reset" class="btn btn-default">Reset</button>
+                                    </form>
+                                </div>
+                                <!-- /.col-lg-6 (nested) -->
+                                <!--div class="col-lg-6">
+                                    <h1>Disabled Form States</h1>
+                                    <form role="form">
+                                        <fieldset disabled>
+                                            <div class="form-group">
+                                                <label for="disabledSelect">Disabled input</label>
+                                                <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input" disabled>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="disabledSelect">Disabled select menu</label>
+                                                <select id="disabledSelect" class="form-control">
+                                                    <option>Disabled select</option>
+                                                </select>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox">Disabled Checkbox
+                                                </label>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Disabled Button</button>
+                                        </fieldset>
+                                    </form>
+                                    <h1>Form Validation States</h1>
+                                    <form role="form">
+                                        <div class="form-group has-success">
+                                            <label class="control-label" for="inputSuccess">Input with success</label>
+                                            <input type="text" class="form-control" id="inputSuccess">
+                                        </div>
+                                        <div class="form-group has-warning">
+                                            <label class="control-label" for="inputWarning">Input with warning</label>
+                                            <input type="text" class="form-control" id="inputWarning">
+                                        </div>
+                                        <div class="form-group has-error">
+                                            <label class="control-label" for="inputError">Input with error</label>
+                                            <input type="text" class="form-control" id="inputError">
+                                        </div>
+                                    </form>
+                                    <h1>Input Groups</h1>
+                                    <form role="form">
+                                        <div class="form-group input-group">
+                                            <span class="input-group-addon">@</span>
+                                            <input type="text" class="form-control" placeholder="Username">
+                                        </div>
+                                        <div class="form-group input-group">
+                                            <input type="text" class="form-control">
+                                            <span class="input-group-addon">.00</span>
+                                        </div>
+                                        <div class="form-group input-group">
+                                            <span class="input-group-addon"><i class="fa fa-eur"></i>
+                                            </span>
+                                            <input type="text" class="form-control" placeholder="Font Awesome Icon">
+                                        </div>
+                                        <div class="form-group input-group">
+                                            <span class="input-group-addon">$</span>
+                                            <input type="text" class="form-control">
+                                            <span class="input-group-addon">.00</span>
+                                        </div>
+                                        <div class="form-group input-group">
+                                            <input type="text" class="form-control">
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-default" type="button"><i class="fa fa-search"></i>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </form>
+                                </div-->
+                                <!-- /.col-lg-6 (nested) -->
+                            </div>
+                            <!-- /.row (nested) -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+				
+				   <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Alternative Methods
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <form role="form">
+                                        <div class="form-group">
+                                            <label>Add Alternative Methods/Contingency Plans</label>
+                                            <input class="form-control" placeholder="Input the name of business activity here!">
+                                            <p class="help-block">Example block-level help text here.</p>
+                                        </div>								
+                                        
+                                        <button type="submit" class="btn btn-default">Previous</button>
+                                        <button type="reset" class="btn btn-default">Next</button>
+                                    </form>
+                                </div>
+                                
+                              
+                                <!-- /.col-lg-6 (nested) -->
+                            </div>
+                            <!-- /.row (nested) -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+					
+					<div class="panel panel-default">
+                        <div class="panel-heading">
+                            Dependencies
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <form role="form">
+                                        <div class="form-group">
+                                            <label>External</label>
+                                            <input class="form-control" placeholder="">
+                                            <p class="help-block">Example block-level help text here.</p>
+                                        </div>
+										<div class="form-group">
+                                            <label>Internal</label>
+                                            <input class="form-control" placeholder="">
+										</div>
+										<div class="form-group">
+                                            <label>Name of Party</label>
+                                            <input class="form-control" placeholder="Department, Provider">
+										</div>
+										<div class="form-group">
+                                            <label>RTO</label>
+                                            <input class="form-control" placeholder="Department, Provider">
+										</div>
+										<div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" value="">BCM Arrangement in Place?
+                                                </label>
+                                        </div>
+                                        
+                                        
+                                        <button type="submit" class="btn btn-default">Previous</button>
+                                        <button type="reset" class="btn btn-default">Next</button>
+                                    </form>
+                                </div>
+                                
+                              
+                                <!-- /.col-lg-6 (nested) -->
+                            </div>
+                            <!-- /.row (nested) -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+					
+					<div class="panel panel-default">
+                        <div class="panel-heading">
+                            Minimum Operating Requirements
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <form role="form">
+                                        <div class="form-group">
+                                            <label>Location</label>
+                                            <input class="form-control" placeholder="">
+                                            <p class="help-block">Example block-level help text here.</p>
+                                        </div>
+										<div class="form-group">
+                                            <label>Staff</label>
+                                            <input class="form-control" placeholder="">
+										</div>
+										<div class="form-group">
+                                            <label>Workstations (Cubicle)</label>
+                                            <input type="number" class="numb form-control" placeholder="">
+										</div>
+										<div class="form-group">
+                                            <label>PC/Notebook</label>
+                                            <input type="number" class="numb form-control" placeholder="">
+										</div>
+										<div class="form-group">
+                                            <label>Work Facility</label>
+                                            <input class="form-control" placeholder="">
+										</div>
+										<div class="form-group">
+                                            <label>Skill Set/Designation</label>
+                                            <input class="form-control" placeholder="">
+										</div>
+                                        <div class="form-group">
+                                            <label>Staff</label>
+												<div class="row">
+												<label class="checkbox-inline"> < 4-hour <input class="numb form-control" type="number"  placeholder=""></label>
+												<label class="checkbox-inline"> < 1-day <input class="numb form-control" type="number"  placeholder=""></label>
+												<label class="checkbox-inline"> < 2-day <input class="numb form-control" type="number"  placeholder=""></label>
+												</div>
+												<div class="row">
+												<label class="checkbox-inline"> < 3-day <input class="numb form-control" type="number"  placeholder=""></label>
+												<label class="checkbox-inline"> < 7-day <input class="numb form-control" type="number"  placeholder=""></label>
+												<label class="checkbox-inline"> > 7-day <input class="numb form-control" type="number"  placeholder=""></label>
+												</div>
+										</div>
+										<div class="form-group">
+                                            <label>Work Area Recovery ( WAR )</label>
+												<div class="row">
+												<label class="checkbox-inline"> < 4-hour <input class="numb form-control" type="number"  placeholder=""></label>
+												<label class="checkbox-inline"> < 1-day <input class="numb form-control" type="number"  placeholder=""></label>
+												<label class="checkbox-inline"> < 2-day <input class="numb form-control" type="number"  placeholder=""></label>
+												</div>
+												<div class="row">
+												<label class="checkbox-inline"> < 3-day <input class="numb form-control" type="number"  placeholder=""></label>
+												<label class="checkbox-inline"> < 7-day <input class="numb form-control" type="number"  placeholder=""></label>
+												<label class="checkbox-inline"> > 7-day <input class="numb form-control" type="number"  placeholder=""></label>
+												</div>
+										</div>
+                                        
+                                        <button type="submit" class="btn btn-default">Previous</button>
+                                        <button type="reset" class="btn btn-default">Next</button>
+                                    </form>
+                                </div>
+                                
+                              
+                                <!-- /.col-lg-6 (nested) -->
+                            </div>
+                            <!-- /.row (nested) -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+					
+					<div class="panel panel-default">
+                        <div class="panel-heading">
+						IT Requirements
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <form role="form">
+                                        <div class="form-group">
+                                            <label>System Application Software</label>
+                                            <input class="form-control" placeholder="">
+                                            <p class="help-block">Example block-level help text here.</p>
+                                        </div>
+										<div class="form-group">
+                                            <label>RTO</label>
+                                            <input class="form-control" placeholder="">
+										</div>
+										<div class="form-group">
+                                            <label>RPO</label>
+                                            <input class="form-control" placeholder="Department, Provider">
+										</div>
+										<div class="form-group">
+                                            <label>Alternative Manual Methods</label>
+                                            <input class="form-control" placeholder="Department, Provider">
+										</div>
+										<div class="form-group">
+                                            <label>Hardware ( Server ) and Pheripherals</label>
+                                            <input class="form-control" placeholder="Department, Provider">
+										</div>
+										<div class="form-group">
+                                            <label>RTO</label>
+                                            <input class="form-control" placeholder="Department, Provider">
+										</div>
+										<div class="form-group">
+                                            <label>Quantity</label>
+                                            <input type="number" class="numb form-control" placeholder="">
+										</div>
+										<div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" value="">Sharing?
+                                                </label>
+                                        </div>
+                                        
+                                        
+                                        <button type="submit" class="btn btn-default">Previous</button>
+                                        <button type="reset" class="btn btn-default">Next</button>
+                                    </form>
+                                </div>
+                                
+                              
+                                <!-- /.col-lg-6 (nested) -->
+                            </div>
+                            <!-- /.row (nested) -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+					
+					<div class="panel panel-default">
+                        <div class="panel-heading">
+						Non IT Requirements
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <form role="form">
+                                        <div class="form-group">
+                                            <label>Equipment</label>
+                                            <input class="form-control" placeholder="">
+                                            
+                                        </div>
+									
+										<div class="form-group">
+                                            <label>RTO</label>
+                                            <input class="form-control" placeholder="Department, Provider">
+										</div>
+										<div class="form-group">
+                                            <label>Quantity</label>
+                                            <input type="number" class="numb form-control" placeholder="">
+										</div>
+										<div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" value="">Sharing?
+                                                </label>
+                                        </div>
+                                        
+                                        
+                                        <button type="submit" class="btn btn-default">Previous</button>
+                                        <button type="reset" class="btn btn-default">Next</button>
+                                    </form>
+                                </div>
+                                
+                              
+                                <!-- /.col-lg-6 (nested) -->
+                            </div>
+                            <!-- /.row (nested) -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+					
+						<div class="panel panel-default">
+                        <div class="panel-heading">
+						Records/Items/Clerical Requirements
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <form role="form">
+                                        <div class="form-group">
+                                            <label>Equipment</label>
+                                            <input class="form-control" placeholder="">
+                                            
+                                        </div>
+									
+										<div class="form-group">
+                                            <label>RTO</label>
+                                            <input class="form-control" placeholder="Department, Provider">
+										</div>
+										<div class="form-group">
+                                            <label>Quantity</label>
+                                            <input type="number" class="numb form-control" placeholder="">
+										</div>
+										<div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" value="">Sharing?
+                                                </label>
+                                        </div>
+                                        
+                                        <button type="submit" class="btn btn-default">Previous</button>
+                                        <button type="submit" class="btn btn-default">Save</button>
+                                        
+                                    </form>
+                                </div>
+                                
+                              
+                                <!-- /.col-lg-6 (nested) -->
+                            </div>
+                            <!-- /.row (nested) -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+					
+					
+                </div>
+                <!-- /.col-lg-12 -->
+				
+				
+            </div>
+            <!-- /.row -->
+			
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <script src="../bower_components/raphael/raphael-min.js"></script>
+    <script src="../bower_components/morrisjs/morris.min.js"></script>
+    <script src="../js/morris-data.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../dist/js/sb-admin-2.js"></script>
+
+</body>
+
+</html>

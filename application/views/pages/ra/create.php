@@ -28,76 +28,39 @@
 										</a>
 									</div>
 								</div>
+										
+								<div class="form-group">
+									<label class="label-bold">P</label>
+									<div class="dropdown">
+										<input class="form-control dropdown-toggle" type="input" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" placeholder="Enter text">
+										<span class="caret"></span>
+										</input>
+											 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+												<li><a href="#">unlikely</a></li>
+												<li><a href="#">likely</a></li>
+												<li><a href="#">less likely</a></li>
+												<li><a href="#">most likely</a></li>
+												<li><a href="#">most good</a></li>
+											</ul>
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label class="label-bold">I</label>
+									<div class="dropdown">
+										<input class="form-control dropdown-toggle" type="input" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" placeholder="Enter text">
+										<span class="caret"></span>
+										</input>
+											 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+												<li><a href="#">unlikely</a></li>
+												<li><a href="#">likely</a></li>
+												<li><a href="#">less likely</a></li>
+												<li><a href="#">most likely</a></li>
+												<li><a href="#">most good</a></li>
+											</ul>
+									</div>
+								</div>
 																	
-								<table class="table-gap">
-									<tr class="tr-gap">
-										<td class="td-label">
-											<label class="label-bold">P</label>
-										</td>
-										<td>
-											<div class="gap col-md-12  ">
-												<div class="gap col-md-2 ">
-													<label class="gap-narrow"> 1  </label>
-													<input type="checkbox" value="">
-												</div>
-																								
-												<div class="gap col-md-2 ">
-													<label class="gap-narrow">2 </label>
-													<input type="checkbox" value="">
-												</div>
-												
-												<div class="gap col-md-2 ">
-													<label class="gap-narrow">3 </label>
-													<input type="checkbox" value="">
-												</div>
-																										
-												<div class="gap col-md-2 ">
-													<label class="gap-narrow"> 4 </label>
-													<input type="checkbox" value="">
-												</div>
-																										
-												<div class="gap col-md-2 ">
-													<label class="gap-narrow"> 5  </label>
-													<input type="checkbox" value="">
-												</div>
-											</div>
-										</td>
-									</tr>
-																						
-									<tr class="tr-gap">
-										<td class="td-label">
-											<label class="label-bold">I</label>
-										</td>
-										<td>
-											<div class="gap col-md-12  ">
-												<div class="gap col-md-2 ">
-													<label class="gap-narrow"> 1  </label>
-													<input type="checkbox" value="">
-												</div>
-																								
-												<div class="gap col-md-2 ">
-													<label class="gap-narrow">2 </label>
-													<input type="checkbox" value="">
-												</div>
-												
-												<div class="gap col-md-2 ">
-													<label class="gap-narrow">3 </label>
-													<input type="checkbox" value="">
-												</div>
-																										
-												<div class="gap col-md-2 ">
-													<label class="gap-narrow"> 4 </label>
-													<input type="checkbox" value="">
-												</div>
-																										
-												<div class="gap col-md-2 ">
-													<label class="gap-narrow"> 5  </label>
-													<input type="checkbox" value="">
-												</div>
-											</div>
-										</td>
-									</tr>
-							</table>
 																					
 							<div class="form-group">
 								<label class="label-bold">Exiting Measure</label>
@@ -111,75 +74,37 @@
 								</div>
 							</div>
 
-							<table class="table-gap">
-									<tr class="tr-gap">
-										<td class="td-label">
-											<label class="label-bold">PM</label>
-										</td>
-										<td>
-											<div class="gap col-md-12  ">
-												<div class="gap col-md-2 ">
-													<label class="gap-narrow"> 1  </label>
-													<input type="checkbox" value="">
-												</div>
-																								
-												<div class="gap col-md-2 ">
-													<label class="gap-narrow">2 </label>
-													<input type="checkbox" value="">
-												</div>
-												
-												<div class="gap col-md-2 ">
-													<label class="gap-narrow">3 </label>
-													<input type="checkbox" value="">
-												</div>
-																										
-												<div class="gap col-md-2 ">
-													<label class="gap-narrow"> 4 </label>
-													<input type="checkbox" value="">
-												</div>
-																										
-												<div class="gap col-md-2 ">
-													<label class="gap-narrow"> 5  </label>
-													<input type="checkbox" value="">
-												</div>
-											</div>
-										</td>
-									</tr>
-																						
-									<tr class="tr-gap">
-										<td class="td-label">
-											<label class="label-bold">IM</label>
-										</td>
-										<td>
-											<div class="gap col-md-12  ">
-												<div class="gap col-md-2 ">
-													<label class="gap-narrow"> 1  </label>
-													<input type="checkbox" value="">
-												</div>
-																								
-												<div class="gap col-md-2 ">
-													<label class="gap-narrow">2 </label>
-													<input type="checkbox" value="">
-												</div>
-												
-												<div class="gap col-md-2 ">
-													<label class="gap-narrow">3 </label>
-													<input type="checkbox" value="">
-												</div>
-																										
-												<div class="gap col-md-2 ">
-													<label class="gap-narrow"> 4 </label>
-													<input type="checkbox" value="">
-												</div>
-																										
-												<div class="gap col-md-2 ">
-													<label class="gap-narrow"> 5  </label>
-													<input type="checkbox" value="">
-												</div>
-											</div>
-										</td>
-									</tr>
-							</table>
+							<div class="form-group">
+									<label class="label-bold">PM</label>
+									<div class="dropdown">
+										<input class="form-control dropdown-toggle" type="input" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" placeholder="Enter text">
+										<span class="caret"></span>
+										</input>
+											 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+												<li><a href="#">unlikely</a></li>
+												<li><a href="#">likely</a></li>
+												<li><a href="#">less likely</a></li>
+												<li><a href="#">most likely</a></li>
+												<li><a href="#">most good</a></li>
+											</ul>
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label class="label-bold">IM</label>
+									<div class="dropdown">
+										<input class="form-control dropdown-toggle" type="input" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" placeholder="Enter text">
+										<span class="caret"></span>
+										</input>
+											 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+												<li><a href="#">unlikely</a></li>
+												<li><a href="#">likely</a></li>
+												<li><a href="#">less likely</a></li>
+												<li><a href="#">most likely</a></li>
+												<li><a href="#">most good</a></li>
+											</ul>
+									</div>
+								</div>
 							
 							<div class="form-group">
 								<label class="label-bold">Proposed Measure</label>

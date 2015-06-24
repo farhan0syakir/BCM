@@ -25,7 +25,7 @@
                                             <th>Business Activity</th>
                                             <th class="td-button"></th>
 											  <th class="td-button"></th>
-                                            <th class="td-button th-gap text-right"><a href="<?php echo base_url('index.php/bia/create') ?>" class="button-gap crud">
+                                            <th class="td-button th-gap text-right"><a href="<?php echo base_url('bia/create') ?>" class="button-gap crud">
 											New <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></th>
                                         </tr>
                                     </thead>
@@ -37,11 +37,11 @@
 									       <td><?php echo $i+1?></td>
 									       <td class="td-title"><?php echo $bia[$i]->name;?></td>
 	
-									       <td  class="td-button text-right"><a class="view-button-gap crud" href="<?php echo base_url('index.php/bia/view/').'/'.$bia[$i]->id;?>">
+									       <td  class="td-button text-right"><a class="view-button-gap crud" href="<?php echo base_url('bia/view/').'/'.$bia[$i]->id;?>">
 										   View <span class="glyphicon glyphicon-check" aria-hidden="true"></span></a></td>
-											<td  class="td-button text-center"><a class="edit-button-gap crud" href="<?php echo base_url('index.php/bia/edit/').'/'.$bia[$i]->id;?>">
+											<td  class="td-button text-center"><a class="edit-button-gap crud" href="<?php echo base_url('bia/edit/').'/'.$bia[$i]->id;?>">
 											Edit <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></td>
-											<td  class="td-button text-right"><a class="delete-button-gap crud" href="<?php echo base_url('index.php/bia/delete/').'/'.$bia[$i]->id;?>">
+											<td  class="td-button text-right"><a class="delete-button-gap crud" href="<?php echo base_url('bia/delete/').'/'.$bia[$i]->id;?>">
 											Delete <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
 										</tr>
 										<?php endfor; ?>
@@ -97,9 +97,9 @@
 										   <td>10 hours</td>
 									       <td>15 minutes</td>
 										   <td>Sambungin ke Idung Ente</td>
-											 <td><a class="view-button-gap crud" href="<?php echo base_url('index.php/bia/view/').'/'.$bia[$i]->id;?>">View</a></td>
-											<td><a class="edit-button-gap crud" href="<?php echo base_url('index.php/bia/edit/').'/'.$bia[$i]->id;?>">Edit</a></td>
-											<td><a class="delete-button-gap crud" href="<?php echo base_url('index.php/bia/edit/').'/'.$bia[$i]->id;?>">Delete</a></td>
+											 <td><a class="view-button-gap crud" href="<?php echo base_url('bia/view/').'/'.$bia[$i]->id;?>">View</a></td>
+											<td><a class="edit-button-gap crud" href="<?php echo base_url('bia/edit/').'/'.$bia[$i]->id;?>">Edit</a></td>
+											<td><a class="delete-button-gap crud" href="<?php echo base_url('bia/edit/').'/'.$bia[$i]->id;?>">Delete</a></td>
 										</tr>
 										<?php endfor; ?>
 									</tbody>
@@ -148,9 +148,9 @@
 										   <td>10 hours</td>
 									       <td>15 minutes</td>
 										   <td>Sambungin ke Idung Ente</td>
-										 <td><a class="view-button-gap crud" href="<?php echo base_url('index.php/bia/view/').'/'.$bia[$i]->id;?>">View</a></td>
-											<td><a class="edit-button-gap crud" href="<?php echo base_url('index.php/bia/edit/').'/'.$bia[$i]->id;?>">Edit</a></td>
-											<td><a class="delete-button-gap crud" href="<?php echo base_url('index.php/bia/edit/').'/'.$bia[$i]->id;?>">Delete</a></td>
+										 <td><a class="view-button-gap crud" href="<?php echo base_url('bia/view/').'/'.$bia[$i]->id;?>">View</a></td>
+											<td><a class="edit-button-gap crud" href="<?php echo base_url('bia/edit/').'/'.$bia[$i]->id;?>">Edit</a></td>
+											<td><a class="delete-button-gap crud" href="<?php echo base_url('bia/edit/').'/'.$bia[$i]->id;?>">Delete</a></td>
 										</tr>
 										<?php endfor; ?>
 									</tbody>

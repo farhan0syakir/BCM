@@ -2,7 +2,7 @@
             <div class="row top-space" >
 				<div  class="content-wrapper">					
 				         <h3 class="title title-header">	
-						 <a class="back-button-gap" href="<?php echo base_url('index.php/bia') ?>">
+						 <a class="back-button-gap" href="<?php echo base_url('bia') ?>">
 						<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
 						</a>Edit Business Activity</h3>
 								     <!-- /.col-lg-6 -->

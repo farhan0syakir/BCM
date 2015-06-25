@@ -2,7 +2,9 @@
 
 class RA_Model extends DataMapper {
 
-    var $table = 'risk_assesment';
+    var $table = 'ra';
+    // var $has_many = array("ra_vulnerability_model");
+    // var $has_one = array("ba_model");
 
     function __construct($id = NULL){
         parent::__construct($id);
@@ -26,6 +28,7 @@ class RA_Model extends DataMapper {
     function getDetailsRiskAssestment($ra){
         $data = new stdClass();
         $data->id = $ra->id;
+        $data->ba_id = $ra->bia;
         $data->threat = $ra->threat;
         $data->p = $ra->p;
         $data->i = $ra->i;
@@ -39,6 +42,8 @@ class RA_Model extends DataMapper {
             $ra = $this->addDetailsRiskAssestment($data);
             if($isSuccess = $ra->save_as_new()){
                 $this->addVulnerabilities($data);
+                $this->addExistingMeasures($data);
+                $this->addProposedMeasures($data);
                 return TRUE;
             } else {
                 return FALSE;
@@ -81,4 +86,51 @@ class RA_Model extends DataMapper {
 
         return $isSuccess;
     }
+
+    function addExistingMeasures($data){
+        $isSuccess = TRUE;
+        foreach ($data['existingMeasures'] as $existingMeasure) {
+            $ra_existingMeasure = new RA_Existing_Measures_Model();
+            $ra = new RA_Model();
+            $ra_existingMeasure->ra_id = $ra->where('threat', $data['threat'])->get()->id;
+            $ra_existingMeasure->existing_measure = $existingMeasure;
+            $isSuccess &= $ra_existingMeasure->save_as_new();
+        }
+
+        return $isSuccess;
+    }
+
+    function addProposedMeasures($data){
+        $isSuccess = TRUE;
+        foreach ($data['proposedMeasures'] as $proposedMeasure) {
+            $ra_proposedMeasure = new RA_Proposed_Measures_Model();
+            $ra = new RA_Model();
+            $ra_proposedMeasure->ra_id = $ra->where('threat', $data['threat'])->get()->id;
+            $ra_proposedMeasure->proposed_measure = $proposedMeasure;
+            $isSuccess &= $ra_proposedMeasure->save_as_new();
+        }
+
+        return $isSuccess;
+    }
+
+    function getVulnerabilities(){
+        $ra_vulnerability = new RA_Vulnerability_Model();
+        return $ra_vulnerability->getWhereRa($this->id);
+    }
+
+    function getExistingMeasures(){
+        $ra_ExistingMeasure = new RA_Existing_Measures_Model();
+        return $ra_ExistingMeasure->getWhereRa($this->id);
+    }
+
+    function getProposedMeasures(){
+        $ra_ProposedMeasure = new RA_Proposed_Measures_Model();
+        return $ra_ProposedMeasure->getWhereRa($this->id);
+    }
+
+    function getBa(){
+        $ba = new BA_Model();
+        $ba->where('id', $this->ba_id)->get();
+        return $ba;
+    }    
 }

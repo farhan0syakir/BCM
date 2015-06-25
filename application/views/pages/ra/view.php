@@ -1,5 +1,5 @@
 <div  class="content-wrapper">
-		<h3 class="title title-header">Business Activity 1</h3>
+		<h3 class="title title-header"><?php echo $title?></h3>
 		<div class="col-lg-12">
 			<div class="panel panel-default">										
 				<div class="panel-body">
@@ -12,7 +12,7 @@
 									</td>
 									<td>
 										<div class="gap col-md-12  ">
-											apa Threatnya ya hehheehhheeh 
+											<?php echo $threat?>
 										</div>
 									</td>
 								</tr>
@@ -21,12 +21,11 @@
 										<label class="label-bold">Vulnerabiliies </label>
 									</td>
 									<td>
+										<?php for ($i = 0; $i < count($vulnerabilities); $i++ )  : ?>
 										<div class="gap row-md-12  ">
-											Vulnerabiliies ini heheheeeeeehehehehee
+											<?php echo $vulnerabilities[$i]->vulnerability?>
 										</div>
-										<div class="gap row-md-12  ">
-											Vulnerabiliies ini heheheeeeeehehehehee
-										</div>
+										<?php endfor?>
 									</td>
 								</tr>
 								<tr class="tr-gap">
@@ -55,12 +54,11 @@
 										<label class="label-bold">Existing Measures</label>
 									</td>
 									<td>
+										<?php for ($i = 0; $i < count($existingMeasures); $i++ )  : ?>
 										<div class="gap row-md-12  ">
-											Existing Measures ini heheheeeeeehehehehee
+											<?php echo $existingMeasures[$i]->existing_measure?>
 										</div>
-										<div class="gap row-md-12  ">
-											Existing Measures ini heheheeeeeehehehehee
-										</div>
+										<?php endfor?>
 									</td>
 								</tr>
 								
@@ -89,12 +87,11 @@
 										<label class="label-bold">Proposed Measures</label>
 									</td>
 									<td>
+										<?php for ($i = 0; $i < count($proposedMeasures); $i++ )  : ?>
 										<div class="gap row-md-12  ">
-											Proposed ini heheheeeeeehehehehee
+											<?php echo $proposedMeasures[$i]->proposed_measure?>
 										</div>
-										<div class="gap row-md-12  ">
-											Proposed ini heheheeeeeehehehehee
-										</div>
+										<?php endfor?>
 									</td>
 								</tr>
 							</table>

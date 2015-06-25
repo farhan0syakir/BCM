@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.2.11
+-- version 4.2.12deb2
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: May 24, 2015 at 02:55 PM
--- Server version: 5.6.21
--- PHP Version: 5.6.3
+-- Host: localhost
+-- Generation Time: Jun 24, 2015 at 01:56 PM
+-- Server version: 5.6.24-0ubuntu2
+-- PHP Version: 5.6.4-4ubuntu6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `bcm`
+-- Database: `db_bcm`
 --
 
 -- --------------------------------------------------------
@@ -62,7 +62,20 @@ CREATE TABLE IF NOT EXISTS `bus_act` (
   `non_type_more_7d` int(11) NOT NULL,
   `critical_time_per` text NOT NULL,
   `rto` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `bus_act`
+--
+
+INSERT INTO `bus_act` (`id`, `name`, `description`, `less_4h`, `type_less_4h`, `less_1d`, `type_less_1d`, `less_2d`, `type_less_2d`, `less_3d`, `type_less_3d`, `less_7d`, `type_less_7d`, `more_7d`, `type_more_7d`, `non_type_less_4h`, `non_type_less_1d`, `non_type_less_2d`, `non_type_less_3d`, `non_type_less_7d`, `non_type_more_7d`, `critical_time_per`, `rto`) VALUES
+(1, 'Temp2 ', 'lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, ', 5, 2, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 4, 5, 0, 0, 0, 0, '5.30pm', '4 Hours'),
+(2, 'DFD SA DS ASD', 'lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, ', 5, 250, 0, 500, 0, 0, 0, 0, 0, 0, 0, 0, 4, 5, 0, 0, 0, 0, '5.30pm', '4 Hours'),
+(3, 'DSF V  JSSDF SS', 'lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, ', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 5, 0, 0, 0, 0, '5.30pm', '1 Day'),
+(4, 'dfs df= fs d', 'lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsu', 0, 0, 5, 246, 0, 493, 0, 0, 0, 0, 0, 0, 4, 5, 0, 0, 0, 0, '5.30pm', '4 Hours'),
+(5, '213 c  wewv', 'fas af haof  adfo ahi asoif asf', 0, 0, 4, 51, 5, 102, 0, 0, 0, 0, 0, 0, 4, 5, 0, 0, 0, 0, '5.30 pm or T+1 (10.am) for FX Spot Laeve order', '1 Day'),
+(6, '34 2342 34', 'jaif sdf fo sdifsdf', 0, 0, 3, 29, 4, 58, 5, 116, 0, 0, 0, 0, 4, 5, 0, 0, 0, 0, '5.30pm', '1 Day'),
+(7, 'rt try ry', 'sfjd f sdf hsds  ', 0, 0, 3, 17, 3, 33, 4, 66, 4, 99, 5, 231, 4, 5, 0, 0, 0, 0, 'T+1 (10.am)', '1 Day');
 
 -- --------------------------------------------------------
 
@@ -162,7 +175,31 @@ CREATE TABLE IF NOT EXISTS `mor_1_data` (
 CREATE TABLE IF NOT EXISTS `name_ba` (
 `id` int(11) NOT NULL,
   `ba_name` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `name_ba`
+--
+
+INSERT INTO `name_ba` (`id`, `ba_name`) VALUES
+(1, 'THETA 01'),
+(2, 'FAFA'),
+(3, 'FD RYH F'),
+(4, 'DF SDFSIF S'),
+(5, 'DFSF F SH'),
+(6, 'FSD SDF SDF'),
+(7, 'THETA 07'),
+(8, 'DFS DF '),
+(9, 'PLP F LPP  '),
+(10, 'PO  O GK'),
+(11, 'KLGH  OP G'),
+(12, 'OPH GK OH'),
+(13, 'G JH  G GG'),
+(14, 'TRY RTYRT  DF'),
+(15, 'ZCZ SD XZC'),
+(16, 'NBM GHN B'),
+(17, 'QWE QWE '),
+(18, '456 456 4554B');
 
 -- --------------------------------------------------------
 
@@ -203,6 +240,97 @@ CREATE TABLE IF NOT EXISTS `notebook_mor_table` (
   `less_7d` int(11) NOT NULL,
   `more_7d` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ra_impact`
+--
+
+CREATE TABLE IF NOT EXISTS `ra_impact` (
+  `id` int(11) NOT NULL,
+  `impact` text COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `ra_impact`
+--
+
+INSERT INTO `ra_impact` (`id`, `impact`) VALUES
+(1, '< 2 hours'),
+(2, '2 to 4 hours'),
+(3, '4 hours to 1 day'),
+(4, '1 day to 3 days'),
+(5, '> 3 days');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ra_likelihood`
+--
+
+CREATE TABLE IF NOT EXISTS `ra_likelihood` (
+  `level` int(11) NOT NULL,
+  `frequence` varchar(140) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `probability` text COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `ra_likelihood`
+--
+
+INSERT INTO `ra_likelihood` (`level`, `frequence`, `probability`) VALUES
+(1, 'Unlikely', '1 in 1000 years'),
+(2, 'Less likely', '1 in 100 years'),
+(3, 'Likely', '1 per 10 years'),
+(4, 'More likely', '1 per Year'),
+(5, 'Most Likely', '1 per Month');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ra_vulnerabilities`
+--
+
+CREATE TABLE IF NOT EXISTS `ra_vulnerabilities` (
+`id` int(11) NOT NULL,
+  `ra_id` int(11) NOT NULL,
+  `vulnerability` text COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `ra_vulnerabilities`
+--
+
+INSERT INTO `ra_vulnerabilities` (`id`, `ra_id`, `vulnerability`) VALUES
+(1, 17, 'Escape'),
+(2, 17, 'form'),
+(3, 17, 'kenyataan');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `risk_assesment`
+--
+
+CREATE TABLE IF NOT EXISTS `risk_assesment` (
+`id` int(11) NOT NULL,
+  `threat` varchar(140) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `p` int(11) NOT NULL,
+  `i` int(11) NOT NULL,
+  `pm` int(11) NOT NULL,
+  `im` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `risk_assesment`
+--
+
+INSERT INTO `risk_assesment` (`id`, `threat`, `p`, `i`, `pm`, `im`) VALUES
+(6, 'Syakir', 1, 2, 1, 3),
+(15, 'Refresh', 1, 1, 1, 1),
+(16, 'Keren', 1, 1, 1, 3),
+(17, 'Ocean', 2, 2, 2, 2);
 
 -- --------------------------------------------------------
 
@@ -297,6 +425,18 @@ ALTER TABLE `notebook_mor_table`
  ADD PRIMARY KEY (`id`), ADD KEY `id_mor_1` (`id_mor_1`);
 
 --
+-- Indexes for table `ra_vulnerabilities`
+--
+ALTER TABLE `ra_vulnerabilities`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `risk_assesment`
+--
+ALTER TABLE `risk_assesment`
+ ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `staff_mor_table`
 --
 ALTER TABLE `staff_mor_table`
@@ -321,7 +461,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `bus_act`
 --
 ALTER TABLE `bus_act`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `dependencies`
 --
@@ -346,7 +486,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `name_ba`
 --
 ALTER TABLE `name_ba`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT for table `non_fin_impact_table`
 --
@@ -357,6 +497,16 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 ALTER TABLE `notebook_mor_table`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `ra_vulnerabilities`
+--
+ALTER TABLE `ra_vulnerabilities`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `risk_assesment`
+--
+ALTER TABLE `risk_assesment`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=18;
 --
 -- AUTO_INCREMENT for table `staff_mor_table`
 --

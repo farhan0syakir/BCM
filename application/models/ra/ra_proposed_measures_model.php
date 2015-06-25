@@ -1,10 +1,9 @@
 <?php
 
-class RA_Vulnerability_Model extends DataMapper {
+class RA_Proposed_Measures_Model extends DataMapper {
 
-    var $table = 'ra_vulnerabilities';
-    // var $has_one = array('ra_model');
-    
+    var $table = 'ra_proposed_measures';
+
     function __construct($id = NULL){
         parent::__construct($id);
         $ci = &get_instance();
@@ -13,12 +12,12 @@ class RA_Vulnerability_Model extends DataMapper {
     }
     
     function getAll(){
-        $ras = new RA_Vulnerability_Model();
-        $ras->get();
+        $temps = new RA_Proposed_Measures_Model();
+        $temps->get();
         $result = array();
-        foreach ($ras as $ra)
+        foreach ($temps as $temp)
         {
-            $data = $this->getDetails($ra);
+            $data = $this->getDetails($temp);
             // $data = ('1' => 'farhan');
             array_push($result, $data);
         }
@@ -29,7 +28,8 @@ class RA_Vulnerability_Model extends DataMapper {
     function getDetails($ra){
         $data = new stdClass();
         $data->id = $ra->id;
-        $data->vulnerability = $ra->vulnerability;
+        $data->ra_id = $ra->ra_id;
+        $data->proposed_measure = $ra->proposed_measure;
         return $data;
     }
 

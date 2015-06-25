@@ -6,111 +6,106 @@
 				<div class="panel-body">
 					<div class="row">
 						<div class="col-lg-12">
-							<form role="form">
+							<?php echo form_open('ra/add');?>
 								<div class="form-group">
 									<label class="label-bold">Business Activity</label>
-										<select class="form-control"> 
-											<option value="biology">Business Activity 1</option>
-											<option value="chemestry">Business Activity 2</option>
-											<option value="physic">Business Activity 3</option>
-											<option value="math">Business Activity 4</option>     
-											<option value="math">Business Activity 5</option> 
+										<select class="form-control" required="true" name="bia"> 
+										<option value="">Please select</option>
+										<?php for ($i = 0; $i < count($ba); $i++ )  : ?>
+											<option value="<?php echo $ba[$i]->id?>"><?php echo $ba[$i]->name?></option>
+										<?php endfor; ?>
 										</select>
 								</div>
 								<div class="form-group">
 									<label class="label-bold">Threat</label>
-									<input class="form-control" placeholder="Enter text">
+									<input class="form-control" placeholder="Enter text" required="true" name="threat">
 								</div>
 															
-								<div class="form-group">
+								<div class="form-group" id="dynamicFormVulnerability">
 									<label class="label-bold">Vulnerabilities</label>
-									<input class="form-control" placeholder="Enter text">
+									<input class="form-control" placeholder="Enter text" required="true" name="vulnerabilities[]">
 								</div>
 												   
-								<div class="top-gap row">
+								<div class="top-gap row" >
 									<div class="col-lg-12 text-right" >
-										<a class="button-gap">Add
+										<a class="button-gap" onClick="addInput('dynamicFormVulnerability','vulnerabilities',5,true)">Add
 											<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
 										</a>
 									</div>
 								</div>
 										
 								<div class="form-group">
-									<label class="label-bold">P</label>
-										<select class="form-control"> 
-											<option value="biology">likely</option>
-											<option value="chemestry">unlikely</option>
-											<option value="physic">most likely</option>
-											<option value="math">good</option>     
-											<option value="math">better</option> 
+									<label class="label-bold">Probability</label>
+										<select class="form-control" required="true" name="P"> 
+											<option value="">Please select</option>
+											<?php for ($i = 0; $i < count($raProbability); $i++ )  : ?>
+												<option value="<?php echo $raProbability[$i]->level?>"><?php echo $raProbability[$i]->probability?></option>
+											<?php endfor; ?>
 										</select>
 								</div>
 								
 								<div class="form-group">
-									<label class="label-bold">I</label>
-										<select class="form-control"> 
-											<option value="biology">likely</option>
-											<option value="chemestry">unlikely</option>
-											<option value="physic">most likely</option>
-											<option value="math">good</option>     
-											<option value="math">better</option> 
+									<label class="label-bold">Impact</label>
+										<select class="form-control" required="true" name="I"> 
+											<option value="">Please select</option>
+											<?php for ($i = 0; $i < count($raImpact); $i++ )  : ?>
+												<option value="<?php echo $raImpact[$i]->id?>"><?php echo $raImpact[$i]->impact?></option>
+											<?php endfor; ?>
 										</select>
 								</div>
 																	
 																					
-							<div class="form-group">
+							<div class="form-group" id = "dynamicFormExistingMeasure">
 								<label class="label-bold">Exiting Measure</label>
-								<input class="form-control" placeholder="Enter text">
+								<input class="form-control" placeholder="Enter text" required="true" name="existingMeasures[]">
 							</div>
 							<div class="top-gap row">
 								<div class="col-lg-12 text-right" >
-									<a class="button-gap">Add
+									<a class="button-gap" onClick="addInput('dynamicFormExistingMeasure','existingMeasures',5,true)">Add
 										<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
 									</a>
 								</div>
 							</div>
 
 							<div class="form-group">
-									<label class="label-bold">PM</label>
-										<select class="form-control"> 
-											<option value="biology">likely</option>
-											<option value="chemestry">unlikely</option>
-											<option value="physic">most likely</option>
-											<option value="math">good</option>     
-											<option value="math">better</option> 
+									<label class="label-bold">Probability after implement measures</label>
+										<select class="form-control" required="true" name="Pm"> 
+											<option value="">Please select</option>
+											<?php for ($i = 0; $i < count($raProbability); $i++ )  : ?>
+												<option value="<?php echo $raProbability[$i]->level?>"><?php echo $raProbability[$i]->probability?></option>
+											<?php endfor; ?> 
 										</select>
 								</div>
 								
 								<div class="form-group">
-									<label class="label-bold">IM</label>
-										<select class="form-control"> 
-											<option value="biology">likely</option>
-											<option value="chemestry">unlikely</option>
-											<option value="physic">most likely</option>
-											<option value="math">good</option>     
-											<option value="math">better</option> 
+									<label class="label-bold">Impact after implemented measures</label>
+										<select class="form-control" required="true" name="Im"> 
+											<option value="">Please select</option>
+											<?php for ($i = 0; $i < count($raImpact); $i++ )  : ?>
+												<option value="<?php echo $raImpact[$i]->id?>"><?php echo $raImpact[$i]->impact?></option>
+											<?php endfor; ?>
 										</select>
 								</div>
 							
-							<div class="form-group">
+							<div class="form-group" id="dynamicFormProposedMeasures">
 								<label class="label-bold">Proposed Measure</label>
-								<input class="form-control" placeholder="Enter text">
+								<input class="form-control" placeholder="Enter text" name="proposedMeasures[]">
 							</div>
 							<div class="top-gap row">
 								<div class="col-lg-12 text-right" >
-									<a class="button-gap">Add
+									<a class="button-gap" onClick="addInput('dynamicFormProposedMeasures','proposedMeasures',5,true)">Add
 										<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
 									</a>
 								</div>
 							</div
-						</form>
 					</div>
 				</div>
 				
 				<div class="col-lg-12 text-center" >
-					<a class="button-gap">Create
+					<button type="submit" class="button-gap">Create
 						<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-					</a>
+					</button>
 				</div>
-			</div>
+			<?php echo form_close()?>
+		</div>
 </div>

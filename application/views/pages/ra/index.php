@@ -36,7 +36,7 @@
                                View <span class="glyphicon glyphicon-check" aria-hidden="true"></span></a></td>
                                <td  class="td-button text-center"><a class="edit-button-gap crud" href="<?php echo base_url('ra/edit/').'/'.$ra[$i]->id;?>">
                                Edit <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></td>
-                               <td  class="td-button text-right"><a class="delete-button-gap crud" href="<?php echo base_url('ra/delete/').'/'.$ra[$i]->id;?>">
+                               <td  class="td-button text-right"><a onClick="changeDeleteId(<?php echo $ra[$i]->id?>)" class="delete-button-gap crud" data-toggle="modal" data-target="#modalDeleteId" href="#">
                                Delete <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
 						      </tr>
 							<?php endfor; ?>
@@ -51,3 +51,4 @@
         <!-- /.panel -->
     </div>
 </div>
+<?php $this->load->view('pages/general/modalDelete');?>

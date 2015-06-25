@@ -8,7 +8,17 @@ class Ra extends CI_Controller {
 
 	public function view($id){
 		
-		$this->load->template('pages/ra/view',$id);
+		$data['id'] = $id;
+		$ra = new RA_Model();
+        $ra->where('id', $id)->get();
+		$data['title'] = $ra->getBa()->name;
+		$data['threat'] = $ra->threat;
+		$data['vulnerabilities'] = 	$ra->getVulnerabilities();
+		$data['existingMeasures'] = $ra->getExistingMeasures();
+		$data['proposedMeasures'] = $ra->getProposedMeasures();
+		// print_r($data['proposedMeasures']);
+		// die();
+		$this->load->template('pages/ra/view',$data);
 	}
 	
 	public function edit($id){
@@ -20,12 +30,16 @@ class Ra extends CI_Controller {
 	}
 
 	public function create(){
-		$this->load->template('pages/ra/create');
 		// die();
 		$ra = new RA_Model();
 		$data['raImpact'] = $ra->getRaImpact();
 		$data['raProbability'] = $ra->getRaProbability();
-		$this->load->template('pages/ra/form',$data);
+
+		$ba = new BA_Model();
+		$data['ba'] = $ba->getAll();
+		
+		$this->load->template('pages/ra/create',$data);
+		// $this->load->template('pages/ra/form',$data);
 	}
 
 	function get(){
@@ -46,8 +60,8 @@ class Ra extends CI_Controller {
 		$data['vulnerabilities'] = $this->input->post('vulnerabilities');
 		$data['existingMeasures'] = $this->input->post('existingMeasures');
 		$data['proposedMeasures'] = $this->input->post('proposedMeasures');
-		print_r($data);
-		die();
+		// print_r($data);
+		// die();
 		$isSuccessAddToDatabase = $ra->add($data);
 		$this->index();
 		// print_r($data);

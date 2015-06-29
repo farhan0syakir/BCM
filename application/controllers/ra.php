@@ -25,8 +25,11 @@ class Ra extends CI_Controller {
 		$this->load->template('pages/ra/edit',$id);
 	}
 
-	public function delete($id){	
-		$this->load->template('pages/ra/delete',$id);
+	public function delete($id){
+		$ra = new RA_Model();
+		$ra->where('id', $id)->get();
+		$ra->delete();
+		$this->index();
 	}
 
 	public function create(){

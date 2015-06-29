@@ -39,7 +39,27 @@
          }
     };
 
+    function removeDiv(divName){
+      document.getElementById(divName).innerHTML="";
+    }
+
     function changeDeleteId(id){
       $('#linkDeleteButtonModal').attr("href", "<?php echo current_url().'/delete/'?>"+id);
+    }
+
+    function disableMyRight(selectId,myNumber,Length){
+      // alert($(this).find('option:selected'));
+      for (i = myNumber+1; i <= Length; i++) {
+        var thisDiv = selectId+i;
+        document.getElementById(thisDiv).disabled=true;
+      }
+    }
+
+    function enableMyRight(selectId,myNumber,Length){
+      // alert($(this).find('option:selected'));
+      for (i = myNumber+1; i <= Length; i++) {
+        var thisDiv = selectId+i;
+        document.getElementById(thisDiv).disabled=false;
+      }
     }
 </script>

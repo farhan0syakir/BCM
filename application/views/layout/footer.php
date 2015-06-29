@@ -20,12 +20,15 @@
 
     <!-- Data table -->
     <script src="<?php echo base_url('assets/js/jquery.dataTables.js')?>"></script>
-    <script src="<?php echo base_url('assets/js/jquery.dataTables.min.js')?>"></script>
+    <script src="<?php echo base_url('assets/js/jquery.dataTables.js')?>"></script>
+    
+
 </body>
 
 <script>
 $(document).ready(function() {
-    $('.table').dataTable(  );
+    $('.table').dataTable();
+
 } );
 
     var counter = 0;
@@ -58,6 +61,7 @@ $(document).ready(function() {
       // alert($(this).find('option:selected'));
       for (i = myNumber+1; i <= Length; i++) {
         var thisDiv = selectId+i;
+        document.getElementById(thisDiv).options[5].selected = true;
         document.getElementById(thisDiv).disabled=true;
       }
     }
@@ -66,6 +70,7 @@ $(document).ready(function() {
       // alert($(this).find('option:selected'));
       for (i = myNumber+1; i <= Length; i++) {
         var thisDiv = selectId+i;
+        document.getElementById(thisDiv).options[0].selected = true;
         document.getElementById(thisDiv).disabled=false;
       }
     }

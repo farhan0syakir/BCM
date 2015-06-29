@@ -24,7 +24,10 @@ class Bia extends CI_Controller {
 
 	public function create()
 	{
-		$this->load->template('pages/bia/create');
+		$ba = new BA_Model();
+		$data['baImpact'] = $ba->getImpact();
+
+		$this->load->template('pages/bia/create',$data);
 	}
 
 	function get(){

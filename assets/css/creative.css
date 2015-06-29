@@ -2284,9 +2284,17 @@ tr
 
 .form-login{
   max-width: 400px;
-  padding: 19px 29px 29px;
+  padding: 20px 30px 30px;
   margin: 0 auto 20px;
   background-color: #fff;
-  border: 2px solid #e5e5e5;
+  border: 1px solid #1abc9c;
   margin-top:20px;
+}
+.text-center{
+text-align:center;
+}
+
+.a-forth{
+  max-width:50%;
+  min-height:40px;
 }

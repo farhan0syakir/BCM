@@ -4,7 +4,7 @@
 	<select>
 		<option onClick = "removeDiv('tes')">farhan</option>
 		<option onClick = "removeDiv('tes')">syakir</option>
-		<option onClick = "addInput('tes','tes',1,false)">other</option>
+		<option onClick = "addInput('tes','tes',5,false)">other</option>
 	</select>
 	<div id="tes">
 	</div>

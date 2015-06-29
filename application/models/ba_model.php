@@ -100,7 +100,11 @@ class BA_Model extends DataMapper {
 
         return $data;
     }
-
+    function getImpact(){
+        $data = new BA_Impact_Model();
+        $result = $data->getAll();
+        return $result;
+    }
 }
 
 /* End of file country.php */

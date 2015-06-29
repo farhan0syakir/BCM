@@ -73,11 +73,9 @@
 					<a data-toggle="tab" href="#dep">Dependencies</a>
 				</li>
 				<li class="tab-gap tab">
-					<a  data-toggle="tab" href="#norm">Normal </a>
+					<a  data-toggle="tab" href="#norm">Resource Staff </a>
 				</li>
-				<li class="tab-gap tab">
-					<a  data-toggle="tab" href="#mor">MOR </a>
-				</li>
+				
 				<li class="tab-gap tab">
 					<a  data-toggle="tab" href="#it">IT Requirements</a>
 				</li>
@@ -89,6 +87,7 @@
 				</li>
 								
 			</ul>
+			
 				<div class=" tab tab-content">
 					<div id="alt" class="tab-pane fade in active">
 						<div class="col-lg-12">
@@ -97,7 +96,7 @@
 									<div class="row">
 										<div class="col-lg-6">
 											<table  class="bia-detail">
-												<tr >
+												<tr class="tr-gap">
 													<td class="td-label">
 														<label class="label-bold">Alternative Methods</label>
 													</td>
@@ -116,16 +115,80 @@
 													</td>
 												</tr>
 											</table>
+											
 										</div>
+										 
 									</div>
 								</div>
 							</div>
 						</div>
+					
 						</div>
 							<div id="dep" class="tab-pane fade">
 								<div class="col-lg-12">
 									<div class="panel panel-default">										
 										<div class="panel-body">
+										<div class="row">
+												<strong><h4 class="label-bold title-gap title title-header">Upstream</h4></strong>
+											</div>	
+											<div class="row">
+												<div class="col-lg-6">
+													<table  class="bia-detail">
+														<tr class="tr-gap">
+															<td class="td-label">
+																<label class="label-bold">Internal/External</label>
+															</td>
+															<td>
+																<div class="gap col-md-12  ">
+																	Ini isinya External/Internal
+																</div>
+															</td>
+														</tr>
+														
+														<tr class="tr-gap">
+															<td class="td-label">
+																<label class="label-bold">Name of Party</label>
+															</td>
+																	
+															<td>
+																<div class="gap col-md-12  ">
+																	Isinya Department, Provider
+																</div>
+															</td>
+														</tr>
+																
+														<tr class="tr-gap">
+															<td class="td-label">
+																<label class="label-bold">RTO</label>
+															</td>
+															
+															<td>
+																<div class="gap col-md-12  ">
+																	Isinya RTO
+																</div>
+															</td>
+														</tr>
+																
+														<tr >
+															<td class="td-label">
+																<label class="label-bold">BCM Arrangement in Place</label>
+															</td>
+															<td>
+																<div class="gap col-md-12  ">
+																	Isinya Yes or No
+																</div>
+															</td>
+														</tr>
+													</table>
+												</div>
+											</div>
+										</div>
+									</div>
+										<div class="panel panel-default">										
+										<div class="panel-body">
+										<div class="row">
+												<strong><h4 class="label-bold title-gap title title-header">Downstream</h4></strong>
+											</div>	
 											<div class="row">
 												<div class="col-lg-6">
 													<table  class="bia-detail">
@@ -181,11 +244,15 @@
 									</div>
 								</div>
 							</div>
+							
 								
 							<div id="norm" class="tab-pane fade">
 								<div class="col-lg-12">
 									<div class="panel panel-default">										
 										<div class="panel-body">
+										<div class="row">
+												<strong><h4 class="label-bold title-gap title title-header">Normal</h4></strong>
+											</div>	
 											<div class="row">
 												<div class="col-lg-6">
 													<table  class="bia-detail">
@@ -228,21 +295,7 @@
 																<label class="num ">10</label>
 															</td>
 														</tr>
-													</table>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							
-							<div id="mor" class="tab-pane fade">
-								<div class="col-lg-12">
-									<div class="panel panel-default">										
-										<div class="panel-body">
-											<div class="row">
-												<div class="col-lg-6">
-													<table  class="bia-detail">
+														
 														<tr class="tr-gap">
 															<td class="td-label">
 																<label class="label-bold">Work Facility</label>
@@ -281,6 +334,20 @@
 																</div>
 															</td>
 														</tr>
+													</table>
+												</div>
+											</div>
+										</div>
+									</div>
+										<div class="panel panel-default">										
+										<div class="panel-body">
+										<div class="row">
+												<strong><h4 class="label-bold title-gap title title-header">Minimum Operating Requirements ( MOR )</h4></strong>
+											</div>	
+											<div class="row">
+												<div class="col-lg-6">
+													<table  class="bia-detail">
+														
 															
 														<tr class="tr-gap">
 															<td class="td-label">
@@ -363,17 +430,18 @@
 									</div>
 								</div>
 							</div>
+							
 							<div id="it" class="tab-pane fade">
 								<div class="col-lg-12">
 									<div class="panel panel-default">										
 										<div class="panel-body">
-										    <div class="row">
-												<strong><h4 class="label-bold title-gap title title-header">Software Requirements</h4></strong>
-											</div>	 
-										<div class="row">
-											<div class="col-lg-6">
-												<table  class="bia-detail">
-													<tr class="tr-gap">
+											 <div class="row">
+													<strong><h4 class="label-bold title-gap title title-header">Software Requirements</h4></strong>
+												</div>		
+											<div class="row">
+												<div class="col-lg-6">
+													<table  class="bia-detail">
+														<tr class="tr-gap">
 														<td class="td-label">
 															<label class="label-bold">System Application  / Software</label>
 														</td>
@@ -411,19 +479,20 @@
 															</div>
 														</td>
 													</tr>
-												</table>
+													</table>
+												</div>
 											</div>
 										</div>
 									</div>
-								
-									<div class="panel-body">
-										 <div class="row">
-											<strong><h4 class="label-bold title-gap title title-header">Hardware Requirements</h4></strong>
-										</div>	 
+										<div class="panel panel-default">										
+										<div class="panel-body">
 										<div class="row">
-											<div class="col-lg-6">
-												<table  class="bia-detail">
-													<tr class="tr-gap">
+											<strong><h4 class="label-bold title-gap title title-header">Hardware Requirements</h4></strong>
+										</div>		
+											<div class="row">
+												<div class="col-lg-6">
+													<table  class="bia-detail">
+														<tr class="tr-gap">
 														<td class="td-label">
 															<label class="label-bold">Hardware (Server) & Peripherals</label>
 														</td>
@@ -459,13 +528,16 @@
 															<label class="num ">Yes</label>
 														</td>
 													</tr>
-												</table>
-											 </div>
-										 </div>
+													</table>
+												</div>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
+							
+						
+						
 						<div id="nonit" class="tab-pane fade">
 							<div class="col-lg-12">
 								<div class="panel panel-default">										

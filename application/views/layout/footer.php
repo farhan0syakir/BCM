@@ -18,9 +18,16 @@
     <!-- Custom Theme JavaScript -->
     <script src="<?php echo base_url('assets/js/creative.js')?>"></script>
 
+    <!-- Data table -->
+    <script src="<?php echo base_url('assets/js/jquery.dataTables.js')?>"></script>
+    <script src="<?php echo base_url('assets/js/jquery.dataTables.min.js')?>"></script>
 </body>
 
 <script>
+$(document).ready(function() {
+    $('.table').dataTable(  );
+} );
+
     var counter = 0;
     var limit = 10;
     var isShowAlert = True;

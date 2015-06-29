@@ -28,12 +28,14 @@
 	
 	<link rel="stylesheet" href="<?php echo base_url('assets/back-to-top/css/style.css')?>"> <!-- Gem style -->
 	<script src="back-to-top/js/modernizr.js"></script> <!-- Modernizr -->
-	<!-- Zerif -->
-	 
-	 <link rel="stylesheet" href="<?php echo base_url('assets/css/zerif/custom-editor-style.css')?>" type="text/css">
-	 <link rel="stylesheet" href="<?php echo base_url('assets/css/zerif/responsive.css" type="text/css')?>">
-	 <link rel="stylesheet" href="<?php echo base_url('assets/css/zerif/style-mobile.css')?>" type="text/css">
+    <!-- Zerif -->
+     
+     <link rel="stylesheet" href="<?php echo base_url('assets/css/zerif/custom-editor-style.css')?>" type="text/css">
+     <link rel="stylesheet" href="<?php echo base_url('assets/css/zerif/responsive.css" type="text/css')?>">
+     <link rel="stylesheet" href="<?php echo base_url('assets/css/zerif/style-mobile.css')?>" type="text/css">
 
+    <!-- data table -->
+     <link rel="stylesheet" href="<?php echo base_url('assets/css/jquery.dataTables.css')?>" type="text/css">
 	 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

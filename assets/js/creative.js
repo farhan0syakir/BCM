@@ -117,15 +117,6 @@ $.ajax({
         });
 		
 
-/*FB Login Javascript SDK*/
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '1427442397577579',
-      xfbml      : true,
-      version    : 'v2.3'
-    });
-  };
-
 
    /*FB Login Javascript SDK*/
    

@@ -97,7 +97,7 @@
 										<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
 									</a>
 								</div>
-							</div
+							</div>
 					</div>
 				</div>
 				

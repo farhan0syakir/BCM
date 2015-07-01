@@ -29,7 +29,18 @@
 $(document).ready(function() {
     $('.table').dataTable();
 
+
 } );
+
+    function getDepedenciesForm(divName) {
+      // get the time if clicked via an ajax get queury
+      // see the code in the controller time.php
+      $.get("/BCM/index.php/bia/getDepedenciesForm", function (data) {
+        var newdiv = document.createElement('div');
+        newdiv.innerHTML = data;
+        document.getElementById(divName).appendChild(newdiv);
+      });
+    }
 
     var counter = 0;
     var limit = 10;
@@ -64,6 +75,7 @@ $(document).ready(function() {
         document.getElementById(thisDiv).options[5].selected = true;
         document.getElementById(thisDiv).disabled=true;
       }
+      setRTO(selectId,myNumber);
     }
 
     function enableMyRight(selectId,myNumber,Length){
@@ -73,5 +85,42 @@ $(document).ready(function() {
         document.getElementById(thisDiv).options[0].selected = true;
         document.getElementById(thisDiv).disabled=false;
       }
+      // setRTO();
+    }
+
+    var finansialImpactSelectNumber = 1000;//inisialisasi dengan angka yang besar terserah
+    var nonFinansialImpactSelectNumber = 1000;
+    function setRTO(selectId,myNumber){
+      var rtoVal = ["","4 Hours", "1 day", "2 days", "3 days", "7 days", "More than 7 days", ""];
+      if(selectId==="finansialImpactSelect"){
+        finansialImpactSelectNumber = myNumber;
+      }
+
+      if(selectId==="nonFinansialImpactSelect"){
+        nonFinansialImpactSelectNumber = myNumber;
+      }
+
+      if(nonFinansialImpactSelectNumber<10 && finansialImpactSelectNumber<10){//kira2 yang angkanya kecil 
+        var elem = document.getElementById("rtoId");
+        if(nonFinansialImpactSelectNumber===6 && finansialImpactSelectNumber===6){
+          elem.disabled=false;
+        }else{
+          elem.value = rtoVal[Math.min(nonFinansialImpactSelectNumber,finansialImpactSelectNumber)];
+        }
+        // $("#rtoId").html=Math.max(nonFinansialImpactSelectNumber,finansialImpactSelectNumber);
+      }
+    }
+
+    function inputPartialForm(divName){
+      var temporaryDiv = document.getElementById(divName);
+        $.ajax({
+            url:'/BCM/bia/make/'+divName,
+            type:'post',
+            data:$(temporaryDiv).serialize(),
+            success:function(data){
+                console.log(data);
+            }
+        });
+        // alert('fahran');
     }
 </script>

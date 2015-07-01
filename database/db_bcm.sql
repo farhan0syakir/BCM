@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.2.12deb2
+-- version 4.2.11
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Jun 24, 2015 at 01:56 PM
--- Server version: 5.6.24-0ubuntu2
--- PHP Version: 5.6.4-4ubuntu6
+-- Host: 127.0.0.1
+-- Generation Time: Jul 01, 2015 at 04:17 AM
+-- Server version: 5.6.21
+-- PHP Version: 5.6.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -23,24 +23,24 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `alt_method`
+-- Table structure for table `alternative_method`
 --
 
-CREATE TABLE IF NOT EXISTS `alt_method` (
-`id` int(11) NOT NULL,
-  `id_bus_act` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `alternative_method` (
+  `id_ba_alternative` varchar(20) NOT NULL,
+  `name_ba_alternative` varchar(200) NOT NULL,
   `alt_method` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `bus_act`
+-- Table structure for table `business_activity`
 --
 
-CREATE TABLE IF NOT EXISTS `bus_act` (
-`id` int(11) NOT NULL,
-  `name` text NOT NULL,
+CREATE TABLE IF NOT EXISTS `business_activity` (
+  `id` varchar(20) NOT NULL,
+  `name` varchar(200) NOT NULL,
   `description` text NOT NULL,
   `less_4h` float NOT NULL,
   `type_less_4h` int(11) NOT NULL,
@@ -60,22 +60,35 @@ CREATE TABLE IF NOT EXISTS `bus_act` (
   `non_type_less_3d` int(11) NOT NULL,
   `non_type_less_7d` int(11) NOT NULL,
   `non_type_more_7d` int(11) NOT NULL,
-  `critical_time_per` text NOT NULL,
-  `rto` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+  `critical_time_per` text,
+  `rto` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `bus_act`
+-- Dumping data for table `business_activity`
 --
 
-INSERT INTO `bus_act` (`id`, `name`, `description`, `less_4h`, `type_less_4h`, `less_1d`, `type_less_1d`, `less_2d`, `type_less_2d`, `less_3d`, `type_less_3d`, `less_7d`, `type_less_7d`, `more_7d`, `type_more_7d`, `non_type_less_4h`, `non_type_less_1d`, `non_type_less_2d`, `non_type_less_3d`, `non_type_less_7d`, `non_type_more_7d`, `critical_time_per`, `rto`) VALUES
-(1, 'Temp2 ', 'lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, ', 5, 2, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 4, 5, 0, 0, 0, 0, '5.30pm', '4 Hours'),
-(2, 'DFD SA DS ASD', 'lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, ', 5, 250, 0, 500, 0, 0, 0, 0, 0, 0, 0, 0, 4, 5, 0, 0, 0, 0, '5.30pm', '4 Hours'),
-(3, 'DSF V  JSSDF SS', 'lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, ', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 5, 0, 0, 0, 0, '5.30pm', '1 Day'),
-(4, 'dfs df= fs d', 'lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsu', 0, 0, 5, 246, 0, 493, 0, 0, 0, 0, 0, 0, 4, 5, 0, 0, 0, 0, '5.30pm', '4 Hours'),
-(5, '213 c  wewv', 'fas af haof  adfo ahi asoif asf', 0, 0, 4, 51, 5, 102, 0, 0, 0, 0, 0, 0, 4, 5, 0, 0, 0, 0, '5.30 pm or T+1 (10.am) for FX Spot Laeve order', '1 Day'),
-(6, '34 2342 34', 'jaif sdf fo sdifsdf', 0, 0, 3, 29, 4, 58, 5, 116, 0, 0, 0, 0, 4, 5, 0, 0, 0, 0, '5.30pm', '1 Day'),
-(7, 'rt try ry', 'sfjd f sdf hsds  ', 0, 0, 3, 17, 3, 33, 4, 66, 4, 99, 5, 231, 4, 5, 0, 0, 0, 0, 'T+1 (10.am)', '1 Day');
+INSERT INTO `business_activity` (`id`, `name`, `description`, `less_4h`, `type_less_4h`, `less_1d`, `type_less_1d`, `less_2d`, `type_less_2d`, `less_3d`, `type_less_3d`, `less_7d`, `type_less_7d`, `more_7d`, `type_more_7d`, `non_type_less_4h`, `non_type_less_1d`, `non_type_less_2d`, `non_type_less_3d`, `non_type_less_7d`, `non_type_more_7d`, `critical_time_per`, `rto`) VALUES
+('1', 'Liquidity Management MM; GWM', 'Maintaining Bank''s Primary & Secondary Reserve Requirement for Rupiah and Primary Reserve Requirement for Foreign Currency in accordance with BI Regulation and Internal Provision', 5, 2, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 4, 5, 0, 0, 0, 0, '5.30pm', '4 Hours'),
+('2', 'AFS Fee Income', 'AFS transactions to realize P/L', 5, 250, 0, 500, 0, 0, 0, 0, 0, 0, 0, 0, 4, 5, 0, 0, 0, 0, '5.30pm', '4 Hours'),
+('3', 'FTP to LOB', 'The processes which are conducted to support ALCO Portfolio & Portfolio Management', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 5, 0, 0, 0, 0, '5.30pm', '1 Day'),
+('4', 'TCM-NOP', 'NOP Monitoring & Balancing', 0, 0, 5, 246, 0, 493, 0, 0, 0, 0, 0, 0, 4, 5, 0, 0, 0, 0, '5.30pm', '4 Hours'),
+('5', 'TCM-TRFX-01', 'FX Spot/ FX Tom/ FX Tod/Forward', 0, 0, 4, 51, 5, 102, 0, 0, 0, 0, 0, 0, 4, 5, 0, 0, 0, 0, '5.30 pm or T+1 (10.am) for FX Spot Laeve order', '1 Day'),
+('6', 'TCM-TRIB-02', 'IDR Bond', 0, 0, 3, 29, 4, 58, 5, 116, 0, 0, 0, 0, 4, 5, 0, 0, 0, 0, '5.30pm', '1 Day'),
+('7', 'TCM-TRUB-03', 'USD Bonds ', 0, 0, 3, 17, 3, 33, 4, 66, 4, 99, 5, 231, 4, 5, 0, 0, 0, 0, 'T+1 (10.am)', '1 Day');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `business_unit`
+--
+
+CREATE TABLE IF NOT EXISTS `business_unit` (
+  `id` varchar(10) NOT NULL,
+  `name` varchar(200) NOT NULL,
+  `name_ba` varchar(200) NOT NULL,
+  `id_ba_bu` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -84,17 +97,17 @@ INSERT INTO `bus_act` (`id`, `name`, `description`, `less_4h`, `type_less_4h`, `
 --
 
 CREATE TABLE IF NOT EXISTS `dependencies` (
-`id` int(11) NOT NULL,
-  `id_bus_act` int(11) NOT NULL,
+  `id` varchar(20) NOT NULL,
+  `id_ba_dependencies` varchar(20) NOT NULL,
   `in_part` text NOT NULL,
-  `in_rto` int(11) NOT NULL,
+  `in_rto` int(20) NOT NULL,
   `in_rto_type` varchar(50) NOT NULL,
   `in_arrg` tinyint(1) NOT NULL,
   `ex_part` text NOT NULL,
-  `ex_rto` int(11) NOT NULL,
+  `ex_rto` int(20) NOT NULL,
   `ex_rto_type` varchar(50) NOT NULL,
   `ex_arrg` tinyint(1) NOT NULL,
-  `type_stream` tinyint(1) NOT NULL
+  `type_stream` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -133,8 +146,16 @@ CREATE TABLE IF NOT EXISTS `mor_1` (
   `location` text NOT NULL,
   `staff` int(11) NOT NULL,
   `workstations` int(11) NOT NULL,
-  `notebook` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `notebook` int(11) NOT NULL,
+  `work_area_recovery` int(10) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `mor_1`
+--
+
+INSERT INTO `mor_1` (`id`, `id_bus_act`, `work_facility`, `location`, `staff`, `workstations`, `notebook`, `work_area_recovery`) VALUES
+(1, 0, '', '', 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -169,37 +190,95 @@ CREATE TABLE IF NOT EXISTS `mor_1_data` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `mor_hardware`
+--
+
+CREATE TABLE IF NOT EXISTS `mor_hardware` (
+  `name_hardware` varchar(100) NOT NULL,
+  `id_ba` varchar(20) NOT NULL,
+  `rto_hardware` varchar(20) NOT NULL,
+  `quantity` int(100) NOT NULL,
+  `sharing` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mor_non_it`
+--
+
+CREATE TABLE IF NOT EXISTS `mor_non_it` (
+  `equipment` varchar(200) NOT NULL,
+  `id_ba_non_it` varchar(20) NOT NULL,
+  `rto_non_it` varchar(20) NOT NULL,
+  `quantity_non_it` int(20) NOT NULL,
+  `sharing` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mor_record`
+--
+
+CREATE TABLE IF NOT EXISTS `mor_record` (
+  `name_record` int(100) NOT NULL,
+  `id_ba_record` varchar(20) NOT NULL,
+  `rto_record` varchar(20) NOT NULL,
+  `rpo_record` varchar(20) DEFAULT NULL,
+  `media` varchar(10) NOT NULL,
+  `current_storage_location` varchar(50) NOT NULL,
+  `ownership` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mor_software`
+--
+
+CREATE TABLE IF NOT EXISTS `mor_software` (
+  `system_application` longtext NOT NULL,
+  `id` int(11) NOT NULL,
+  `rto_software` int(11) NOT NULL,
+  `rpo_software` int(11) NOT NULL,
+  `alternative_software` longtext
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `name_ba`
 --
 
 CREATE TABLE IF NOT EXISTS `name_ba` (
-`id` int(11) NOT NULL,
+  `id` varchar(20) NOT NULL,
   `ba_name` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `name_ba`
 --
 
 INSERT INTO `name_ba` (`id`, `ba_name`) VALUES
-(1, 'THETA 01'),
-(2, 'FAFA'),
-(3, 'FD RYH F'),
-(4, 'DF SDFSIF S'),
-(5, 'DFSF F SH'),
-(6, 'FSD SDF SDF'),
-(7, 'THETA 07'),
-(8, 'DFS DF '),
-(9, 'PLP F LPP  '),
-(10, 'PO  O GK'),
-(11, 'KLGH  OP G'),
-(12, 'OPH GK OH'),
-(13, 'G JH  G GG'),
-(14, 'TRY RTYRT  DF'),
-(15, 'ZCZ SD XZC'),
-(16, 'NBM GHN B'),
-(17, 'QWE QWE '),
-(18, '456 456 4554B');
+('1', 'TCM-BSM-01\r\n'),
+('10', 'TCM-SLRTL-02\r\n'),
+('11', 'TCM-SLW-01\r\n'),
+('12', 'TCM-SLW-02\r\n'),
+('13', 'TCM-SLW-03'),
+('14', 'TCM-BM-01'),
+('15', 'TCM-BM-02'),
+('16', 'TCM-BM-03'),
+('17', 'TCM-ECO-01'),
+('18', 'TCM-ECO-02'),
+('2', 'TCM-BSM-02\r\n'),
+('3', 'TCM-BSM-03\r\n'),
+('4', 'TCM-NOP\r\n'),
+('5', 'TCM-TRFX-01\r\n'),
+('6', 'TCM-TRIB-02\r\n'),
+('7', 'TCM-TRUB-03\r\n'),
+('8', 'TCM-TRSTIR-04\r\n'),
+('9', 'TCM-SLRTL-01\r\n');
 
 -- --------------------------------------------------------
 
@@ -289,27 +368,6 @@ INSERT INTO `ra_likelihood` (`level`, `frequence`, `probability`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ra_vulnerabilities`
---
-
-CREATE TABLE IF NOT EXISTS `ra_vulnerabilities` (
-`id` int(11) NOT NULL,
-  `ra_id` int(11) NOT NULL,
-  `vulnerability` text COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `ra_vulnerabilities`
---
-
-INSERT INTO `ra_vulnerabilities` (`id`, `ra_id`, `vulnerability`) VALUES
-(1, 17, 'Escape'),
-(2, 17, 'form'),
-(3, 17, 'kenyataan');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `risk_assesment`
 --
 
@@ -320,17 +378,17 @@ CREATE TABLE IF NOT EXISTS `risk_assesment` (
   `i` int(11) NOT NULL,
   `pm` int(11) NOT NULL,
   `im` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `risk_assesment`
 --
 
 INSERT INTO `risk_assesment` (`id`, `threat`, `p`, `i`, `pm`, `im`) VALUES
-(6, 'Syakir', 1, 2, 1, 3),
-(15, 'Refresh', 1, 1, 1, 1),
-(16, 'Keren', 1, 1, 1, 3),
-(17, 'Ocean', 2, 2, 2, 2);
+(1, 'Bomb Threat', 4, 3, 3, 2),
+(2, 'Earthquake', 4, 1, 4, 1),
+(5, 'farhan', 0, 0, 0, 0),
+(6, 'Syakir', 1, 2, 1, 3);
 
 -- --------------------------------------------------------
 
@@ -347,6 +405,18 @@ CREATE TABLE IF NOT EXISTS `staff_mor_table` (
   `less_3d` int(11) NOT NULL,
   `less_7d` int(11) NOT NULL,
   `more_7d` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `version`
+--
+
+CREATE TABLE IF NOT EXISTS `version` (
+  `date` date NOT NULL,
+  `name_version` varchar(100) NOT NULL,
+  `id_ba_version` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -371,22 +441,28 @@ CREATE TABLE IF NOT EXISTS `war_mor_table` (
 --
 
 --
--- Indexes for table `alt_method`
+-- Indexes for table `alternative_method`
 --
-ALTER TABLE `alt_method`
- ADD PRIMARY KEY (`id`), ADD KEY `id_bus_act` (`id_bus_act`);
+ALTER TABLE `alternative_method`
+ ADD PRIMARY KEY (`id_ba_alternative`);
 
 --
--- Indexes for table `bus_act`
+-- Indexes for table `business_activity`
 --
-ALTER TABLE `bus_act`
+ALTER TABLE `business_activity`
  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `business_unit`
+--
+ALTER TABLE `business_unit`
+ ADD PRIMARY KEY (`id`), ADD KEY `id_ba_bu` (`id_ba_bu`);
 
 --
 -- Indexes for table `dependencies`
 --
 ALTER TABLE `dependencies`
- ADD PRIMARY KEY (`id`), ADD KEY `id_bus_act` (`id_bus_act`);
+ ADD PRIMARY KEY (`id`), ADD KEY `id_bus_act` (`id_ba_dependencies`);
 
 --
 -- Indexes for table `fin_impact_table`
@@ -425,12 +501,6 @@ ALTER TABLE `notebook_mor_table`
  ADD PRIMARY KEY (`id`), ADD KEY `id_mor_1` (`id_mor_1`);
 
 --
--- Indexes for table `ra_vulnerabilities`
---
-ALTER TABLE `ra_vulnerabilities`
- ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `risk_assesment`
 --
 ALTER TABLE `risk_assesment`
@@ -443,6 +513,12 @@ ALTER TABLE `staff_mor_table`
  ADD PRIMARY KEY (`id`), ADD KEY `id_mor_1` (`id_mor_1`);
 
 --
+-- Indexes for table `version`
+--
+ALTER TABLE `version`
+ ADD UNIQUE KEY `name_version` (`name_version`), ADD KEY `id_ba_version` (`id_ba_version`);
+
+--
 -- Indexes for table `war_mor_table`
 --
 ALTER TABLE `war_mor_table`
@@ -453,21 +529,6 @@ ALTER TABLE `war_mor_table`
 --
 
 --
--- AUTO_INCREMENT for table `alt_method`
---
-ALTER TABLE `alt_method`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `bus_act`
---
-ALTER TABLE `bus_act`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
---
--- AUTO_INCREMENT for table `dependencies`
---
-ALTER TABLE `dependencies`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
 -- AUTO_INCREMENT for table `fin_impact_table`
 --
 ALTER TABLE `fin_impact_table`
@@ -476,17 +537,12 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 -- AUTO_INCREMENT for table `mor_1`
 --
 ALTER TABLE `mor_1`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `mor_1_data`
 --
 ALTER TABLE `mor_1_data`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `name_ba`
---
-ALTER TABLE `name_ba`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT for table `non_fin_impact_table`
 --
@@ -498,15 +554,10 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 ALTER TABLE `notebook_mor_table`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `ra_vulnerabilities`
---
-ALTER TABLE `ra_vulnerabilities`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
---
 -- AUTO_INCREMENT for table `risk_assesment`
 --
 ALTER TABLE `risk_assesment`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=18;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `staff_mor_table`
 --
@@ -520,24 +571,6 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- Constraints for dumped tables
 --
-
---
--- Constraints for table `alt_method`
---
-ALTER TABLE `alt_method`
-ADD CONSTRAINT `alt_method_ibfk_1` FOREIGN KEY (`id_bus_act`) REFERENCES `bus_act` (`id`);
-
---
--- Constraints for table `bus_act`
---
-ALTER TABLE `bus_act`
-ADD CONSTRAINT `bus_act_ibfk_1` FOREIGN KEY (`id`) REFERENCES `name_ba` (`id`);
-
---
--- Constraints for table `dependencies`
---
-ALTER TABLE `dependencies`
-ADD CONSTRAINT `dependencies_ibfk_1` FOREIGN KEY (`id_bus_act`) REFERENCES `bus_act` (`id`);
 
 --
 -- Constraints for table `notebook_mor_table`

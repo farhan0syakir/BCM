@@ -30,6 +30,11 @@ class Bia extends CI_Controller {
 		$this->load->template('pages/bia/create',$data);
 	}
 
+	public function getDepedenciesForm()
+	{
+		$this->load->view('pages/bia/depedenciesForm');
+	}
+
 	function get(){
 		$ba = new BA_Model();
 		$result = $ba->getAll();
@@ -66,4 +71,10 @@ class Bia extends CI_Controller {
 		echo $ba->add($data);
 	}
 	
+	function make($name){
+		echo $name."</br>";
+		$result = $this->input->post();
+		var_dump($result);
+		// print_r($result);
+	}
 }

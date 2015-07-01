@@ -2,7 +2,7 @@
 
 class BA_Model extends DataMapper {
 
-    var $table = 'bus_act';
+    var $table = 'business_activity';
     // var $has_many = array('ra_model');
 
     function __construct($id = NULL){

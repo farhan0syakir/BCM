@@ -36,3 +36,8 @@
 		<option onCLick = "disableMyRight('selectFirst',5,5)">disable right</option>
 	</select>
 </div>
+<button id="myButton">
+tralaal
+</button>
+<div id="myText">
+</div>

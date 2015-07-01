@@ -40,7 +40,7 @@
 						<div class="bottom-gap modal-body">
 							<div class="row"> 
 								<div class="padding-leftt-narrow text-left col-lg-12">
-									<div class="col-lg-12 text-right" >
+									<div class="col-lg-12 text-center">
 										<a class="button-gap">Login
 											<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
 										</a>
@@ -51,4 +51,4 @@
                     </div>
 				</div>
           </div>
-</div>
+	</div>

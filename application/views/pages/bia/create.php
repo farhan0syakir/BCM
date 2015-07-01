@@ -38,6 +38,7 @@
 			<div class=" tab tab-content">
 				<div id="desc" class="tab-pane fade in active">
 					<?php echo form_open('bia/make/desc',array("id"=>"myDescForm"))?>
+
 					<div class="col-lg-12">
 						<div class="panel panel-default">
 							<div class="panel-body">
@@ -57,12 +58,12 @@
 										<div class="form-group">
 											<label class="label-bold">Business Unit</label>
 											<select class="form-control"> 
-												<option value="BA1">BA1</option>
-												<option value="BA2">BA2</option>
-												<option value="BA3">BA3</option>
-												<option value="BA4">BA4</option>     
-												<option value="BA5">BA5</option> 
-												<option value="BA6">BA6</option> 
+												<option value="BA1">BU1</option>
+												<option value="BA2">BU2</option>
+												<option value="BA3">BU3</option>
+												<option value="BA4">BU4</option>     
+												<option value="BA5">BU5</option> 
+												<option value="BA6">BU6</option> 
 											</select>
 										</div>
 										<div class="form-group">
@@ -192,15 +193,14 @@
 												<td>
 													<div class="form-group" id="alternativeMethodsId">
 														<label class="label-bold">Add Alternative Methods/Contingency Plans</label>
-														<input class="form-control" name="alternativeMethods[]" placeholder="Input the contingency plan here!">
+														<input class="form-control" placeholder="Input the contingency plan here!">
 													</div>	
 													<div class="row  bottom-gap-narrow">
 														<div class="col-lg-12 text-right">
-															<a class="button-gap" onClick="addInput('alternativeMethodsId', 'alternativeMethods',5,true)">Add
+															<a class="button-gap" onClick="addInput('alternativeMethodsId', 'alternativeMethodsId',5,true)">Add
 															<span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
 														</div>
 													</div>
-
 												</td>
 											</tr>
 										</table>
@@ -211,8 +211,8 @@
 														Previous</a>
 											</div>
 											<div class="col-lg-12 text-right" >
-												<button class="edit-button-gap" onClick="inputPartialForm()" data-toggle="tab" href="#dep">Next
-												<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
+												<a class="edit-button-gap" data-toggle="tab" href="#dep">Next
+												<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
 											</div>
 										</div>
 									</div>

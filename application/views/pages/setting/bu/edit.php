@@ -2,9 +2,9 @@
             <div class="row top-space" >
 				<div  class="content-wrapper">
 				        <h3 class="title title-header">	
-						 <a class="back-button-gap" href="<?php echo base_url('role') ?>">
+						 <a class="back-button-gap" href="<?php echo base_url('bu') ?>">
 						<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-						</a>Edit User</h3>
+						</a>Edit Business Unit</h3>
 								     <!-- /.col-lg-6 -->
 									<div class="col-lg-12">
 										<div class="panel panel-default">
@@ -13,43 +13,111 @@
 												<div class="row">
 													<div class="col-lg-12">
 														<form role="form">
-															<div class="form-group">
-																<label class="label-bold">Role</label>
-																<select class="form-control" placeholder="Select Role">
-																		  <option value="Manajer">Manajer</option>
-																		  <option value="Tim Perumus">Tim Perumus</option>
-																		  <option value="Staff">Staff</option>
-																		  <option value="Admin" selected>Admin</option>
-																</select>
-																<!--p class="help-block">Example block-level help text here.</p-->
-															</div>
+														
 																					
 															<div class="form-group">
-																<label class="label-bold">Username</label>
-																<input class="form-control" placeholder="enter username here. ex:john.doe"/>
+																<label class="label-bold">BU Code</label>
+																<input class="a-forth form-control"  Value="TCM">
 															</div>
 															<div class="form-group">
-																<label class="label-bold">Password</label>
-																<input type="password" class="form-control" placeholder="enter password here">
+																<label class="label-bold">Unit Name</label>
+																<input  class="form-control" Value="Treasury and Capital Management" >
 															</div>
 															<div class="form-group">
-																<label class="label-bold">Verify Password</label>
-																<input type="password" class="form-control" placeholder="retype password here">
+																	
+																	<label class="label-bold">MTPD</label>
+																	<div class="row text-left">
+																	<div class="col-md-2">
+																		<input class=" form-control" Value="8">
+																	</div>
+																	<div class="col-md-2">
+																		<select class="form-control">
+																			<option  >hour(s)</option>
+																			<option selected="true">day(s)</option>
+																			<option>month(s)</option>
+																		</select>
+																	</div>
+																	</div>
+
+															</div>
+																<div class="form-group">
+																	
+																	<label class="label-bold">Impact Scale Parameter</label>
+																	
+																	<div class="bottom-gap-narrow row text-left">
+																	<div class="col-md-2">
+																		<input class=" form-control" value="< 4">
+																	</div>
+																	<div class="col-md-2">
+																		<select class="form-control">
+																			<option selected="true">hour(s)</option>
+																			<option>day(s)</option>
+																			<option>month(s)</option>
+																		</select>
+																	</div>
+																	<div class="col-md-2">
+																		<input class=" form-control" value="< 1">
+																	</div>
+																	<div class="col-md-2">
+																		<select class="form-control">
+																			<option>hour(s)</option>
+																			<option selected="true">day(s)</option>
+																			<option>month(s)</option>
+																		</select>
+																	</div>
+																	<div class="col-md-2">
+																		<input class=" form-control" value="< 4">
+																	</div>
+																	<div class="col-md-2">
+																		<select class="form-control">
+																			<option>hour(s)</option>
+																			<option selected="true">day(s)</option>
+																			<option>month(s)</option>
+																		</select>
+																	</div>
+
+																	</div>
+
+																	<div class="row text-left">
+																	<div class="col-md-2">
+																		<input class=" form-control" value="< 8">
+																	</div>
+																	<div class="col-md-2">
+																		<select class="form-control">
+																			<option>hour(s)</option>
+																			<option selected="true">day(s)</option>
+																			<option>month(s)</option>
+																		</select>
+																	</div>
+																	<div class="col-md-2">
+																		<input class=" form-control" value="> 8">
+																	</div>
+																	<div class="col-md-2">
+																		<select class="form-control">
+																			<option>hour(s)</option>
+																			<option>day(s)</option>
+																			<option selected="true">month(s)</option>
+																		</select>
+																	</div>
+																	
+
+																	</div>
+
 															</div>
 												   
 															<div class="top-gap row">
 																				<div class="col-lg-6 text-left" >
-																					<a  class="delete-button-gap">
+																					<a  class="delete-button-gap" href="<?php echo base_url('bu'); ?>">
 																					<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
 																					Cancel
 																					</a>
 																				</div>
 																				<div class="col-lg-6 text-right" >
-																					<a class="button-gap" data-toggle="tab" href="#alt">Save User
+																					<a class="button-gap" href="<?php echo base_url('bu/view/1'); ?>">Save
 																					<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
 																					</a>
 																				</div>
-																			</div>
+															</div>
 														</form>
 													</div>
 

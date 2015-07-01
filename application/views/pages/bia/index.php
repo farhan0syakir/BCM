@@ -21,8 +21,8 @@
                     <table class="table table-striped">
                         <thead>
                             <tr class="tr-gap">
-                                <th>#</th>
-                                <th>Business Activity</th>
+                                <th class="col-md-3">#</th>
+                                <th >Business Activity</th>
                                 <th class="td-button"></th>
 								  <th class="td-button"></th>
                                 <th class="td-button th-gap text-right"><a href="<?php echo base_url('bia/create') ?>" class="button-gap crud">

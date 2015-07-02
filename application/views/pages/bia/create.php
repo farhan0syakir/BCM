@@ -1,6 +1,6 @@
 <?php
 	$impactLabel = array(
-			"<4-h","1-d","<2-d","<3-d","<7-d",">7-d"
+			"<4-h","<1-d","<2-d","<3-d","<7-d",">7-d"
 		);
 ?>
 
@@ -37,7 +37,7 @@
 					
 			<div class=" tab tab-content">
 				<div id="desc" class="tab-pane fade in active">
-					<?php echo form_open('bia/make/desc',array("id"=>"myDescForm"))?>
+					<?php echo form_open('bia/make',array("id"=>"myDescForm"))?>
 
 					<div class="col-lg-12">
 						<div class="panel panel-default">
@@ -72,7 +72,7 @@
 										</div>
 										<div class="form-group">
 											<label class="label-bold">Business Activity</label>
-											<input name="bussinessActivity" class="form-control" placeholder="Input the name of business activity here!">
+											<input id="bussinessNameId" name="name" class="form-control" placeholder="Input the name of business activity here!">
 										</div>
 										<div class="form-group">
 											<label class="label-bold">Description</label>
@@ -140,20 +140,20 @@
 																						
 											<div class="form-group">
 												<label class="label-bold">Critical Time Period</label>
-												<select class="form-control"> 
+												<select class="form-control" name="cto"> 
 													<option value="1" onClick="removeDiv('popUpFreeText')">hourly</option>
 													<option value="2" onClick="removeDiv('popUpFreeText')">dayly</option>
 													<option value="3" onClick="removeDiv('popUpFreeText')">weekly</option>
 													<option value="4" onClick="removeDiv('popUpFreeText')">monthly</option>     
 													<option value="5" onClick="removeDiv('popUpFreeText')">yearly</option> 
-													<option value="5" onClick = "addInput('popUpFreeText','CTO',1,false)">others</option> 
+													<option value="5" onClick = "addInput('popUpFreeText','cto_notes',1,false)">others</option> 
 												</select>
 											</div>
 											<div id="popUpFreeText">
 											</div>
 											<div class="form-group">
 												<label class="label-bold">RTO</label>
-												<input id = "rtoId" class="form-control" placeholder="Enter text" disabled>
+												<input id = "rtoId" class="form-control" placeholder="Enter text" readOnly="true" name="rto">
 											</div>
 											
 											<div class="top-gap row">
@@ -180,6 +180,7 @@
 				</div>
 				
 				<div id="alt" class="tab-pane fade">
+					<?php echo form_open('bia/make',array("id"=>"myAlternativeForm"))?>
 					<div class="col-lg-12">
 						<div class="panel panel-default">
 							<div class="panel-heading">
@@ -193,11 +194,11 @@
 												<td>
 													<div class="form-group" id="alternativeMethodsId">
 														<label class="label-bold">Add Alternative Methods/Contingency Plans</label>
-														<input class="form-control" placeholder="Input the contingency plan here!">
+														<input class="form-control" name="alternativeMethods[]" placeholder="Input the contingency plan here!">
 													</div>	
 													<div class="row  bottom-gap-narrow">
 														<div class="col-lg-12 text-right">
-															<a class="button-gap" onClick="addInput('alternativeMethodsId', 'alternativeMethodsId',5,true)">Add
+															<a class="button-gap" onClick="addInput('alternativeMethodsId', 'alternativeMethods',5,true)">Add
 															<span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
 														</div>
 													</div>
@@ -211,8 +212,8 @@
 														Previous</a>
 											</div>
 											<div class="col-lg-12 text-right" >
-												<a class="edit-button-gap" data-toggle="tab" href="#dep">Next
-												<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+												<button class="edit-button-gap" type="submit" onClick="inputPartialForm('myAlternativeForm')" data-toggle="tab" href="#dep">Next
+													<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
 											</div>
 										</div>
 									</div>
@@ -220,9 +221,11 @@
 							</div>
 						</div>
 					</div>
+					<?php echo form_close()?>
 				</div>
 
 				<div id="dep" class="tab-pane fade">
+					<?php echo form_open('bia/make',array("id"=>"myDepedenciesForm"))?>
 					<div class="col-lg-12">
 						<div class="panel panel-default">
 							<div class="panel-heading">
@@ -243,36 +246,39 @@
 													<div id="contentDepedenciesFormUpstream">
 														<div>
 															<label class="label-bold radio-inline">
-															<input  type="radio" name="optradio">External																</label>
+															<input  type="radio" name="radioInternalExternalUpstream0[]">External
+															</label>
 															<label class="label-bold radio-inline">
-															<input  type="radio" name="optradio" >Internal
+																<input  type="radio" name="radioInternalExternalUpstream0[]" >Internal
 															</label>
 														</div>
-													<div class="form-group">
-														<label class="label-bold">Dependency</label>																		<input class="form-control" placeholder="Department, Provider">
-													</div>	
-													<div class="form-group">
-														<label class="label-bold">Name of Party</label>
-														<input class="form-control" placeholder="Department, Provider">
-													</div>
-													<div class="form-group">
-														<label class="label-bold">RTO</label>
-														<input class="form-control" placeholder="RTO">
-													</div>
-													<div class="form-group">
-														<label class="label-bold">
-															BCM Arrangement in Place?
-														</label>
-														<label class="label-bold radio-inline">
-														<input  type="radio" name="optradio">Yes
-														</label>
-														<label class="label-bold radio-inline">
-														<input  type="radio" name="optradio" >No
-														</label>
+														<div class="form-group">
+																<label class="label-bold">Dependency</label>
+																<input class="form-control" placeholder="Department, Provider" name="depedenciesNameUpstream[]">
+															</div>	
+														<div class="form-group">
+															<label class="label-bold">Name of Party</label>
+															<input class="form-control" placeholder="Department, Provider" name="partyNameUpstream[]">
+														</div>
+														<div class="form-group">
+															<label class="label-bold">RTO</label>
+															<input class="form-control" placeholder="RTO" name="rtoNameUpstream[]">
+														</div>
+														<div class="form-group">
+															<label class="label-bold">
+																BCM Arrangement in Place?
+															</label>
+															<label class="label-bold radio-inline">
+															<input  type="radio" name="radioBCMArrangmentPlaceUpstream0[]">Yes
+															</label>
+															<label class="label-bold radio-inline">
+																<input  type="radio" name="radioBCMArrangmentPlaceUpstream0[]" >No
+															</label>
+														</div>
 													</div>
 													<div class="row  bottom-gap-narrow">
 														<div class="col-lg-12 text-right">
-															<a class="button-gap" id ="addDepedenciesFormBtn" onClick="getDepedenciesForm('contentDepedenciesFormUpstream')">Add
+															<a class="button-gap" id ="addDepedenciesFormBtn" onClick="getDepedenciesForm('contentDepedenciesFormUpstream','Upstream')">Add
 															<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 															</a>
 														</div>
@@ -290,39 +296,39 @@
 														<div id="contentDepedenciesFormDownstream">
 															<div>
 																<label class="label-bold radio-inline">
-																<input  type="radio" name="optradio">External
+																<input  type="radio" name="radioInternalExternalDownstream0[]">External
 																</label>
 																<label class="label-bold radio-inline">
-																<input  type="radio" name="optradio" >Internal
+																	<input  type="radio" name="radioInternalExternalDownstream0[]" >Internal
 																</label>
 															</div>
 															<div class="form-group">
-																<label class="label-bold">Dependency</label>
-																<input class="form-control" placeholder="Department, Provider">
-															</div>	
+																	<label class="label-bold">Dependency</label>
+																	<input class="form-control" placeholder="Department, Provider" name="depedenciesNameDownstream[]">
+																</div>	
 															<div class="form-group">
 																<label class="label-bold">Name of Party</label>
-																<input class="form-control" placeholder="Department, Provider">
+																<input class="form-control" placeholder="Department, Provider" name="partyNameDownstream[]">
 															</div>
 															<div class="form-group">
 																<label class="label-bold">RTO</label>
-																<input class="form-control" placeholder="RTO">
+																<input class="form-control" placeholder="RTO" name="rtoNameDownstream[]">
 															</div>
 															<div class="form-group">
 																<label class="label-bold">
 																	BCM Arrangement in Place?
 																</label>
 																<label class="label-bold radio-inline">
-																<input  type="radio" name="optradio">Yes
+																<input  type="radio" name="radioBCMArrangmentPlaceDownstream0[]">Yes
 																</label>
 																<label class="label-bold radio-inline">
-																<input  type="radio" name="optradio" >No
+																	<input  type="radio" name="radioBCMArrangmentPlaceDownstream0[]" >No
 																</label>
 															</div>
 														</div>
 														<div class="row  bottom-gap-narrow">
 															<div class="col-lg-12 text-right">
-																<a class="button-gap" onClick = "getDepedenciesForm('contentDepedenciesFormDownstream')">Add
+																<a class="button-gap" onClick = "getDepedenciesForm('contentDepedenciesFormDownstream','Downstream')">Add
 																<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 																</a>
 															</div>
@@ -337,9 +343,9 @@
 												Previous</a>
 											</div>
 											<div class="col-lg-6 text-right" >
-												<a class="edit-button-gap" data-toggle="tab" href="#norm">Next
-												<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-												</a>
+												<button class="edit-button-gap" type="submit" onClick="inputPartialForm('myDepedenciesForm')" data-toggle="tab" href="#alt">Next
+													<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+												</button>
 											</div>
 										</div>
 									</div>
@@ -347,9 +353,11 @@
 							</div>
 						</div>
 					</div>
+					<?php echo form_close()?>
 				</div>
 
 				<div id="norm" class="tab-pane fade">
+					<?php echo form_open('bia/make',array("id"=>"myNormalForm"))?>
 					<div class="col-lg-12">
 						<div class="panel panel-default">
 							<div class="panel-heading">
@@ -365,46 +373,50 @@
 														<label class="label-bold "><h4 class="title-header ">Normal</h4></label>
 													</div>
 													<div class="form-group">
-														<label class="label-bold">Location</label><input class="form-control" placeholder="">
+														<label class="label-bold">Location</label>
+														<input class="form-control" placeholder="" name="location">
 													</div>
 													<div class="form-group">
 														<table>
 															<tr>
 																<td>
 																	<label class="label-bold">Staff</label>
-																	<input  type="number" class="num form-control a-forth" placeholder=""/>
+																	<input  name="staffs" type="number" class="num form-control a-forth" placeholder=""/>
 																</td>
 																<td>
 																	<label class="label-bold">Shift</label>
-																	<input  type="number" class="num form-control a-forth" placeholder=""/>
+																	<input  name="shifts" type="number" class="num form-control a-forth" placeholder=""/>
 																</td>
 															</tr>
 														</table>
 													</div>
 													<div class="form-group">
-														<label class="label-bold">Workstations (Cubicle)</label><input type="number" class="num  form-control" placeholder="">
+														<label class="label-bold">Workstations (Cubicle)</label>
+														<input name="cubicles" type="number" class="num  form-control" placeholder="">
 													</div>
 													<div class="form-group">
-														<label class="label-bold">PC/Notebook</label><input type="number" class="num form-control" placeholder="">
+														<label class="label-bold">PC/Notebook</label>
+														<input name="notebooks" type="number" class="num form-control" placeholder="">
 													</div>
-													<div class="form-group">
-														<label class="label-bold">Work Facility</label><input class="form-control" placeholder="">
+													<div class="form-group" id="workFacilitiesId">
+														<label class="label-bold">Work Facility</label>
+														<input name="facilities[]" class="form-control" placeholder="">
 													</div>
 													<div class="row ">
 														<div class="col-lg-12 text-right">
-															<a class="button-gap">
+															<a class="button-gap" onClick="addInput('workFacilitiesId','facilities',5,false)">
 																Add
 															<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 															</a>
 														</div>
 													</div>
-													<div class="form-group">
+													<div class="form-group" id="skillSetsId">
 														<label class="label-bold">Skill Set/Designation</label>
-														<input class="form-control" placeholder="">
+														<input name="skillSets[]"class="form-control" placeholder="">
 													</div>
 													<div class="row bottom-gap-narrow ">
 														<div class="col-lg-12 text-right">
-															<a class="button-gap">
+															<a class="button-gap" onClick="addInput('skillSetsId','skillSets',5,false)"> 
 																Add
 															<span class="glyphicon glyphicon-plus" aria-hidden="true">
 															</span>
@@ -427,33 +439,15 @@
 																	<label class="label-bold">Staff</label></td>
 																<td>
 																	<div class="gap col-md-12  ">
-																		<div class="gap col-md-2 ">
-																			<label class="gap-narrow"> <4-h  </label>
-																			<input class="num" type="number" ></label>
-																		</div>
-																		<div class="gap col-md-2 ">
-																			<label class="gap-narrow"><1-d </label>
-																			<input class="num" type="number" ></label>
-																		</div>
-																		<div class="gap col-md-2 ">
-																			<label class="gap-narrow"><2-d  </label>
-																			<input class="num" type="number" ></label>
-																		</div>
-																		<div class="gap col-md-2 ">
-																			<label class="gap-narrow"> <3-d  </label>
-																			<input class="num" type="number" ></label>
-																		</div>
+																		<?php for($i=0;$i<count($impactLabel);$i++):?>
 																			<div class="gap col-md-2 ">
-																				<label class="gap-narrow"> <7-d  </label>
-																				<input class="num" type="number" ></label>
+																				<label class="gap-narrow"> <?php echo $impactLabel[$i];?> </label>
+																				<input name="morStaffs[]" class="num" type="number" ></input>
 																			</div>
-																			<div class="gap col-md-2 ">
-																				<label class="gap-narrow"> >7-d  </label>
-																				<input class="num" type="number" ></label>
-																			</div>
-																		</div>
-																	</td>
-																</tr>
+																		<?php endfor;?>
+																	</div>
+																</td>
+															</tr>
 																						
 																<tr class="tr-gap">
 																	<td class="td-label">
@@ -461,30 +455,12 @@
 																	</td>
 																	<td>
 																		<div class="gap col-md-12  ">
-																		<div class="gap col-md-2 ">
-																			<label class="gap-narrow"> <4-h  </label>
-																			<input class="num" type="number" ></label>
-																		</div>
-																		<div class="gap col-md-2 ">
-																			<label class="gap-narrow"><1-d </label>
-																			<input class="num" type="number" ></label>
-																		</div>
-																		<div class="gap col-md-2 ">
-																			<label class="gap-narrow"><2-d  </label>
-																			<input class="num" type="number" ></label>
-																		</div>
-																		<div class="gap col-md-2 ">
-																			<label class="gap-narrow"> <3-d  </label>
-																			<input class="num" type="number" ></label>
-																		</div>
-																		<div class="gap col-md-2 ">
-																			<label class="gap-narrow"> <7-d  </label>
-																			<input class="num" type="number" ></label>
-																		</div>
+																			<?php for($i=0;$i<count($impactLabel);$i++):?>
 																			<div class="gap col-md-2 ">
-																				<label class="gap-narrow"> >7-d  </label>
-																				<input class="num" type="number" ></label>
+																				<label class="gap-narrow"> <?php echo $impactLabel[$i];?> </label>
+																				<input name="morWorkAreaRecoveries[]" class="num" type="number" ></input>
 																			</div>
+																			<?php endfor;?>
 																		</div>
 																	</td>
 																</tr>
@@ -495,30 +471,12 @@
 																	</td>
 																	<td>
 																		<div class="gap col-md-12  ">
+																			<?php for($i=0;$i<count($impactLabel);$i++):?>
 																			<div class="gap col-md-2 ">
-																				<label class="gap-narrow"> <4-h  </label>
-																				<input class="num" type="number" ></label>
+																				<label class="gap-narrow"> <?php echo $impactLabel[$i];?> </label>
+																				<input name="morNotebook[]" class="num" type="number" ></input>
 																			</div>
-																			<div class="gap col-md-2 ">
-																				<label class="gap-narrow"><1-d </label>
-																				<input class="num" type="number" ></label>
-																			</div>
-																			<div class="gap col-md-2 ">
-																				<label class="gap-narrow"><2-d  </label>
-																				<input class="num" type="number" ></label>
-																			</div>
-																			<div class="gap col-md-2 ">
-																				<label class="gap-narrow"> <3-d  </label>
-																				<input class="num" type="number" ></label>
-																			</div>
-																			<div class="gap col-md-2 ">
-																				<label class="gap-narrow"> <7-d  </label>
-																				<input class="num" type="number" ></label>
-																			</div>
-																			<div class="gap col-md-2 ">
-																				<label class="gap-narrow"> >7-d  </label>
-																				<input class="num" type="number" ></label>
-																			</div>	
+																			<?php endfor;?>	
 																		</div>	
 																	</td>
 																</tr>
@@ -535,9 +493,9 @@
 													Previous</a>
 											</div>
 											<div class="col-lg-6 text-right" >
-												<a class="edit-button-gap" data-toggle="tab" href="#it">Next
-												<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-												</a>
+												<button class="edit-button-gap" type="submit" onClick="inputPartialForm('myNormalForm')" data-toggle="tab" href="#it">Next
+													<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+												</button>
 											</div>
 										</div>
 									</div>
@@ -545,9 +503,11 @@
 							</div>
 						</div>
 					</div>
+					<?php echo form_close()?>
 				</div>
 
 				<div id="it" class="tab-pane fade">
+					<?php echo form_open('bia/make',array("id"=>"myItForm"))?>
 					<div class="col-lg-12">
 						<div class="panel panel-default">
 							<div class="panel-heading">
@@ -566,29 +526,30 @@
 													</div>
 													<table>
 														<tr class="gap col-md-12">
-															<td class="gap col-md-6">
+															<td class="gap col-md-3">
 																<label class="gap-narrow">Software</label></td>
-															<td class="gap col-md-6">
+															<td class="gap col-md-3">
 																<label class="gap-narrow">RTO</label></td>		
-															<td class="gap col-md-6">
+															<td class="gap col-md-3">
 																<label class="gap-narrow" >RPO</label></td>
+															<td class="gap col-md-3">
+																<label class="label-bold">Alternative Manual Methods</label>
+																</td>
 														</tr>
+														<?php for($i=0;$i<count($mor_software);$i++):?>
 														<tr class="gap col-md-12 ">
-															<td class="gap col-md-6">
-																<input type="checkbox" value=""> Database</td>
-															<td class="gap col-md-6"><input class="num" ></td>		
-															<td class="gap col-md-6"><input class="num"  ></td>
+															<td class="gap col-md-3">
+																<input type="checkbox" name="software_name[]" value="<?php echo $mor_software[$i]->id?>"><?php echo $mor_software[$i]->name?>
+															</td>
+															<td class="gap col-md-3"><input class="num" name="software_rto[]"></td>		
+															<td class="gap col-md-3"><input class="num" name="software_rpo[]" ></td>
+															<td class="gap col-md-3">
+																<input class="form-control" placeholder="Department, Provider" name="software_alterntive_method[]">
+															</td>
 														</tr>
-														<tr class="gap col-md-12 ">
-															<td class="gap col-md-6"><input type="checkbox" value=""> Email</td>
-															<td class="gap col-md-6"><input class="num"  ></td>		
-															<td class="gap col-md-6"><input class="num" ></td>
-														</tr>
+														<?php endfor;?>
+														
 													</table>
-													<div class="form-group">
-														<label class="label-bold">Alternative Manual Methods</label>
-														<input class="form-control" placeholder="Department, Provider">
-													</div>
 												</td>
 											</tr>
 											<tr class="tr-gap">
@@ -600,32 +561,34 @@
 													
 														<table>
 															<tr class="gap col-md-12">
-																<td class="gap col-md-6">
+																<td class="gap col-md-4">
 																	<label class="gap-narrow">Software</label>
 																</td>
-																<td class="gap col-md-6">
+																<td class="gap col-md-3">
 																	<label class="gap-narrow">RTO</label>
 																</td>		
-																<td class="gap col-md-6">
+																<td class="gap col-md-3">
 																	<label class="gap-narrow" >Quantity</label>
 																</td>
+																<td class="gap col-md-5">
+																	<label class="label-bold">Sharing?</label>
+																</td>
 															</tr>
+															<?php for($i=0;$i<count($mor_hardware);$i++):?>
 															<tr class="gap col-md-12 ">
-																<td class="gap col-md-6"><input type="checkbox" value=""> CPU</td>
-																<td class="gap col-md-6"><input class="num" ></td>		
-																<td class="gap col-md-6"><input class="num"  ></td>
+																<td class="gap col-md-4"><input type="checkbox" value="<?php echo $mor_hardware[$i]->id?>" name="hardware_id[]"><?php echo $mor_hardware[$i]->name?></td>
+																<td class="gap col-md-3"><input class="num" name="hardware_rto[]"></td>		
+																<td class="gap col-md-3"><input class="num" name="hardware_quantity[]" ></td>
+																<td class="gap col-md-5 ">
+																	<label class="label-bold radio-inline"><input  type="radio" name="is_sharing[<?php echo $mor_hardware[$i]->id?>]" value=true>Yes</label>
+																	<label class="label-bold radio-inline"><input  type="radio" name="is_sharing[<?php echo $mor_hardware[$i]->id?>]" value=false>No</label>
+																</td>		
 															</tr>
-															<tr class="gap col-md-12 ">
-																<td class="gap col-md-6"><input type="checkbox" value=""> Monitor</td>
-																<td class="gap col-md-6"><input class="num"  ></td>		
-																<td class="gap col-md-6"><input class="num" ></td>
-															</tr>
+															<?php endfor;?>
+															
 														</table>
 													</div>
 													<div class="form-group">
-															<label class="label-bold">Sharing?</label>
-															<label class="label-bold radio-inline"><input  type="radio" name="optradio">Yes</label>
-															<label class="label-bold radio-inline"><input  type="radio" name="optradio" >No</label>
 													</div>
 												</td>
 											</tr>
@@ -636,8 +599,8 @@
 												<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
 											</div>
 											<div class="col-lg-6 text-right" >
-												<a class="edit-button-gap" data-toggle="tab" href="#nonit">
-												<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>Next</a>
+												<button class="edit-button-gap" type="submit" onClick="inputPartialForm('myItForm')" data-toggle="tab" href="#nonit">Next
+												<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
 											</div>
 										</div>
 									</div>
@@ -645,9 +608,11 @@
 							</div>
 						</div>
 					</div>
+					<?php echo form_close()?>
 				</div>
 
 				<div id="nonit" class="tab-pane fade">
+					<?php echo form_open('bia/make',array("id"=>"myNonItForm"))?>
 					<div class="col-lg-12">
 						<div class="panel panel-default">
 							<div class="panel-heading">
@@ -699,9 +664,11 @@
 							</div>	
 						</div>
 					</div>
+					<?php echo form_close()?>
 				</div>
 
 				<div id="rec" class="tab-pane fade">
+					<?php echo form_open('bia/make',array("id"=>"myRecordForm"))?>
 					<div class="col-lg-12">
 						<div class="panel panel-default">
 							<div class="panel-heading">
@@ -721,6 +688,7 @@
 														</tr>
 														<tr class="gap col-md-12 ">
 															<td class="gap col-md-6"><input type="checkbox" value=""> Trade blotter from SUMMIT</td>
+															<td class="gap col-md-6"><input class="num" ></td>		
 															<td class="gap col-md-6"><input class="num" ></td>		
 														</tr>
 														<tr class="gap col-md-12 ">
@@ -752,6 +720,7 @@
 							</div>
 						</div>
 					</div>
+					<?php echo form_close()?>
 				</div>
 			</div>
 		</div>

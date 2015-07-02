@@ -27,12 +27,20 @@ class Bia extends CI_Controller {
 		$ba = new BA_Model();
 		$data['baImpact'] = $ba->getImpact();
 
+		$mor_software = new BA_Mor_Software_Model();
+		$data['mor_software'] = $mor_software->getAll();
+		
+		$mor_hardware = new BA_Mor_Hardware_Model();
+		$data['mor_hardware'] = $mor_hardware->getAll();
+		
 		$this->load->template('pages/bia/create',$data);
 	}
 
-	public function getDepedenciesForm()
+	public function getDepedenciesForm($stream,$counter)
 	{
-		$this->load->view('pages/bia/depedenciesForm');
+		$data['stream'] = $stream;
+		$data['counter'] = $counter;
+		$this->load->view('pages/bia/depedenciesForm',$data);
 	}
 
 	function get(){
@@ -42,39 +50,70 @@ class Bia extends CI_Controller {
 		return $result;
 	}
 	
-	function add(){
+	
+	function add($input){
 		$ba = new BA_Model();
-		$data['number'] = $this->input->get('number');
-		$data['name'] = $this->input->get('name');
-		$data['description'] = $this->input->get('description');
-		$data['cto'] = $this->input->get('cto');
-        $data['rto'] = $this->input->get('rto');
-        $data['less_4h'] = $this->input->get('less_4h');
-        $data['less_1d'] = $this->input->get('less_1d');
-        $data['less_2d'] = $this->input->get('less_2d');
-        $data['less_3d'] = $this->input->get('less_3d');
-        $data['less_7d'] = $this->input->get('');
-        $data['more_7d'] = $this->input->get('');
-        $data['type_less_4h'] = $this->input->get('');
-        $data['type_less_1d'] = $this->input->get('');
-        $data['type_less_2d'] = $this->input->get('');
-        $data['type_less_3d'] = $this->input->get('');
-        $data['type_less_7d'] = $this->input->get('');
-        $data['type_more_7d'] = $this->input->get('');
-        $data['non_type_less_4h'] = $this->input->get('');
-        $data['non_type_less_1d'] = $this->input->get('');
-        $data['non_type_less_2d'] = $this->input->get('');
-        $data['non_type_less_3d'] = $this->input->get('');
-        $data['non_type_less_7d'] = $this->input->get('');
-        $data['non_type_more_7d'] = $this->input->get('');
-
+		// var_dump($input['finansialImpact'][0]);
+		// die();
+		$data['name'] = $input['name'];
+		$data['description'] = $input['description'];
+        $data['less_4h'] = $input['finansialImpact'][0];
+        $data['less_1d'] = $input['finansialImpact'][1];
+        $data['less_2d'] = $input['finansialImpact'][2];
+        $data['less_3d'] = $input['finansialImpact'][3];
+        $data['less_7d'] = $input['finansialImpact'][4];
+        $data['more_7d'] = $input['finansialImpact'][5];
+        $data['non_less_4h'] = $input['nonFinansialImpact'][0];
+        $data['non_less_1d'] = $input['nonFinansialImpact'][1];
+        $data['non_less_2d'] = $input['nonFinansialImpact'][2];
+        $data['non_less_3d'] = $input['nonFinansialImpact'][3];
+        $data['non_less_7d'] = $input['nonFinansialImpact'][4];
+        $data['non_more_7d'] = $input['nonFinansialImpact'][5];
+		$data['cto'] = $input['cto'];
+		$data['cto_notes'] = $input['cto_notes'][0];
+        $data['rto'] = $input['rto'];
 		echo $ba->add($data);
 	}
-	
+
 	function make($name){
-		echo $name."</br>";
+		// echo $name."</br>";
 		$result = $this->input->post();
-		var_dump($result);
+		// var_dump($result);
+		// die();
+		if($name=="myDescForm"){
+			$this->add($result);
+		}else if($name=="myAlternativeForm"){
+			$this->addAlternative($result);
+		}else if($name=="myDepedenciesForm"){
+			$temp = new BA_Depedencies_Model();
+		}else if($name=="myNormalForm"){
+			$temp = new BA_Normal_Model();
+		}else if($name=="myItForm"){
+			$temp = new BA_It_Model();
+		}else if($name=="myNonItForm"){
+			$temp = new BA_Non_It_Model();
+		}else if($name=="myRecordForm"){
+			$temp = new BA_Record_Model();
+		}
+		$isSuccess = $temp->add($result);
+		return $isSuccess;
 		// print_r($result);
+	}
+
+
+
+	function addAlternative($inputs){
+		$ba = new BA_Model();
+		// $name = $inputs['name'];
+		var_dump($inputs);
+		die();
+		$ba_id = $ba->where('name',$name)->get()->id;
+		foreach ($inputs['alternativeMethods'] as $input) {
+			# code...
+			$temp = new BA_Alternative_Model();
+        	$data['ba_id'] = $ba_id;
+        	$data['alternative_method'] = $input;
+			$temp->add($data);
+		}
 	}
 }

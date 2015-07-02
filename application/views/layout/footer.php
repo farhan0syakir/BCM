@@ -31,32 +31,33 @@ $(document).ready(function() {
 
 
 } );
-
-    function getDepedenciesForm(divName) {
+    
+    var getDepedenciesCounter = 1;
+    function getDepedenciesForm(divName,stream) {
       // get the time if clicked via an ajax get queury
       // see the code in the controller time.php
-      $.get("/BCM/index.php/bia/getDepedenciesForm", function (data) {
+      $.get("/BCM/index.php/bia/getDepedenciesForm/"+stream+"/"+getDepedenciesCounter, function (data) {
         var newdiv = document.createElement('div');
         newdiv.innerHTML = data;
         document.getElementById(divName).appendChild(newdiv);
       });
     }
 
-    var counter = 0;
+    var addInputCounter = 0;
     var limit = 10;
     var isShowAlert = True;
     function addInput(divName, nameForInput,myLimit,myIsShowAlert){
          limit = myLimit;
          isShowAlert = myIsShowAlert;
-         if (counter >= limit)  {
+         if (addInputCounter >= limit)  {
               if(isShowAlert){
-                alert("You have reached the limit of adding " + counter + " inputs");
+                alert("You have reached the limit of adding " + addInputCounter + " inputs");
               }
          }else {
               var newdiv = document.createElement('div');
               newdiv.innerHTML = " <br><input class='form-control' placeholder='Enter text' name='"+nameForInput +"[]'>";
               document.getElementById(divName).appendChild(newdiv);
-              counter++;
+              addInputCounter++;
          }
     };
 
@@ -72,8 +73,8 @@ $(document).ready(function() {
       // alert($(this).find('option:selected'));
       for (i = myNumber+1; i <= Length; i++) {
         var thisDiv = selectId+i;
+        document.getElementById(thisDiv).readOnly = true;
         document.getElementById(thisDiv).options[5].selected = true;
-        document.getElementById(thisDiv).disabled=true;
       }
       setRTO(selectId,myNumber);
     }
@@ -82,8 +83,8 @@ $(document).ready(function() {
       // alert($(this).find('option:selected'));
       for (i = myNumber+1; i <= Length; i++) {
         var thisDiv = selectId+i;
+        document.getElementById(thisDiv).readOnly = false;
         document.getElementById(thisDiv).options[0].selected = true;
-        document.getElementById(thisDiv).disabled=false;
       }
       // setRTO();
     }
@@ -103,7 +104,7 @@ $(document).ready(function() {
       if(nonFinansialImpactSelectNumber<10 && finansialImpactSelectNumber<10){//kira2 yang angkanya kecil 
         var elem = document.getElementById("rtoId");
         if(nonFinansialImpactSelectNumber===6 && finansialImpactSelectNumber===6){
-          elem.disabled=false;
+          elem.readOnly=false;
         }else{
           elem.value = rtoVal[Math.min(nonFinansialImpactSelectNumber,finansialImpactSelectNumber)];
         }
@@ -112,7 +113,9 @@ $(document).ready(function() {
     }
 
     function inputPartialForm(divName){
+      var biaName = document.getElementById('bussinessNameId').value;//ini perlu karena nama bia ga masuk form
       var temporaryDiv = document.getElementById(divName);
+      console.log(biaName);
         $.ajax({
             url:'/BCM/bia/make/'+divName,
             type:'post',

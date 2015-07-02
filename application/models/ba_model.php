@@ -38,11 +38,8 @@ class BA_Model extends DataMapper {
 
     function addDetailsBusAct($data){
         $ba = new BA_Model();
-        $ba->number = $data['number'];
         $ba->name = $data['name'];
         $ba->description = $data['description'];
-        $ba->critical_time_per = $data['cto'];
-        $ba->rto = $data['rto'];
 
         $ba->less_4h = $data['less_4h'];
         $ba->less_1d = $data['less_1d'];
@@ -51,19 +48,17 @@ class BA_Model extends DataMapper {
         $ba->less_7d = $data['less_7d'];
         $ba->more_7d = $data['more_7d'];
 
-        $ba->type_less_4h = $data['type_less_4h'];
-        $ba->type_less_1d = $data['type_less_1d'];
-        $ba->type_less_2d = $data['type_less_2d'];
-        $ba->type_less_3d = $data['type_less_3d'];
-        $ba->type_less_7d = $data['type_less_7d'];
-        $ba->type_more_7d = $data['type_more_7d'];
+        $ba->non_less_4h = $data['non_less_4h'];
+        $ba->non_less_1d = $data['non_less_1d'];
+        $ba->non_less_2d = $data['non_less_2d'];
+        $ba->non_less_3d = $data['non_less_3d'];
+        $ba->non_less_7d = $data['non_less_7d'];
+        $ba->non_more_7d = $data['non_more_7d'];
+     
+        $ba->critical_time_per = $data['cto'];
+        $ba->cto_notes = $data['cto_notes'];
+        $ba->rto = $data['rto'];
 
-        $ba->non_type_less_4h = $data['non_type_less_4h'];
-        $ba->non_type_less_1d = $data['non_type_less_1d'];
-        $ba->non_type_less_2d = $data['non_type_less_2d'];
-        $ba->non_type_less_3d = $data['non_type_less_3d'];
-        $ba->non_type_less_7d = $data['non_type_less_7d'];
-        $ba->non_type_more_7d = $data['non_type_more_7d'];
 
         return $ba;
     }

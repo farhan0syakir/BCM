@@ -41,7 +41,7 @@
                                             View <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></td>				      
 											<td  class=" text-right"><a class="edit-button-gap crud" href="<?php echo base_url('bu/edit/').'/'.$bia[$i]->id;?>">
 											Edit <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></td>
-											<td  class="td-button text-right"><a class="delete-button-gap crud" href="<?php echo base_url('bu/delete/').'/'.$bia[$i]->id;?>">
+											<td  class="td-button text-right"><a class="delete-button-gap crud" href="#" data-target="#delete-bu" data-toggle="modal">
 											Delete <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
 										</tr>
 										<?php endfor; ?>
@@ -56,109 +56,27 @@
                     <!-- /.panel -->
                 </div>
 			</div>
+
+                <div class="modal fade" id="delete-bu">
+                  <div class="top-padding modal-dialog">
+                    <div class="top-gap modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title text-center">Delete Business Unit</h4>
+                      </div>
+                      <div class="text-center left-gap right-gap modal-body">
+                        <h5>Are you sure want to delete 'Treasury and Capital Management' from Business Units? </h5>
+                        
+                      </div>
+                      <div class="top-gap-narrow bottom-gap-narrow modal-footer text-center">
+                        <a data-dismiss="modal" href="#" class="delete-button-gap">Cancel</a>
+                        <a data-dismiss="modal" href="#" class="button-gap">Delete</a>
+                      </div>
+                    </div><!-- /.modal-content -->
+                  </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
 		
-		<!--div class="row">
-                <div class=" col-lg-12">
-                    <h3 class="title page-header">IT Requirements</h3>
-                </div>
-                <!-- /.col-lg-12 -->
-            
-                <!-- /.col-lg-4 -->
-             <!--/div>
-			
-			<div class="row">
-				<div class="col-lg-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4>List of Software Requirements</h4>
-                        </div>
-                        <!-- /.panel-heading -->
-                        <!--div class="panel-body">
-                            <div class="table-responsive">
-                                <table class="table table-striped">
-                                    <thead>
-                                        <tr class="tr-gap">
-                                            <th>#</th>
-                                            <th>System Application Software</th>
-                                            <th>RTO</th>
-											<th>RPO</th>
-											<th>Alt Manual Method </th>
-                                             <th></th>
-											  <th></th>
-                                              <th class="th-gap"><a class="button-gap crud">Create New</a></th>
-                                        </tr>
-                                    </thead>
 
-								   	<tbody>
-										<?php for ($i = 0; $i < count($bia); $i++ )  : ?>
-									   <tr class="tr-gap">
-									       <td><?php echo $i+1?></td>
-									       <td><?php echo $bia[$i]->name;?></td>
-										   <td>10 hours</td>
-									       <td>15 minutes</td>
-										   <td>Sambungin ke Idung Ente</td>
-											 <td><a class="view-button-gap crud" href="<?php echo base_url('index.php/bia_controller/view/').'/'.$bia[$i]->id;?>">View</a></td>
-											<td><a class="edit-button-gap crud" href="<?php echo base_url('index.php/bia_controller/edit/').'/'.$bia[$i]->id;?>">Edit</a></td>
-											<td><a class="delete-button-gap crud" href="<?php echo base_url('index.php/bia_controller/edit/').'/'.$bia[$i]->id;?>">Delete</a></td>
-										</tr>
-										<?php endfor; ?>
-									</tbody>
-									
-                                </table>
-                            </div>
-                            <!-- /.table-responsive -->
-                        <!--/div>
-                        <!-- /.panel-body -->
-						
-						
-						
-                    <!--/div>
-                    <!-- /.panel -->
-                <!--/div>
-			</div>
-			
-							<div class="row">
-				<div class="col-lg-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4>List of Hardware Requirements</h4>
-                        </div>
-                        <!-- /.panel-heading -->
-                        <!--div class="panel-body">
-                            <div class="table-responsive">
-                                <table class="table table-striped">
-                                    <thead>
-                                        <tr class="tr-gap">
-                                            <th>#</th>
-                                            <th>System Application Software</th>
-                                            <th>RTO</th>
-											<th>RPO</th>
-											<th>Alt Manual Method </th>
-                                               <th></th>
-											  <th></th>
-                                              <th class="th-gap"><a class="button-gap crud">Create New</a></th>
-                                        </tr>
-                                    </thead>
-
-								   	<tbody>
-										<?php for ($i = 0; $i < count($bia); $i++ )  : ?>
-									   <tr class="tr-gap">
-									       <td><?php echo $i+1?></td>
-									       <td><?php echo $bia[$i]->name;?></td>
-										   <td>10 hours</td>
-									       <td>15 minutes</td>
-										   <td>Sambungin ke Idung Ente</td>
-										 <td><a class="view-button-gap crud" href="<?php echo base_url('index.php/bia_controller/view/').'/'.$bia[$i]->id;?>">View</a></td>
-											<td><a class="edit-button-gap crud" href="<?php echo base_url('index.php/bia_controller/edit/').'/'.$bia[$i]->id;?>">Edit</a></td>
-											<td><a class="delete-button-gap crud" href="<?php echo base_url('index.php/bia_controller/edit/').'/'.$bia[$i]->id;?>">Delete</a></td>
-										</tr>
-										<?php endfor; ?>
-									</tbody>
-									
-                                </table>
-                            </div-->
-                            <!-- /.table-responsive -->
-                        </div-->
                         <!-- /.panel-body -->
 						
 						

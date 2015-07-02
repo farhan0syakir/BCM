@@ -1,70 +1,196 @@
-
-            <div class="row top-space" >
-				<div  class="content-wrapper">
-				        <h3 class="title title-header">	
-						 <a class="back-button-gap" href="<?php echo base_url('role') ?>">
-						<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-						</a>Edit User</h3>
-								     <!-- /.col-lg-6 -->
-									<div class="col-lg-12">
-										<div class="panel panel-default">
-										
-											<div class="panel-body">
-												<div class="row">
-													<div class="col-lg-12">
-														<form role="form">
-															<div class="form-group">
-																<label class="label-bold">Role</label>
-																<select class="form-control" placeholder="Select Role">
-																		  <option value="Manajer">Manajer</option>
-																		  <option value="Tim Perumus">Tim Perumus</option>
-																		  <option value="Staff">Staff</option>
-																		  <option value="Admin" selected>Admin</option>
-																</select>
-																<!--p class="help-block">Example block-level help text here.</p-->
-															</div>
-																					
-															<div class="form-group">
-																<label class="label-bold">Username</label>
-																<input class="form-control" placeholder="enter username here. ex:john.doe"/>
-															</div>
-															<div class="form-group">
-																<label class="label-bold">Password</label>
-																<input type="password" class="form-control" placeholder="enter password here">
-															</div>
-															<div class="form-group">
-																<label class="label-bold">Verify Password</label>
-																<input type="password" class="form-control" placeholder="retype password here">
-															</div>
-												   
-															<div class="top-gap row">
-																				<div class="col-lg-6 text-left" >
-																					<a  class="delete-button-gap">
-																					<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-																					Cancel
-																					</a>
-																				</div>
-																				<div class="col-lg-6 text-right" >
-																					<a class="button-gap" data-toggle="tab" href="#alt">Save User
-																					<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-																					</a>
-																				</div>
-																			</div>
-														</form>
-													</div>
-
-													<!-- /.col-lg-6 (nested) -->
-												</div>
-												<!-- /.row (nested) -->
-											</div>
-											<!-- /.panel-body -->
-										</div>
-										<!-- /.panel -->
-									</div>
-									<!-- /.col-lg-12 -->
-				
-						</div>				
-			
-					</div>
-				</div>
-
+<div  class="row">
+    <div class=" col-lg-12">
+         <h3 class="title page-header">Setting</h3>
+     </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">        
+            <div class="panel-heading">
+                <h4>Buisiness Unit</h4>
+            </div>                               
+             <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr class="tr-gap">
+                               <th class="col-md-3">Date</th>
+                                <th class="col-md-3">Version</th> 
+                                <th class="col-md-3"></th> 
+                                <th class="col-md-3 text-right">
+                                    <a class="button-gap crud"  data-toggle="modal" data-target="#add" href="#">
+                                     Add New Version<span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
+                                     <div class="modal fade" id="add">
+                                        <div class="top-padding modal-dialog">
+                                            <div class="top-gap modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                                    <h4 class="modal-title text-center">Add New Version</h4>
+                                                </div>
+                                                 <div class="text-center left-gap right-gap modal-body">
+                                                    <input type ="Date" class="form-control" placeholder="Date">
+                                                </div>
+                                                <div class="text-center left-gap right-gap modal-body">
+                                                     <input type="version" class="form-control" placeholder="version">
+                                                </div>
+                                                <div class="top-gap-narrow bottom-gap-narrow modal-footer text-center">
+                                                     <a class="button-gap">Save<span class="glyphicon glyphicon-ok" aria-hidden="true"></span></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>  
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="tr-gap-upper odd" role="row">
+                               <td class="sorting_1">21 Agustus 2015</td>
+                               <td class="td-title ">Ver.1</td>
+                               <td class="td-button text-center"><a class="edit-button-gap crud"  data-toggle="modal" data-target="#edit1" href="#">
+                                Edit <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                                 <div class="modal fade" id="edit1">
+                                        <div class="top-padding modal-dialog">
+                                            <div class="top-gap modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                                    <h4 class="modal-title text-center">Edit Version 'Ver.1'</h4>
+                                                </div>
+                                                 <div class="text-center left-gap right-gap modal-body">
+                                                    <input type ="Date" class="form-control" placeholder="Date">
+                                                </div>
+                                                <div class="text-center left-gap right-gap modal-body">
+                                                     <input type="version" class="form-control" placeholder="version">
+                                                </div>
+                                                <div class="top-gap-narrow bottom-gap-narrow modal-footer text-center">
+                                                     <a class="button-gap">Save<span class="glyphicon glyphicon-ok" aria-hidden="true"></span></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>  
+                                </td>
+                                <td class="td-button text-right">
+                                    <a class="delete-button-gap crud" data-toggle="modal" data-target="#delete1" href="#">
+                                      Delete <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                    </a>
+                                    <div class="modal fade" id="delete1">
+                                        <div class="top-padding modal-dialog">
+                                            <div class="top-gap modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                                    <h4 class="modal-title text-center">Delete Version</h4>
+                                                </div>
+                                                <div class="text-center left-gap right-gap modal-body">
+                                                    <h5>Are you sure want to delete 'Ver.1' from List of Version? </h5>
+                                                </div>
+                                                <div class="top-gap-narrow bottom-gap-narrow modal-footer text-center">
+                                                    <a data-dismiss="modal" href="#" class="delete-button-gap">Cancel</a>
+                                                    <a data-dismiss="modal" href="#" class="button-gap">Delete</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="tr-gap-upper even" role="row">
+                               <td class="sorting_1">21 Agustus 2016</td>
+                               <td class="td-title">Ver.2</td>
+                                <td class="td-button text-center"><a class="edit-button-gap crud"  data-toggle="modal" data-target="#edit2" href="#">
+                                Edit <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                                 <div class="modal fade" id="edit2">
+                                        <div class="top-padding modal-dialog">
+                                            <div class="top-gap modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                                    <h4 class="modal-title text-center">Edit Version 'Ver.2'</h4>
+                                                </div>
+                                                 <div class="text-center left-gap right-gap modal-body">
+                                                    <input type ="Date" class="form-control" placeholder="Date">
+                                                </div>
+                                                <div class="text-center left-gap right-gap modal-body">
+                                                     <input type="version" class="form-control" placeholder="version">
+                                                </div>
+                                                <div class="top-gap-narrow bottom-gap-narrow modal-footer text-center">
+                                                     <a class="button-gap">Save<span class="glyphicon glyphicon-ok" aria-hidden="true"></span></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>  
+                                </td>
+                                <td class="td-button text-right">
+                                    <a class="delete-button-gap crud" data-toggle="modal" data-target="#delete2" href="#">
+                                      Delete <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                    </a>
+                                    <div class="modal fade" id="delete2">
+                                        <div class="top-padding modal-dialog">
+                                            <div class="top-gap modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                                    <h4 class="modal-title text-center">Delete Version</h4>
+                                                </div>
+                                                <div class="text-center left-gap right-gap modal-body">
+                                                    <h5>Are you sure want to delete 'Ver.2' from List of Version? </h5>
+                                                </div>
+                                                <div class="top-gap-narrow bottom-gap-narrow modal-footer text-center">
+                                                    <a data-dismiss="modal" href="#" class="delete-button-gap">Cancel</a>
+                                                    <a data-dismiss="modal" href="#" class="button-gap">Delete</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="tr-gap-upper odd" role="row">
+                               <td class="sorting_1">21 Agustus 2017</td>
+                               <td class="td-title">Ver.3</td>
+                                <td class="td-button text-center"><a class="edit-button-gap crud"  data-toggle="modal" data-target="#edit3" href="#">
+                                Edit <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                                 <div class="modal fade" id="edit3">
+                                        <div class="top-padding modal-dialog">
+                                            <div class="top-gap modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                                    <h4 class="modal-title text-center">Edit Version 'Ver.1'</h4>
+                                                </div>
+                                                 <div class="text-center left-gap right-gap modal-body">
+                                                    <input type ="Date" class="form-control" placeholder="Date">
+                                                </div>
+                                                <div class="text-center left-gap right-gap modal-body">
+                                                     <input type="version" class="form-control" placeholder="version">
+                                                </div>
+                                                <div class="top-gap-narrow bottom-gap-narrow modal-footer text-center">
+                                                     <a class="button-gap">Save<span class="glyphicon glyphicon-ok" aria-hidden="true"></span></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>  
+                                </td>
+                                <td class="td-button text-right">
+                                    <a class="delete-button-gap crud" data-toggle="modal" data-target="#delete3" href="#">
+                                      Delete <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                    </a>
+                                    <div class="modal fade" id="delete3">
+                                        <div class="top-padding modal-dialog">
+                                            <div class="top-gap modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                                    <h4 class="modal-title text-center">Delete Version</h4>
+                                                </div>
+                                                <div class="text-center left-gap right-gap modal-body">
+                                                    <h5>Are you sure want to delete 'Ver.3' from List of Version? </h5>
+                                                </div>
+                                                <div class="top-gap-narrow bottom-gap-narrow modal-footer text-center">
+                                                    <a data-dismiss="modal" href="#" class="delete-button-gap">Cancel</a>
+                                                    <a data-dismiss="modal" href="#" class="button-gap">Delete</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

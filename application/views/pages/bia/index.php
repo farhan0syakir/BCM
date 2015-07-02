@@ -24,7 +24,7 @@
                                 <th>#</th>
                                 <th>Business Activity</th>
                                 <th class="td-button"></th>
-								  <th class="td-button"></th>
+								<th></th>
                                 <th class="td-button th-gap text-right"><a href="<?php echo base_url('bia/create') ?>" class="button-gap crud">
 								New <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></th>
                             </tr>

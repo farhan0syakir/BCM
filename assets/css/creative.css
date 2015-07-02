@@ -1,4 +1,4 @@
-f/*!
+/*!
  * Start Bootstrap - Creative Bootstrap Theme (http://startbootstrap.com)
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
@@ -2093,6 +2093,11 @@ th .th-gap
     padding-top: 10%;
 }
 
+.top-padding-narrow
+{
+    padding-top: 1.5%;
+}
+
 .bottom-gap
 {
 	margin-bottom:40px;
@@ -2259,7 +2264,7 @@ tr
 
 .td-button
 {
-	max-width:60px;
+	max-width:100px;
 }
 
 .td-title
@@ -2295,6 +2300,22 @@ text-align:center;
 }
 
 .a-forth{
-  max-width:50%;
+  max-width:25%;
   min-height:40px;
+}
+
+.sorting_1{
+  max-width: 50px;
+}
+
+select{
+    min-width:50px;
+    font-size:12pt;
+}
+.dataTables_length{
+    font-size:12pt;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: #16a085;
+    margin-bottom:5%:;
 }

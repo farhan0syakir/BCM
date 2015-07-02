@@ -1,6 +1,9 @@
 <div class="row top-space" >
 	<div  class="content-wrapper">
-		<h3 class="title title-header">Business Activity 1</h3>
+		<h3 class="title title-header">
+		<a class="back-button-gap" href="<?php echo base_url('bia') ?>">
+		<span class="glyphicon glyphicon-chevron-left" aria-hidden="true">
+		</span></a>Business Activity 1</h3>
 		<div class="col-lg-12">
 			<div class="panel panel-default">										
 				<div class="panel-body">
@@ -62,32 +65,39 @@
 					</div>
 				</div>
 			</div>
+
+			<div class="row text-center" >
+					<ul class="tab-switch nav nav-tabs text-center">
+						
+						<li class="tab-gap tab active">
+							<a data-toggle="tab" href="#alt">Alt Methods</a>
+						</li>
+						<li class="tab-gap tab">
+							<a data-toggle="tab" href="#dep">Dependencies</a>
+						</li>
+						<li class="tab-gap tab">
+							<a  data-toggle="tab" href="#norm">MOR Resource </a>
+						</li>
+						<li class="tab-gap tab">
+							<a  data-toggle="tab" href="#it">MOR IT</a>
+						</li>
+						<li class="tab-gap tab">
+							<a  data-toggle="tab" href="#nonit">MOR Non-IT </a>
+						</li>
+						<li class="tab-gap tab">
+							<a  data-toggle="tab" href="#rec">MOR Others</a>
+						</li>
+					</ul>	
+				</div>
+
 		</div>
+	</div>
+		
 		
 		<div class="detail">
-			<ul class="tab-switch nav nav-tabs">
-				<li class="tab-gap tab active">
-					<a class="learntab" data-toggle="tab" href="#alt">Alternative Methods</a>
-				</li>
-				<li class="tab-gap tab">
-					<a data-toggle="tab" href="#dep">Dependencies</a>
-				</li>
-				<li class="tab-gap tab">
-					<a  data-toggle="tab" href="#norm">Resource Staff </a>
-				</li>
-				
-				<li class="tab-gap tab">
-					<a  data-toggle="tab" href="#it">IT Requirements</a>
-				</li>
-				<li class="tab-gap tab">
-					<a  data-toggle="tab" href="#nonit">Non-IT Requirements</a>
-				</li>
-				<li class="tab-gap tab">
-					<a  data-toggle="tab" href="#rec">Clerical Requirements</a>
-				</li>
-								
-			</ul>
 			
+				
+
 				<div class=" tab tab-content">
 					<div id="alt" class="tab-pane fade in active">
 						<div class="col-lg-12">
@@ -96,7 +106,7 @@
 									<div class="row">
 										<div class="col-lg-6">
 											<table  class="bia-detail">
-												<tr class="tr-gap">
+												<tr >
 													<td class="td-label">
 														<label class="label-bold">Alternative Methods</label>
 													</td>
@@ -641,7 +651,10 @@
 							</div>
 						</div>
 				</div>
-		</div>				
-	</div>
+		</div>
+
+
+
+	
 </div>
 

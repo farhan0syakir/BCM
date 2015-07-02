@@ -1994,9 +1994,20 @@ li.ganjil
 
 }
 
+.tab:hover
+{
+    background-color: white;
+}
+
+.tab> a:hover{
+    border-radius: 0px;
+    background-color: white;
+}
+
 
 .title-header {
-  padding-bottom: 20px;
+  padding-top:10px;
+ 
   width:100%;
   float:center;
   border-bottom: 1px solid #eee;
@@ -2087,6 +2098,11 @@ th .th-gap
 	margin-top:40px;
 
 }
+.top-gap-narrow
+{
+    margin-top:10px;
+
+}
 
 .top-padding
 {
@@ -2123,8 +2139,11 @@ th .th-gap
 
 .button-gap
 {
-	margin-top:3px;
-	margin:10px;
+	
+	margin-top:10px;
+    margin-bottom:10px;
+    margin-left:0px;
+    margin-right:0px;
 
     padding:10px;
 	background-color:#3498db;
@@ -2143,7 +2162,10 @@ th .th-gap
 
 .view-button-gap
 {
-	margin:10px;
+	margin-top:10px;
+    margin-bottom:10px;
+    margin-left:0px;
+    margin-right:0px;
     padding:10px;
 	background-color:#2ecc71;
 	border-radius:5px;
@@ -2162,7 +2184,10 @@ th .th-gap
 
 .edit-button-gap
 {
-	margin:10px;
+	margin-top:10px;
+    margin-bottom:10px;
+    margin-left:0px;
+    margin-right:0px;
     padding:10px;
 	background-color:#9b59b6;
 	border-radius:5px;
@@ -2202,7 +2227,10 @@ th .th-gap
 
 .delete-button-gap
 {
-	margin:10px;
+	margin-top:10px;
+    margin-bottom:10px;
+    margin-left:0px;
+    margin-right:0px;
     padding:10px;
 	background-color:#e74c3c;
 	border-radius:5px;
@@ -2221,9 +2249,14 @@ th .th-gap
 
 .tab-switch
 {
-	height:125px;
+	height:43px;
 	margin:15px;
 	padding:0px;
+    border-style:block;
+    border-width:1pt;
+    color:red;
+    background-color: #1abc9c;
+    border-radius: 5px;
 	
 }
 
@@ -2232,8 +2265,20 @@ th .th-gap
 	background-color:transparent;
 	max-height:70px;
 	text-decoration:none;
+    font-weight: bold;
+   
+
 }
 
+li.tab-gap > a{
+     font-color:#ffffff; 
+     color:#ffffff;
+}
+
+li.tab-gap > a:hover{
+     font-color:#1abc9c; 
+     color:#1abc9c;
+}
 .num
 
 {
@@ -2264,7 +2309,13 @@ tr
 
 .td-button
 {
-	max-width:100px;
+	max-width:70px;
+    min-width: 0px;
+}
+
+.td-button-long
+{
+    max-width:80px;
 }
 
 .td-title
@@ -2308,14 +2359,36 @@ text-align:center;
   max-width: 50px;
 }
 
+/* CSS untuk Search/Filter */
 select{
     min-width:50px;
     font-size:12pt;
 }
 .dataTables_length{
     font-size:12pt;
-    border-bottom-style: solid;
-    border-bottom-width: 2px;
-    border-bottom-color: #16a085;
+ 
     margin-bottom:5%:;
+}
+
+.dataTables_filter{
+    font-size:12pt;
+ 
+    margin-bottom:5%:;
+}
+
+.dataTables_info{
+    font-size:12pt;
+
+    margin-top:10px:;
+}
+
+.dataTables_paginate{
+    font-size:12pt;
+ 
+    margin-top:5%:;
+}
+
+.green-bg
+{
+    background-color: green;
 }

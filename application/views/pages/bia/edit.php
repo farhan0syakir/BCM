@@ -9,7 +9,7 @@
 		<h3 class="title title-header">	
 		<a class="back-button-gap" href="<?php echo base_url('bia') ?>">
 		<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-		</a>Create New Business Activity</h3>
+		</a>Edit Business Activity</h3>
 		<div class="detail text-">
 			<ul class="tab-switch nav nav-tabs text-center">
 				<li class="tab-gap tab active">
@@ -65,11 +65,11 @@
 											</select>
 										</div>
 										<div class="form-group">
-											<label class="label-bold">Business Activity Code</label>
+											<label class="label-bold" value="TCM-001">Business Activity Code</label>
 											<input name="bussinessUnitCode" class="form-control" placeholder="Input the name of business activity here!">
 										</div>
 										<div class="form-group">
-											<label class="label-bold">Business Activity</label>
+											<label class="label-bold" value="Makan Kerupuk Pake Sendok">Business Activity</label>
 											<input name="bussinessActivity" class="form-control" placeholder="Input the name of business activity here!">
 										</div>
 										<div class="form-group">
@@ -163,10 +163,9 @@
 													</a>
 												</div>
 												<div class="col-lg-6 text-right" >
-													<a class="button-gap" data-toggle="tab" href="#alt">Next
-														<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-													</a>
-												</div>
+												<a class="edit-button-gap" data-toggle="tab" href="#alt">Next
+												<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+											</div>
 											</div>
 										</table>
 									</div>
@@ -189,8 +188,9 @@
 											<tr class="tr-gap">
 												<td>
 													<div class="form-group" id="alternativeMethodsId">
-														<label class="label-bold">Add Alternative Methods/Contingency Plans</label>
-														<input class="form-control" placeholder="Input the contingency plan here!">
+														<label class="label-bold">Edit Alternative Methods/Contingency Plans</label>
+														<input class="form-control" value="Contingency plan 1">
+														<input class="top-paddding-narrow form-control" value="Contingency plan 2">
 													</div>	
 													<div class="row  bottom-gap-narrow">
 														<div class="col-lg-12 text-right">
@@ -358,7 +358,7 @@
 										<table  class="bia-detail">
 											<tr class="tr-gap">
 												<td>
-													<div class="form-group text-center">
+													<div class="row text-center">
 														<label class="label-bold "><h4 class="title-header ">Normal</h4></label>
 													</div>
 													<div class="form-group">

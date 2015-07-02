@@ -2307,3 +2307,15 @@ text-align:center;
 .sorting_1{
   max-width: 50px;
 }
+
+select{
+    min-width:50px;
+    font-size:12pt;
+}
+.dataTables_length{
+    font-size:12pt;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: #16a085;
+    margin-bottom:5%:;
+}

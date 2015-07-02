@@ -39,10 +39,8 @@
 
 						       <td  class="td-button text-right"><a class="view-button-gap crud" href="<?php echo base_url('bia/view/').'/'.$bia[$i]->id;?>">
 							   View <span class="glyphicon glyphicon-check" aria-hidden="true"></span></a></td>
-								<td  class="td-button text-center"><a class="edit-button-gap crud" href="<?php echo base_url('bia/edit/').'/'.$bia[$i]->id;?>">
 								<td  class="td-button text-right"><a class="edit-button-gap crud" href="<?php echo base_url('bia/edit/').'/'.$bia[$i]->id;?>">
 								Edit <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></td>
-								<td  class="td-button text-right"><a class="delete-button-gap crud" data-toggle="modal" data-target="#modalDeleteId" href="#" >
 								<td  class="td-button-long text-right"><a class="delete-button-gap crud" data-toggle="modal" data-target="#modalDeleteId" href="#" >
 								Delete <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
 							</tr>

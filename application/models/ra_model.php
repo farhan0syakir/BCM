@@ -2,7 +2,7 @@
 
 class RA_Model extends DataMapper {
 
-    var $table = 'ra';
+    var $table = 'risk_assesment';
     // var $has_many = array("ra_vulnerability_model");
     // var $has_one = array("ba_model");
 

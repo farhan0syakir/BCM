@@ -20,11 +20,14 @@
                     <a href="#"><img class="notif" src="<?php echo base_url('assets/images/approve.png')?>"></a>
                 </li>
                 <ul class="dropdown-menu" >
-					    <li><a href="#">Action</a></li>
-					    <li><a href="#">Another action</a></li>
-					    <li><a href="#">Something else here</a></li>
+					    <li class="text-right"><a href="#">Business Activity TCM-006 you created has been approved<br>
+					    <p style="font-size:10pt;color:orange;" href="#">View</p></a></li>
+					     <li class="text-right"><a href="#">Business Activity TCM-005 you created has been approved<br>
+					    <p style="font-size:10pt;color:orange;" href="#">View</p></a></li>
+					     <li class="text-right"><a href="#">Business Activity TCM-004 you created has been approved<br>
+					    <p style="font-size:10pt;color:orange;" href="#">View</p></a></li>
 					    <li role="separator" class="divider"></li>
-					    <li><a href="#">Separated link</a></li>
+					    <li class="text-center"><a href="#">List of Approvals <span class="left-gap glyphicon glyphicon-option-horizontal" aria-hidden="true"></span> </a></li>
 				</ul>
 				</div>
 
@@ -33,24 +36,26 @@
 	                    <a class="no-padding " href="#"><img class="notif" src="<?php echo base_url('assets/images/notif.png')?>"></a>
 	                </li>
 	                <ul class="dropdown-menu" >
-					    <li><a href="#">Action</a></li>
-					    <li><a href="#">Another action</a></li>
-					    <li><a href="#">Something else here</a></li>
+					    <li class="text-right"><a href="#">SOP for Fire has been activated<br>
+					    <p style="font-size:10pt;color:orange;" href="#">See instructions</p></a></li>
+					    <li class="text-right"><a href="#">SOP for Flood has been activated<br>
+					    <p style="font-size:10pt;color:orange;" href="#">See instructions</p></a></li>
+					    <li class="text-right"><a href="#">SOP for System Down has been activated<br>
+					    <p style="font-size:10pt;color:orange;" href="#">See instructions</p></a></li>
 					    <li role="separator" class="divider"></li>
-					    <li><a href="#">Separated link</a></li>
-					</ul>
+					    <li class="text-center"><a href="#">See all notifications <span class="left-gap glyphicon glyphicon-option-horizontal" aria-hidden="true"></span> </a></li>
+				</ul>
 				</div>
 				
 				<div class="top-padding-narrow btn-group">
 	                <li  class="no-padding " data-toggle="dropdown" data-target="#notification">
-	                    <a class="no-padding " href="#"><img class="notif" src="<?php echo base_url('assets/images/notif.png')?>"></a>
+	                    <a class="no-padding " href="#"><img class="notif" src="<?php echo base_url('assets/images/user.png')?>"></a>
 	                </li>
 	                <ul class="dropdown-menu" >
-					    <li><a href="#">Action Solalalalalalalalllllllllllllllllllllllllllll</a></li>
-					    <li><a href="#">Another action</a></li>
-					    <li><a href="#">Something else here</a></li>
+					    <li><a href="#">Account</a></li>
+					    <li><a href="#">My Work</a></li>
 					    <li role="separator" class="divider"></li>
-					    <li><a href="<?php echo base_url('login/logout')?>">Logout</a></li>
+					    <li class="text-center"><a href="<?php echo base_url('login/logout')?>">Logout</a></li>
 					</ul>
 				</div>
 			</ul>

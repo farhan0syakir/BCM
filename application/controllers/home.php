@@ -1,14 +1,9 @@
 <?php
 class Home extends CI_Controller {
-
-	public function index()
+	
+	function index()
 	{
-		$this->load->library('../controllers/bia');
-		$this->bia->index();
-	}
-
-	public function comments()
-	{
-		echo 'Look at this!';
+		$this->load->library('../controllers/login');
+		$this->login->index();
 	}
 }

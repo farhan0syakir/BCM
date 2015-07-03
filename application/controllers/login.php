@@ -1,55 +1,82 @@
 <?php
+session_start();
+
 class Login extends CI_Controller {
 
-	public function index(){
-		$data['ra'] = $this->get();
-		$this->load->template('pages/ra/index',$data);
+	public function __construct() {
+		parent::__construct();
+
+		$this->load->helper('form');
+		$this->load->library('form_validation');
+		$this->load->library('session');
+		$this->load->model('login_model');
 	}
 
-	public function view($id){
+	function index() {
+	//$this->load->template('pages/login/index');
+	$this->load->template('pages/login/index');
+	}
+  
+	function process() {
+        /*$loginobject = new Login_Model();
+		$loginobject -> where ('username', 'admin')->get();
+		$username = $loginobject -> username;
+		$password = $loginobject -> password;
+		*/
+		/*$result = $this->input->post();
+		print_r($result);
+		echo "hello";
+die();*/
+		$this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
+		$this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean');
 		
-		$this->load->template('pages/ra/view',$id);
-	}
-	
-	public function edit($id){
-		$this->load->template('pages/ra/edit',$id);
-	}
 
-	public function delete($id){	
-		$this->load->template('pages/ra/delete',$id);
-	}
+		if ($this->form_validation->run() == FALSE) {
+			if(isset($this->session->userdata['logged_in'])){
+				$this->load->template('pages/bia');
+			}else{
+				$this->load->template('pages/login/index');
+			}
+		} else {
+			$data = array(
+				'username' => $this->input->post('username'),
+				'password' => $this->input->post('password')
+			);
+		
+			$result = $this->login_model->login($data);
+			
+		
+			if ($result == TRUE) {
 
-	public function create(){
-		$this->load->template('pages/ra/create');
-		// die();
-		$ra = new RA_Model();
-		$data['raImpact'] = $ra->getRaImpact();
-		$data['raProbability'] = $ra->getRaProbability();
-		$this->load->template('pages/ra/form',$data);
-	}
+				$username = $this->input->post('username');
+				//$result = $this->login_model->
+				
+				//$result = new Login_Model();
+				//$result->where("username",$username)->get();
 
-	function get(){
-		$ra = new RA_Model();
-		$result = $ra->getAll();
-		// print_r($result);
-		return $result;
+
+					if ($result != false) {
+						$session_data = array('username' => $result->username);
+					
+						$this->session->set_userdata('logged_in', $session_data);
+					  	redirect('bia/index');
+					}
+			
+			} else {
+				$data = array(
+				'error_message' => 'Invalid Username or Password'
+				);
+				$this->load->template('pages/login/index', $data);
+			}
+		}
 	}
-	
-	function add(){
-		$ra = new RA_Model();
-		$data['bia'] = $this->input->post('bia');
-		$data['threat'] = $this->input->post('threat');
-		$data['p'] = $this->input->post('P');
-		$data['i'] = $this->input->post('I');
-		$data['pm'] = $this->input->post('Pm');
-		$data['im'] = $this->input->post('Im');
-		$data['vulnerabilities'] = $this->input->post('vulnerabilities');
-		$data['existingMeasures'] = $this->input->post('existingMeasures');
-		$data['proposedMeasures'] = $this->input->post('proposedMeasures');
-		print_r($data);
-		die();
-		$isSuccessAddToDatabase = $ra->add($data);
-		$this->index();
-		// print_r($data);
-	}
+ 
+    function logout() {
+		$sess_array = array('username' => '');
+		
+		$this->session->unset_userdata('logged_in', $sess_array);
+		$data['message_display'] = 'Successfully Logout';
+		
+		$this->load->template('pages/login/index', $data);
+    }
 }

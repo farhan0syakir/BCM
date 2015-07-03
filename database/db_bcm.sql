@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.2.11
+-- version 4.2.12deb2
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Jul 01, 2015 at 04:17 AM
--- Server version: 5.6.21
--- PHP Version: 5.6.3
+-- Host: localhost
+-- Generation Time: Jul 03, 2015 at 02:28 PM
+-- Server version: 5.6.24-0ubuntu2
+-- PHP Version: 5.6.4-4ubuntu6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -27,10 +27,23 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `alternative_method` (
-  `id_ba_alternative` varchar(20) NOT NULL,
-  `name_ba_alternative` varchar(200) NOT NULL,
-  `alt_method` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+`id` int(20) NOT NULL,
+  `ba_id` int(11) NOT NULL,
+  `alternative_method` text NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `alternative_method`
+--
+
+INSERT INTO `alternative_method` (`id`, `ba_id`, `alternative_method`) VALUES
+(1, 0, 'alt 1'),
+(2, 0, 'alter meth 1'),
+(3, 0, 'alalaaasi dfgaisf'),
+(4, 21, 'satu'),
+(5, 21, 'dua'),
+(6, 21, 'satu'),
+(7, 21, 'dua');
 
 -- --------------------------------------------------------
 
@@ -39,43 +52,43 @@ CREATE TABLE IF NOT EXISTS `alternative_method` (
 --
 
 CREATE TABLE IF NOT EXISTS `business_activity` (
-  `id` varchar(20) NOT NULL,
+`id` int(20) NOT NULL,
   `name` varchar(200) NOT NULL,
   `description` text NOT NULL,
-  `less_4h` float NOT NULL,
-  `type_less_4h` int(11) NOT NULL,
-  `less_1d` float NOT NULL,
-  `type_less_1d` int(11) NOT NULL,
-  `less_2d` float NOT NULL,
-  `type_less_2d` int(11) NOT NULL,
-  `less_3d` float NOT NULL,
-  `type_less_3d` int(11) NOT NULL,
-  `less_7d` float NOT NULL,
-  `type_less_7d` int(11) NOT NULL,
-  `more_7d` float NOT NULL,
-  `type_more_7d` int(11) NOT NULL,
-  `non_type_less_4h` int(11) NOT NULL,
-  `non_type_less_1d` int(11) NOT NULL,
-  `non_type_less_2d` int(11) NOT NULL,
-  `non_type_less_3d` int(11) NOT NULL,
-  `non_type_less_7d` int(11) NOT NULL,
-  `non_type_more_7d` int(11) NOT NULL,
+  `less_4h` int(11) NOT NULL,
+  `less_1d` int(11) NOT NULL,
+  `less_2d` int(11) NOT NULL,
+  `less_3d` int(11) NOT NULL,
+  `less_7d` int(11) NOT NULL,
+  `more_7d` int(11) NOT NULL,
+  `non_less_4h` int(11) NOT NULL,
+  `non_less_1d` int(11) NOT NULL,
+  `non_less_2d` int(11) NOT NULL,
+  `non_less_3d` int(11) NOT NULL,
+  `non_less_7d` int(11) NOT NULL,
+  `non_more_7d` int(11) NOT NULL,
   `critical_time_per` text,
+  `cto_notes` text NOT NULL,
   `rto` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `business_activity`
 --
 
-INSERT INTO `business_activity` (`id`, `name`, `description`, `less_4h`, `type_less_4h`, `less_1d`, `type_less_1d`, `less_2d`, `type_less_2d`, `less_3d`, `type_less_3d`, `less_7d`, `type_less_7d`, `more_7d`, `type_more_7d`, `non_type_less_4h`, `non_type_less_1d`, `non_type_less_2d`, `non_type_less_3d`, `non_type_less_7d`, `non_type_more_7d`, `critical_time_per`, `rto`) VALUES
-('1', 'Liquidity Management MM; GWM', 'Maintaining Bank''s Primary & Secondary Reserve Requirement for Rupiah and Primary Reserve Requirement for Foreign Currency in accordance with BI Regulation and Internal Provision', 5, 2, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 4, 5, 0, 0, 0, 0, '5.30pm', '4 Hours'),
-('2', 'AFS Fee Income', 'AFS transactions to realize P/L', 5, 250, 0, 500, 0, 0, 0, 0, 0, 0, 0, 0, 4, 5, 0, 0, 0, 0, '5.30pm', '4 Hours'),
-('3', 'FTP to LOB', 'The processes which are conducted to support ALCO Portfolio & Portfolio Management', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 5, 0, 0, 0, 0, '5.30pm', '1 Day'),
-('4', 'TCM-NOP', 'NOP Monitoring & Balancing', 0, 0, 5, 246, 0, 493, 0, 0, 0, 0, 0, 0, 4, 5, 0, 0, 0, 0, '5.30pm', '4 Hours'),
-('5', 'TCM-TRFX-01', 'FX Spot/ FX Tom/ FX Tod/Forward', 0, 0, 4, 51, 5, 102, 0, 0, 0, 0, 0, 0, 4, 5, 0, 0, 0, 0, '5.30 pm or T+1 (10.am) for FX Spot Laeve order', '1 Day'),
-('6', 'TCM-TRIB-02', 'IDR Bond', 0, 0, 3, 29, 4, 58, 5, 116, 0, 0, 0, 0, 4, 5, 0, 0, 0, 0, '5.30pm', '1 Day'),
-('7', 'TCM-TRUB-03', 'USD Bonds ', 0, 0, 3, 17, 3, 33, 4, 66, 4, 99, 5, 231, 4, 5, 0, 0, 0, 0, 'T+1 (10.am)', '1 Day');
+INSERT INTO `business_activity` (`id`, `name`, `description`, `less_4h`, `less_1d`, `less_2d`, `less_3d`, `less_7d`, `more_7d`, `non_less_4h`, `non_less_1d`, `non_less_2d`, `non_less_3d`, `non_less_7d`, `non_more_7d`, `critical_time_per`, `cto_notes`, `rto`) VALUES
+(1, 'Liquidity Management MM; GWM', 'Maintaining Bank''s Primary & Secondary Reserve Requirement for Rupiah and Primary Reserve Requirement for Foreign Currency in accordance with BI Regulation and Internal Provision', 5, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, '5.30pm', '', '4 Hours'),
+(2, 'AFS Fee Income', 'AFS transactions to realize P/L', 5, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, '5.30pm', '', '4 Hours'),
+(3, 'FTP to LOB', 'The processes which are conducted to support ALCO Portfolio & Portfolio Management', 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, '5.30pm', '', '1 Day'),
+(4, 'TCM-NOP', 'NOP Monitoring & Balancing', 0, 5, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, '5.30pm', '', '4 Hours'),
+(5, 'TCM-TRFX-01', 'FX Spot/ FX Tom/ FX Tod/Forward', 0, 4, 5, 0, 0, 0, 4, 0, 0, 0, 0, 0, '5.30 pm or T+1 (10.am) for FX Spot Laeve order', '', '1 Day'),
+(6, 'TCM-TRIB-02', 'IDR Bond', 0, 3, 4, 5, 0, 0, 4, 0, 0, 0, 0, 0, '5.30pm', '', '1 Day'),
+(7, 'TCM-TRUB-03', 'USD Bonds ', 0, 3, 3, 4, 4, 5, 4, 0, 0, 0, 0, 0, 'T+1 (10.am)', '', '1 Day'),
+(16, 'my new ba name', 'new new', 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, '1', '', '4 Hours'),
+(17, 'name', 'desc', 2, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, '5', 'facebook sjhakshdf ', '4 Hours'),
+(18, 'name sekali lagi', 'sdsaf l', 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, '1', '', '4 Hours'),
+(19, 'farhan name', 'fasfd a sdf asf ds fs dfafa', 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, '1', '', '4 Hours'),
+(21, 'TES S UDSA', 'SJKADF  SDAF sdifa', 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, '1', '', '4 Hours');
 
 -- --------------------------------------------------------
 
@@ -84,7 +97,7 @@ INSERT INTO `business_activity` (`id`, `name`, `description`, `less_4h`, `type_l
 --
 
 CREATE TABLE IF NOT EXISTS `business_unit` (
-  `id` varchar(10) NOT NULL,
+`id` int(10) NOT NULL,
   `name` varchar(200) NOT NULL,
   `name_ba` varchar(200) NOT NULL,
   `id_ba_bu` varchar(20) NOT NULL
@@ -97,18 +110,25 @@ CREATE TABLE IF NOT EXISTS `business_unit` (
 --
 
 CREATE TABLE IF NOT EXISTS `dependencies` (
-  `id` varchar(20) NOT NULL,
-  `id_ba_dependencies` varchar(20) NOT NULL,
-  `in_part` text NOT NULL,
-  `in_rto` int(20) NOT NULL,
-  `in_rto_type` varchar(50) NOT NULL,
-  `in_arrg` tinyint(1) NOT NULL,
-  `ex_part` text NOT NULL,
-  `ex_rto` int(20) NOT NULL,
-  `ex_rto_type` varchar(50) NOT NULL,
-  `ex_arrg` tinyint(1) NOT NULL,
+`id` int(20) NOT NULL,
+  `ba_id` varchar(20) NOT NULL,
+  `is_internal` tinyint(4) NOT NULL,
+  `party_name` text NOT NULL,
+  `rto` int(20) NOT NULL,
+  `rto_type` varchar(50) NOT NULL,
+  `arrangement_in_place` tinyint(1) NOT NULL,
   `type_stream` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `dependencies`
+--
+
+INSERT INTO `dependencies` (`id`, `ba_id`, `is_internal`, `party_name`, `rto`, `rto_type`, `arrangement_in_place`, `type_stream`) VALUES
+(1, '1', 0, 'Partai', 3, 'hours', 0, '0'),
+(2, '1', 0, 'tukang jahit', 11, 'weeks', 0, '0'),
+(3, '1', 0, 'hohooooo', 3, 'weeks', 0, '1'),
+(4, '1', 0, 'mengerta', 0, 'hours', 0, '1');
 
 -- --------------------------------------------------------
 
@@ -194,11 +214,34 @@ CREATE TABLE IF NOT EXISTS `mor_1_data` (
 --
 
 CREATE TABLE IF NOT EXISTS `mor_hardware` (
-  `name_hardware` varchar(100) NOT NULL,
-  `id_ba` varchar(20) NOT NULL,
-  `rto_hardware` varchar(20) NOT NULL,
-  `quantity` int(100) NOT NULL,
-  `sharing` varchar(200) NOT NULL
+`id` int(11) NOT NULL,
+  `name` varchar(140) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `mor_hardware`
+--
+
+INSERT INTO `mor_hardware` (`id`, `name`) VALUES
+(1, 'printer'),
+(2, 'telepon'),
+(3, 'monitor'),
+(4, 'hardware apa'),
+(5, 'kek');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mor_hardware_ba`
+--
+
+CREATE TABLE IF NOT EXISTS `mor_hardware_ba` (
+`id` int(11) NOT NULL,
+  `ba_id` int(11) NOT NULL,
+  `mor_hardware_id` int(11) NOT NULL,
+  `rto` varchar(140) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `is_sharing` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -238,11 +281,38 @@ CREATE TABLE IF NOT EXISTS `mor_record` (
 --
 
 CREATE TABLE IF NOT EXISTS `mor_software` (
-  `system_application` longtext NOT NULL,
-  `id` int(11) NOT NULL,
-  `rto_software` int(11) NOT NULL,
-  `rpo_software` int(11) NOT NULL,
-  `alternative_software` longtext
+`id` int(11) NOT NULL,
+  `name` varchar(140) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `mor_software`
+--
+
+INSERT INTO `mor_software` (`id`, `name`) VALUES
+(1, 'instagram'),
+(2, 'internet'),
+(3, 'software a'),
+(4, 'software b'),
+(5, 'software ini'),
+(6, 'software itu'),
+(7, 'yang ini'),
+(8, 'yang itu'),
+(9, 'aplikasi ini'),
+(10, 'aplikasi itu');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mor_software_ba`
+--
+
+CREATE TABLE IF NOT EXISTS `mor_software_ba` (
+`id` int(11) NOT NULL,
+  `mor_software_id` int(11) NOT NULL,
+  `ba_id` int(11) NOT NULL,
+  `rto` varchar(140) NOT NULL,
+  `rpo` varchar(140) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -410,6 +480,28 @@ CREATE TABLE IF NOT EXISTS `staff_mor_table` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `user`
+--
+
+CREATE TABLE IF NOT EXISTS `user` (
+`id` int(11) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` text NOT NULL,
+  `email` varchar(25) NOT NULL,
+  `role` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `username`, `password`, `email`, `role`, `name`) VALUES
+(1, 'admin', 'admin', '', 0, '');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `version`
 --
 
@@ -444,13 +536,13 @@ CREATE TABLE IF NOT EXISTS `war_mor_table` (
 -- Indexes for table `alternative_method`
 --
 ALTER TABLE `alternative_method`
- ADD PRIMARY KEY (`id_ba_alternative`);
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `business_activity`
 --
 ALTER TABLE `business_activity`
- ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `name` (`name`);
 
 --
 -- Indexes for table `business_unit`
@@ -462,7 +554,7 @@ ALTER TABLE `business_unit`
 -- Indexes for table `dependencies`
 --
 ALTER TABLE `dependencies`
- ADD PRIMARY KEY (`id`), ADD KEY `id_bus_act` (`id_ba_dependencies`);
+ ADD PRIMARY KEY (`id`), ADD KEY `id_bus_act` (`ba_id`);
 
 --
 -- Indexes for table `fin_impact_table`
@@ -480,6 +572,30 @@ ALTER TABLE `mor_1`
 -- Indexes for table `mor_1_data`
 --
 ALTER TABLE `mor_1_data`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `mor_hardware`
+--
+ALTER TABLE `mor_hardware`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `mor_hardware_ba`
+--
+ALTER TABLE `mor_hardware_ba`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `mor_software`
+--
+ALTER TABLE `mor_software`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `mor_software_ba`
+--
+ALTER TABLE `mor_software_ba`
  ADD PRIMARY KEY (`id`);
 
 --
@@ -513,6 +629,12 @@ ALTER TABLE `staff_mor_table`
  ADD PRIMARY KEY (`id`), ADD KEY `id_mor_1` (`id_mor_1`);
 
 --
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+ ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `version`
 --
 ALTER TABLE `version`
@@ -529,6 +651,26 @@ ALTER TABLE `war_mor_table`
 --
 
 --
+-- AUTO_INCREMENT for table `alternative_method`
+--
+ALTER TABLE `alternative_method`
+MODIFY `id` int(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT for table `business_activity`
+--
+ALTER TABLE `business_activity`
+MODIFY `id` int(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=22;
+--
+-- AUTO_INCREMENT for table `business_unit`
+--
+ALTER TABLE `business_unit`
+MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `dependencies`
+--
+ALTER TABLE `dependencies`
+MODIFY `id` int(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+--
 -- AUTO_INCREMENT for table `fin_impact_table`
 --
 ALTER TABLE `fin_impact_table`
@@ -542,6 +684,26 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 -- AUTO_INCREMENT for table `mor_1_data`
 --
 ALTER TABLE `mor_1_data`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `mor_hardware`
+--
+ALTER TABLE `mor_hardware`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT for table `mor_hardware_ba`
+--
+ALTER TABLE `mor_hardware_ba`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `mor_software`
+--
+ALTER TABLE `mor_software`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+--
+-- AUTO_INCREMENT for table `mor_software_ba`
+--
+ALTER TABLE `mor_software_ba`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `non_fin_impact_table`
@@ -563,6 +725,11 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 ALTER TABLE `staff_mor_table`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `war_mor_table`
 --

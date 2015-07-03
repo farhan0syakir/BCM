@@ -1,27 +1,32 @@
 <div class="top-padding text-center">
 		<div class="form-login">
-				<div class="form-group">
-					<input type ="username" class="form-control" placeholder="Username">
-				</div>
+			<?php echo form_open("login/process")?>
+				<div class="form-group" method="post">
+					<input name="username" type ="username" class="form-control" placeholder="Username">
 						
-				<div class="form-group">
-					<input type="password" class="form-control" placeholder="Password">
-				</div>
+				<div class="form-group"  method="post">
+					<input name="password" type="password" class="form-control" placeholder="Password">
 				
 				<div class="form-group text-center">
-					<input type="checkbox" value="">Remember  me
+					<input name="is_remember_me" type="checkbox" value="true">Remember  me
 				</div>
 						
+			
+				
 				<div class="modal-body">
 					<div class="row"> 
 							<div class="padding-leftt-narrow text-left col-lg-12">
 									<div class="col-lg-12 text-center">
-										<a class="button-gap">Login
+										<button type = "submit" class="button-gap">Login
 											<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-										</a>
+										</button>
 									</div>
 								</div>
 							</div>
 						</div>
                  
 				</div>
+				<?php if(!empty($error_message)){
+					echo $error_message;
+				}?>
+				<?php echo form_close() ?>

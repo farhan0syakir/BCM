@@ -1,5 +1,5 @@
 <?php
-class Version extends CI_Controller {
+class Version extends MY_Controller {
 
 	public function index()
 	{

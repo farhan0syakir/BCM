@@ -1,5 +1,5 @@
 <?php
-class Role extends CI_Controller {
+class Role extends MY_Controller {
 
 	public function index()
 	{

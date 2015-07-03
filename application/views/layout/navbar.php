@@ -11,6 +11,7 @@
 			<img src="<?php echo base_url('assets/images/logo.png')?>"/>
 			</a>
         </div>
+		<?php if(!empty($this->session->userdata('logged_in'))){ ?>
 		
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right dropdown">
@@ -49,11 +50,15 @@
 					    <li><a href="#">Another action</a></li>
 					    <li><a href="#">Something else here</a></li>
 					    <li role="separator" class="divider"></li>
-					    <li><a href="#">Separated link</a></li>
+					    <li><a href="<?php echo base_url('login/logout')?>">Logout</a></li>
 					</ul>
 				</div>
 			</ul>
 		</div>
+		<?php }else {?>
+
+		<?php }?>
+
     </div>
 </nav>
 

@@ -1,5 +1,5 @@
 <?php
-class Req extends CI_Controller {
+class Req extends MY_Controller {
 
 	public function index()
 	{

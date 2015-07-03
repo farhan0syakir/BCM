@@ -1,5 +1,5 @@
 <?php
-class Setting extends CI_Controller {
+class Setting extends MY_Controller {
 
 	public function index(){
 		$this->load->template('pages/setting/version/index');

@@ -15,12 +15,7 @@
                 <li class="ganjil">
                     <a href="#"><img class="menu" src="<?php echo base_url('assets/images/dm.png')?>">DISASTER MANAGEMENT</a>
                 </li>
-                <li class="ganjil">
-                    <a href="#"><img class="menu" src="<?php echo base_url('assets/images/approve.png')?>">APPROVAL</a>
-                </li>
-                <li class="ganjil" data-toggle="collapse" data-target="#collapsemenu" class="active">
-                    <a href="#"><img class="menu" src="<?php echo base_url('assets/images/notif.png')?>">NOTIFICATION</a>
-                </li>
+                
                 <li class="ganjil" >
                     <a href="<?php echo base_url('company')?>"><img class="menu" src="<?php echo base_url('assets/images/role.png')?>">SETTING</a>
                     

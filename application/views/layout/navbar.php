@@ -14,9 +14,44 @@
 		
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right dropdown">
-				<li class="login" >
-					 <a class="page-scroll" id='modal-launcher' data-toggle="modal" data-target="#login"> LOGIN</a>
-				 </li>
+				<div class="top-padding-narrow btn-group">
+				<li class="no-padding" data-toggle="dropdown" data-target="#approval" >
+                    <a href="#"><img class="notif" src="<?php echo base_url('assets/images/approve.png')?>"></a>
+                </li>
+                <ul class="dropdown-menu" >
+					    <li><a href="#">Action</a></li>
+					    <li><a href="#">Another action</a></li>
+					    <li><a href="#">Something else here</a></li>
+					    <li role="separator" class="divider"></li>
+					    <li><a href="#">Separated link</a></li>
+				</ul>
+				</div>
+
+                <div class="top-padding-narrow btn-group">
+	                <li  class="no-padding " data-toggle="dropdown" data-target="#notification">
+	                    <a class="no-padding " href="#"><img class="notif" src="<?php echo base_url('assets/images/notif.png')?>"></a>
+	                </li>
+	                <ul class="dropdown-menu" >
+					    <li><a href="#">Action</a></li>
+					    <li><a href="#">Another action</a></li>
+					    <li><a href="#">Something else here</a></li>
+					    <li role="separator" class="divider"></li>
+					    <li><a href="#">Separated link</a></li>
+					</ul>
+				</div>
+				
+				<div class="top-padding-narrow btn-group">
+	                <li  class="no-padding " data-toggle="dropdown" data-target="#notification">
+	                    <a class="no-padding " href="#"><img class="notif" src="<?php echo base_url('assets/images/notif.png')?>"></a>
+	                </li>
+	                <ul class="dropdown-menu" >
+					    <li><a href="#">Action Solalalalalalalallllllllllllllllllllllllllllllllllllllllllllllllllll</a></li>
+					    <li><a href="#">Another action</a></li>
+					    <li><a href="#">Something else here</a></li>
+					    <li role="separator" class="divider"></li>
+					    <li><a href="#">Separated link</a></li>
+					</ul>
+				</div>
 			</ul>
 		</div>
     </div>
@@ -41,6 +76,7 @@
 							<div class="row"> 
 								<div class="padding-leftt-narrow text-left col-lg-12">
 									<div class="col-lg-12 text-center">
+
 										<a class="button-gap">Login
 											<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
 										</a>

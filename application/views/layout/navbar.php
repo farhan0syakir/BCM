@@ -46,7 +46,7 @@
 	                    <a class="no-padding " href="#"><img class="notif" src="<?php echo base_url('assets/images/notif.png')?>"></a>
 	                </li>
 	                <ul class="dropdown-menu" >
-					    <li><a href="#">Action Solalalalalalalallllllllllllllllllllllllllllllllllllllllllllllllllll</a></li>
+					    <li><a href="#">Action Solalalalalalalalllllllllllllllllllllllllllll</a></li>
 					    <li><a href="#">Another action</a></li>
 					    <li><a href="#">Something else here</a></li>
 					    <li role="separator" class="divider"></li>

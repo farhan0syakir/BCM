@@ -36,11 +36,12 @@ class Bia extends CI_Controller {
 		$this->load->template('pages/bia/create',$data);
 	}
 
-	public function getDepedenciesForm($stream,$counter)
+	public function getDependenciesForm($stream,$counter)
 	{
+
 		$data['stream'] = $stream;
 		$data['counter'] = $counter;
-		$this->load->view('pages/bia/depedenciesForm',$data);
+		$this->load->view('pages/bia/dependenciesForm',$data);
 	}
 
 	function get(){
@@ -70,7 +71,9 @@ class Bia extends CI_Controller {
         $data['non_less_7d'] = $input['nonFinansialImpact'][4];
         $data['non_more_7d'] = $input['nonFinansialImpact'][5];
 		$data['cto'] = $input['cto'];
-		$data['cto_notes'] = $input['cto_notes'][0];
+		if(!empty($input['cto_notes'][0])){
+			$data['cto_notes'] = $input['cto_notes'][0];
+		}
         $data['rto'] = $input['rto'];
 		echo $ba->add($data);
 	}
@@ -84,36 +87,89 @@ class Bia extends CI_Controller {
 			$this->add($result);
 		}else if($name=="myAlternativeForm"){
 			$this->addAlternative($result);
-		}else if($name=="myDepedenciesForm"){
-			$temp = new BA_Depedencies_Model();
+		}else if($name=="myDependenciesForm"){
+			$this->	addDependencies($result);
 		}else if($name=="myNormalForm"){
 			$temp = new BA_Normal_Model();
 		}else if($name=="myItForm"){
-			$temp = new BA_It_Model();
+			$this->	addMorIt($result);
 		}else if($name=="myNonItForm"){
 			$temp = new BA_Non_It_Model();
 		}else if($name=="myRecordForm"){
 			$temp = new BA_Record_Model();
 		}
-		$isSuccess = $temp->add($result);
-		return $isSuccess;
+		// $isSuccess = $temp->add($result);
+		// return $isSuccess;
 		// print_r($result);
 	}
 
-
-
-	function addAlternative($inputs){
+	function addAlternative($result){
 		$ba = new BA_Model();
-		// $name = $inputs['name'];
-		var_dump($inputs);
-		die();
+		$name = $result['name'];
 		$ba_id = $ba->where('name',$name)->get()->id;
-		foreach ($inputs['alternativeMethods'] as $input) {
-			# code...
+		foreach ($result['alternativeMethods'] as $input) {
 			$temp = new BA_Alternative_Model();
         	$data['ba_id'] = $ba_id;
         	$data['alternative_method'] = $input;
 			$temp->add($data);
+		}
+	}
+
+	function addDependencies($result){
+		$ba = new BA_Model();
+		$name = $result['name'];
+		$ba_id = $ba->where('name',$name)->get()->id;
+		// var_dump($result);
+		// echo "helo";
+		// die();
+		for($i = 0; $i < count($result['radioInternalExternalUpstream']); $i++) {
+			$temp = new BA_Dependencies_Model();
+        	$data['ba_id'] = $ba_id;
+	        $data['is_internal'] = $result['radioInternalExternalUpstream'][$i];
+	        $data['party_name']=$result['nameUpstream'][$i];
+	        $data['rto']=$result['rtoUpstream'][$i];
+	        $data['rto_type']=$result['rtoTypeUpstream'][$i];
+	        $data['arrangement_in_place']=$result['radioBCMArrangmentPlaceUpstream'][$i];
+	        $data['type_stream']=0;//0 untuk upstream
+			$temp->add($data);
+		}
+		for($i = 0; $i < count($result['radioInternalExternalDownstream']); $i++) {
+			$temp = new BA_Dependencies_Model();
+        	$data['ba_id'] = $ba_id;
+	        $data['is_internal'] = $result['radioInternalExternalDownstream'][$i];
+	        $data['party_name']=$result['nameDownstream'][$i];
+	        $data['rto']=$result['rtoDownstream'][$i];
+	        $data['rto_type']=$result['rtoTypeDownstream'][$i];
+	        $data['arrangement_in_place']=$result['radioBCMArrangmentPlaceDownstream'][$i];
+	        $data['type_stream']=1;//0 untuk Downstream
+			$temp->add($data);
+		}
+	}
+
+	function addMorIt($result){
+		// Create objects
+		var_dump($result);
+		die();
+		$ba = new BA_Model();
+		$name = $result['name'];
+		$ba_id = $ba->where('name',$name)->get()->id;
+		
+		for($i = 0; $i < count($result['softMorId']); $i++) {
+			$soft = new BA_Mor_Software_Model();
+			$soft->get_by_id($result['softMorId'][$i]);
+			
+			$soft->set_join_field($ba, 'rto', $result['soft_rto'][$i]);
+			$soft->set_join_field($ba, 'quantity', $result['soft_quantity'][$i]);
+			$soft->set_join_field($ba, 'is_sharing', $result['soft_is_sharing'][$i]);
+		}
+		
+		for($i = 0; $i < count($result['hardMorId']); $i++) {
+			$hard = new BA_Mor_Hardware_Model();
+			$hard->get_by_id($result['hardMorId'][$i]);
+			
+			$hard->set_join_field($ba, 'rto', $result['hard_rto'][$i]);
+			$hard->set_join_field($ba, 'quantity', $result['hard_quantity'][$i]);
+			$hard->set_join_field($ba, 'is_sharing', $result['hard_is_sharing'][$i]);
 		}
 	}
 }

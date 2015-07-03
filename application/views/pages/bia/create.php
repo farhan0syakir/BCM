@@ -225,7 +225,7 @@
 				</div>
 
 				<div id="dep" class="tab-pane fade">
-					<?php echo form_open('bia/make',array("id"=>"myDepedenciesForm"))?>
+					<?php echo form_open('bia/make',array("id"=>"myDependenciesForm"))?>
 					<div class="col-lg-12">
 						<div class="panel panel-default">
 							<div class="panel-heading">
@@ -242,43 +242,13 @@
 														<h4 class="title-header ">Upstream</h4>
 														</label>
 													</div>
-															<!--insert depedencies Form-->
-													<div id="contentDepedenciesFormUpstream">
-														<div>
-															<label class="label-bold radio-inline">
-															<input  type="radio" name="radioInternalExternalUpstream0[]">External
-															</label>
-															<label class="label-bold radio-inline">
-																<input  type="radio" name="radioInternalExternalUpstream0[]" >Internal
-															</label>
-														</div>
-														<div class="form-group">
-																<label class="label-bold">Dependency</label>
-																<input class="form-control" placeholder="Department, Provider" name="depedenciesNameUpstream[]">
-															</div>	
-														<div class="form-group">
-															<label class="label-bold">Name of Party</label>
-															<input class="form-control" placeholder="Department, Provider" name="partyNameUpstream[]">
-														</div>
-														<div class="form-group">
-															<label class="label-bold">RTO</label>
-															<input class="form-control" placeholder="RTO" name="rtoNameUpstream[]">
-														</div>
-														<div class="form-group">
-															<label class="label-bold">
-																BCM Arrangement in Place?
-															</label>
-															<label class="label-bold radio-inline">
-															<input  type="radio" name="radioBCMArrangmentPlaceUpstream0[]">Yes
-															</label>
-															<label class="label-bold radio-inline">
-																<input  type="radio" name="radioBCMArrangmentPlaceUpstream0[]" >No
-															</label>
-														</div>
+															<!--insert dependencies Form-->
+													<div id="contentDependenciesFormUpstream">
+														<?php $this->load->view('pages/bia/dependenciesForm',array('stream'=>'Upstream','counter'=>'0'));?>
 													</div>
 													<div class="row  bottom-gap-narrow">
 														<div class="col-lg-12 text-right">
-															<a class="button-gap" id ="addDepedenciesFormBtn" onClick="getDepedenciesForm('contentDepedenciesFormUpstream','Upstream')">Add
+															<a class="button-gap" id ="addDependenciesFormBtn" onClick="getDependenciesForm('contentDependenciesFormUpstream','Upstream')">Add
 															<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 															</a>
 														</div>
@@ -293,42 +263,12 @@
 																<h4 class="title-header ">Downstream</h4>
 															</label>
 														</div>
-														<div id="contentDepedenciesFormDownstream">
-															<div>
-																<label class="label-bold radio-inline">
-																<input  type="radio" name="radioInternalExternalDownstream0[]">External
-																</label>
-																<label class="label-bold radio-inline">
-																	<input  type="radio" name="radioInternalExternalDownstream0[]" >Internal
-																</label>
-															</div>
-															<div class="form-group">
-																	<label class="label-bold">Dependency</label>
-																	<input class="form-control" placeholder="Department, Provider" name="depedenciesNameDownstream[]">
-																</div>	
-															<div class="form-group">
-																<label class="label-bold">Name of Party</label>
-																<input class="form-control" placeholder="Department, Provider" name="partyNameDownstream[]">
-															</div>
-															<div class="form-group">
-																<label class="label-bold">RTO</label>
-																<input class="form-control" placeholder="RTO" name="rtoNameDownstream[]">
-															</div>
-															<div class="form-group">
-																<label class="label-bold">
-																	BCM Arrangement in Place?
-																</label>
-																<label class="label-bold radio-inline">
-																<input  type="radio" name="radioBCMArrangmentPlaceDownstream0[]">Yes
-																</label>
-																<label class="label-bold radio-inline">
-																	<input  type="radio" name="radioBCMArrangmentPlaceDownstream0[]" >No
-																</label>
-															</div>
+														<div id="contentDependenciesFormDownstream">
+															<?php $this->load->view('pages/bia/dependenciesForm',array('stream'=>'Downstream','counter'=>'0'));?>
 														</div>
 														<div class="row  bottom-gap-narrow">
 															<div class="col-lg-12 text-right">
-																<a class="button-gap" onClick = "getDepedenciesForm('contentDepedenciesFormDownstream','Downstream')">Add
+																<a class="button-gap" onClick = "getDependenciesForm('contentDependenciesFormDownstream','Downstream')">Add
 																<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 																</a>
 															</div>
@@ -343,7 +283,7 @@
 												Previous</a>
 											</div>
 											<div class="col-lg-6 text-right" >
-												<button class="edit-button-gap" type="submit" onClick="inputPartialForm('myDepedenciesForm')" data-toggle="tab" href="#alt">Next
+												<button class="edit-button-gap" type="submit" onClick="inputPartialForm('myDependenciesForm')" data-toggle="tab" href="#norm">Next
 													<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 												</button>
 											</div>

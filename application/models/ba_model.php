@@ -56,7 +56,9 @@ class BA_Model extends DataMapper {
         $ba->non_more_7d = $data['non_more_7d'];
      
         $ba->critical_time_per = $data['cto'];
-        $ba->cto_notes = $data['cto_notes'];
+        if(!empty($data['cto_notes'])){
+           $ba->cto_notes = $data['cto_notes'];
+        }
         $ba->rto = $data['rto'];
 
 

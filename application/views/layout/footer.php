@@ -32,11 +32,11 @@ $(document).ready(function() {
 
 } );
     
-    var getDepedenciesCounter = 1;
-    function getDepedenciesForm(divName,stream) {
+    var getDependenciesCounter = 1;
+    function getDependenciesForm(divName,stream) {
       // get the time if clicked via an ajax get queury
       // see the code in the controller time.php
-      $.get("/BCM/index.php/bia/getDepedenciesForm/"+stream+"/"+getDepedenciesCounter, function (data) {
+      $.get("/BCM/index.php/bia/getDependenciesForm/"+stream+"/"+getDependenciesCounter, function (data) {
         var newdiv = document.createElement('div');
         newdiv.innerHTML = data;
         document.getElementById(divName).appendChild(newdiv);
@@ -115,11 +115,14 @@ $(document).ready(function() {
     function inputPartialForm(divName){
       var biaName = document.getElementById('bussinessNameId').value;//ini perlu karena nama bia ga masuk form
       var temporaryDiv = document.getElementById(divName);
-      console.log(biaName);
+      var data_to_send = $(temporaryDiv).serializeArray();
+      data_to_send.push({ name: "name", value: biaName });
+      // console.log(data_to_send);
+
         $.ajax({
             url:'/BCM/bia/make/'+divName,
             type:'post',
-            data:$(temporaryDiv).serialize(),
+            data:data_to_send,
             success:function(data){
                 console.log(data);
             }

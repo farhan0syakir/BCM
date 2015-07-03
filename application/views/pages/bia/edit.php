@@ -236,8 +236,8 @@
 														<h4 class="title-header ">Upstream</h4>
 														</label>
 													</div>
-															<!--insert depedencies Form-->
-													<div id="contentDepedenciesFormUpstream">
+															<!--insert dependencies Form-->
+													<div id="contentDependenciesFormUpstream">
 														<div>
 															<label class="label-bold radio-inline">
 															<input  type="radio" name="optradio">External																</label>
@@ -269,7 +269,7 @@
 													</div>
 													<div class="row  bottom-gap-narrow">
 														<div class="col-lg-12 text-right">
-															<a class="button-gap" id ="addDepedenciesFormBtn" onClick="getDepedenciesForm('contentDepedenciesFormUpstream')">Add
+															<a class="button-gap" id ="addDependenciesFormBtn" onClick="getDependenciesForm('contentDependenciesFormUpstream')">Add
 															<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 															</a>
 														</div>
@@ -284,7 +284,7 @@
 																<h4 class="title-header ">Downstream</h4>
 															</label>
 														</div>
-														<div id="contentDepedenciesFormDownstream">
+														<div id="contentDependenciesFormDownstream">
 															<div>
 																<label class="label-bold radio-inline">
 																<input  type="radio" name="optradio">External
@@ -319,7 +319,7 @@
 														</div>
 														<div class="row  bottom-gap-narrow">
 															<div class="col-lg-12 text-right">
-																<a class="button-gap" onClick = "getDepedenciesForm('contentDepedenciesFormDownstream')">Add
+																<a class="button-gap" onClick = "getDependenciesForm('contentDependenciesFormDownstream')">Add
 																<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 																</a>
 															</div>

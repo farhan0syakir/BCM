@@ -1,6 +1,6 @@
 <?php
 
-class BA_Mor_Hardware_Model extends DataMapper {
+class Mor_Hardware_Model extends DataMapper {
 
     var $table = 'mor_hardware';
 
@@ -12,7 +12,7 @@ class BA_Mor_Hardware_Model extends DataMapper {
     }
     
     function getAll(){
-        $bas = new BA_Mor_Hardware_Model();
+        $bas = new Mor_Hardware_Model();
         $bas->get();
         $result = array();
         foreach ($bas as $ba)

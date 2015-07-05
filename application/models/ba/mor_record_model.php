@@ -1,8 +1,8 @@
 <?php
 
-class BA_Mor_Software_Model extends DataMapper {
+class Mor_Record_Model extends DataMapper {
 
-    var $table = 'mor_software';
+    var $table = 'mor_record';
 
     function __construct($id = NULL){
         parent::__construct($id);
@@ -12,8 +12,9 @@ class BA_Mor_Software_Model extends DataMapper {
     }
     
     function getAll(){
-        $bas = new BA_Mor_Software_Model();
+        $bas = new Mor_Record_Model();
         $bas->get();
+        
         $result = array();
         foreach ($bas as $ba)
         {
@@ -29,7 +30,26 @@ class BA_Mor_Software_Model extends DataMapper {
         $data = new stdClass();
         $data->id = $ba->id;
         $data->name = $ba->name;
-        $data->is_hardware = $ba->is_hardware;
         return $data;
     }
+
+
+    function add($data){
+        if(is_array($data)){
+            $ba = $this->addDetails($data);
+            if($isSuccess = $ba->save_as_new()){
+                return TRUE;
+            } else {
+                return FALSE;
+            }
+        }
+        return FALSE;
+    }
+
+    function addDetails($data){
+        $temp = new Mor_Record_Model();
+        $temp->name = $data['name'];
+        return $temp;
+    }
+
 }

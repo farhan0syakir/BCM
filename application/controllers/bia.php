@@ -27,11 +27,17 @@ class Bia extends MY_Controller {
 		$ba = new BA_Model();
 		$data['baImpact'] = $ba->getImpact();
 
-		$mor_software = new BA_Mor_Software_Model();
+		$mor_software = new Mor_Software_Model();
 		$data['mor_software'] = $mor_software->getAll();
 		
-		$mor_hardware = new BA_Mor_Hardware_Model();
+		$mor_hardware = new Mor_Hardware_Model();
 		$data['mor_hardware'] = $mor_hardware->getAll();
+
+		$mor_non_it = new Mor_Non_It_Model();
+		$data['mor_non_it'] = $mor_non_it->getAll();
+
+		$mor_record = new Mor_Record_Model();
+		$data['mor_record'] = $mor_record->getAll();
 		
 		$this->load->template('pages/bia/create',$data);
 	}
@@ -90,13 +96,13 @@ class Bia extends MY_Controller {
 		}else if($name=="myDependenciesForm"){
 			$this->	addDependencies($result);
 		}else if($name=="myNormalForm"){
-			$temp = new BA_Normal_Model();
+			$this->	addMorNormal($result);
 		}else if($name=="myItForm"){
 			$this->	addMorIt($result);
 		}else if($name=="myNonItForm"){
-			$temp = new BA_Non_It_Model();
+			$this->	addMorNonIt($result);
 		}else if($name=="myRecordForm"){
-			$temp = new BA_Record_Model();
+			$this->	addMorRecord($result);
 		}
 		// $isSuccess = $temp->add($result);
 		// return $isSuccess;
@@ -148,28 +154,133 @@ class Bia extends MY_Controller {
 
 	function addMorIt($result){
 		// Create objects
+		// var_dump($result);
+		//die();
+		$ba = new BA_Model();
+		$name = $result['name'];
+		$ba_id = $ba->where('name',$name)->get()->id;
+		
+		for($i = 0; $i < count($result['software_name']); $i++) {
+			$soft = new Mor_Software_BA_Model();
+			$data['mor_software_id']=$result['software_name'][$i];
+			$data['ba_id'] = $ba_id;
+			$data['rto'] = $result['software_rto'][$i];
+			$data['rpo'] = $result['software_rpo'][$i];
+			$data['alternative_manual_method'] = $result['alternative_manual_method'][$i];
+			$soft->add($data);
+		}
+		
+		$temp_is_sharing = array();
+		foreach ($result['is_sharing'] as $is_sharing ) {
+			array_push($temp_is_sharing, $is_sharing);
+		}
+
+		for($i = 0; $i < count($result['hardware_id']); $i++) {
+			$hard = new Mor_Hardware_BA_Model();
+			$data['mor_hardware_id']=$result['hardware_id'][$i];
+			$data['ba_id'] = $ba_id;
+			$data['rto'] = $result['hardware_rto'][$i];
+			$data['quantity'] = $result['hardware_quantity'][$i];
+			$data['is_sharing'] = $temp_is_sharing[$i];
+			
+			$hard->add($data);
+		}
+	}
+
+	function addMorNonIt($result){
+		$ba = new BA_Model();
+		$name = $result['name'];
+		$ba_id = $ba->where('name',$name)->get()->id;
+		$temp_is_sharing = array();
+		foreach ($result['is_sharing_non_it'] as $is_sharing ) {
+			array_push($temp_is_sharing, $is_sharing);
+		}
+				
+		for($i = 0; $i < count($result['mor_non_it_id']); $i++) {
+			$non_it = new Mor_Non_It_BA_Model();
+			$data['ba_id']=$ba_id;
+			$data['mor_non_it_id']=$result['mor_non_it_id'][$i];
+			$data['rto']=$result['non_it_rto'][$i];
+			$data['quantity']=$result['non_it_quantity'][$i];
+			$data['is_sharing']=$temp_is_sharing[$i];
+			
+			$non_it->add($data);
+		}
+	}
+
+	function addMorRecord($result){
+		// var_dump($result);
+		// die();
+		$ba = new BA_Model();
+		$name = $result['name'];
+		$ba_id = $ba->where('name',$name)->get()->id;
+				
+		for($i = 0; $i < count($result['mor_record_id']); $i++) {
+			$non_it = new Mor_Record_BA_Model();
+			// echo "hello";
+			// die();
+			$data['ba_id']=$ba_id;
+			$data['mor_record_id']=$result['mor_record_id'][$i];
+			$data['rto']=$result['mor_record_rto'][$i];
+			$data['rpo']=$result['mor_record_rpo'][$i];
+			$data['media']=$result['mor_record_media'][$i];
+			$data['current_storage_location']=$result['mor_record_current_storage_location'][$i];
+			$data['ownership']=$result['mor_record_ownership'][$i];
+			
+			$non_it->add($data);
+		}
+	}
+
+	function addMorNormal($result){
 		var_dump($result);
 		die();
 		$ba = new BA_Model();
 		$name = $result['name'];
 		$ba_id = $ba->where('name',$name)->get()->id;
 		
-		for($i = 0; $i < count($result['softMorId']); $i++) {
-			$soft = new BA_Mor_Software_Model();
-			$soft->get_by_id($result['softMorId'][$i]);
-			
-			$soft->set_join_field($ba, 'rto', $result['soft_rto'][$i]);
-			$soft->set_join_field($ba, 'quantity', $result['soft_quantity'][$i]);
-			$soft->set_join_field($ba, 'is_sharing', $result['soft_is_sharing'][$i]);
-		}
+		$mor_normal = new Mor_Normal_Model();
+		$data['ba_id']=$ba_id;
+		$data['location']=$result['location'];
+		$data['staff']=$result['staff'];
+		$data['skill']=$result['skill'];
+        $data['location']=$result['location'];
+        $data['pc']=$result['pc'];
+        $data['s_less_4h']=$result['morNormalStaffs'][0];
+        $data['s_less_1d']=$result['morNormalStaffs'][1];
+        $data['s_less_2d']=$result['morNormalStaffs'][2];
+        $data['s_less_3d']=$result['morNormalStaffs'][3];
+        $data['s_less_7d']=$result['morNormalStaffs'][4];
+        $data['s_more_7d']=$result['morNormalStaffs'][5];
+        $data['war_less_4h']=$result['morWorkAreaRecoveries'][0];
+        $data['war_less_1d']=$result['morWorkAreaRecoveries'][1];
+        $data['war_less_2d']=$result['morWorkAreaRecoveries'][2];
+        $data['war_less_3d']=$result['morWorkAreaRecoveries'][3];
+        $data['war_less_7d']=$result['morWorkAreaRecoveries'][4];
+        $data['war_more_7d']=$result['morWorkAreaRecoveries'][5];
+        $data['p_less_4h']=$result['morNotebook'][0];
+        $data['p_less_1d']=$result['morNotebook'][1];
+        $data['p_less_2d']=$result['morNotebook'][2];
+        $data['p_less_3d']=$result['morNotebook'][3];
+        $data['p_less_7d']=$result['morNotebook'][4];
+        $data['p_more_7d']=$result['morNotebook'][5];
+		$mor_normal->add($data);
+
+		$temp_mor_normal = new Mor_Normal_Model();
+		$temp_mor_normal_id = $temp_mor_normal->where('ba_id',$ba_id)->get()->id;
+
+		for($i = 0; $i < count($result['facilities'];$i++){
+            $mor_normal_work_facility = new Mor_Normal_Work_Facilities_Model();
+            $temp_data['mor_normal_id'] = $temp_mor_normal_id;
+            $temp_data['work_facility'] = $data['work_facilities'][$i];
+            $mor_normal_work_facility->add($temp_data);
+        }
+
+        for($i = 0; $i < count($result['skillSets'];$i++){
+            $mor_normal_skill_set = new Mor_Normal_Skill_Set_Model();
+            $temp_data['mor_normal_id'] = $temp_mor_normal_id;
+            $temp_data['skill_set'] = $data['skillSets'][$i];
+            $mor_normal_skill_set->add($temp_data);
+        }
 		
-		for($i = 0; $i < count($result['hardMorId']); $i++) {
-			$hard = new BA_Mor_Hardware_Model();
-			$hard->get_by_id($result['hardMorId'][$i]);
-			
-			$hard->set_join_field($ba, 'rto', $result['hard_rto'][$i]);
-			$hard->set_join_field($ba, 'quantity', $result['hard_quantity'][$i]);
-			$hard->set_join_field($ba, 'is_sharing', $result['hard_is_sharing'][$i]);
-		}
 	}
 }

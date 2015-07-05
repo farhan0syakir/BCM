@@ -129,4 +129,55 @@ $(document).ready(function() {
         });
         // alert('fahran');
     }
+
+    function checkingTableWithRadio(hardwareOrNonIt,theId) {
+      var myCheckbox = document.getElementById(theId);
+      var id = myCheckbox.value;
+      if (myCheckbox.checked) {
+        document.getElementById('rto'+hardwareOrNonIt+'Id'+id).disabled = false;
+        document.getElementById('quantity'+hardwareOrNonIt+id).disabled = false;
+        document.getElementsByClassName('radio'+hardwareOrNonIt+id)[0].disabled = false;
+        document.getElementsByClassName('radio'+hardwareOrNonIt+id)[1].disabled = false;
+          // alert("checked");
+      } else {
+        document.getElementById('rto'+hardwareOrNonIt+'Id'+id).disabled = true;
+        document.getElementById('quantity'+hardwareOrNonIt+id).disabled = true;
+        document.getElementsByClassName('radio'+hardwareOrNonIt+id)[0].disabled = true;
+        document.getElementsByClassName('radio'+hardwareOrNonIt+id)[1].disabled = true;
+          // alert("You didn't check it! Let me check it for you.");
+      }
+    }
+
+    function checkingTableWithoutRadio(type,theId) {
+      var myCheckbox = document.getElementById(theId);
+      var id = myCheckbox.value;
+      if (myCheckbox.checked) {
+        document.getElementById('rto'+type+'Id'+id).disabled = false;
+        document.getElementById('rpo'+type+'Id'+id).disabled = false;
+        if(type==="Record"){
+          document.getElementById('media'+type+id).disabled = false;
+          document.getElementById('currentStorageLocation'+type+id).disabled = false;
+          document.getElementById('ownership'+type+id).disabled = false;
+        }else{
+        document.getElementById('alternative'+type+id).disabled = false;
+          
+        }
+          // alert("checked");
+      } else {
+        document.getElementById('rto'+type+'Id'+id).disabled = true;
+        document.getElementById('rpo'+type+'Id'+id).disabled = true;
+        if(type==="Record"){
+          document.getElementById('media'+type+id).disabled = true;
+          document.getElementById('currentStorageLocation'+type+id).disabled = true;
+          document.getElementById('ownership'+type+id).disabled = true;
+        }else{
+        document.getElementById('alternative'+type+id).disabled = true;
+          
+        }
+          // alert("You didn't check it! Let me check it for you.");
+      }
+    }
+
+   
+
 </script>

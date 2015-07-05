@@ -382,7 +382,7 @@
 																		<?php for($i=0;$i<count($impactLabel);$i++):?>
 																			<div class="gap col-md-2 ">
 																				<label class="gap-narrow"> <?php echo $impactLabel[$i];?> </label>
-																				<input name="morStaffs[]" class="num" type="number" ></input>
+																				<input name="morNormalStaffs[]" class="num" type="number" ></input>
 																			</div>
 																		<?php endfor;?>
 																	</div>
@@ -479,12 +479,12 @@
 														<?php for($i=0;$i<count($mor_software);$i++):?>
 														<tr class="gap col-md-12 ">
 															<td class="gap col-md-3">
-																<input type="checkbox" name="software_name[]" value="<?php echo $mor_software[$i]->id?>"><?php echo $mor_software[$i]->name?>
+																<input type="checkbox" id="checkBoxSoftware<?php echo $mor_software[$i]->id?>" name="software_name[]" value="<?php echo $mor_software[$i]->id?>" onClick="checkingTableWithoutRadio('Software','checkBoxSoftware<?php echo $mor_software[$i]->id?>')"><?php echo $mor_software[$i]->name?>
 															</td>
-															<td class="gap col-md-3"><input class="num" name="software_rto[]"></td>		
-															<td class="gap col-md-3"><input class="num" name="software_rpo[]" ></td>
+															<td class="gap col-md-3"><input disabled="true" class="num" id="rtoSoftwareId<?php echo $mor_software[$i]->id?>" name="software_rto[]"></td>		
+															<td class="gap col-md-3"><input disabled="true" class="num" id="rpoSoftwareId<?php echo $mor_software[$i]->id?>" name="software_rpo[]" ></td>
 															<td class="gap col-md-3">
-																<input class="form-control" placeholder="Department, Provider" name="software_alterntive_method[]">
+																<input class="form-control" disabled="true" placeholder="Department, Provider" id="alternativeSoftware<?php echo $mor_software[$i]->id?>" name="alternative_manual_method[]">
 															</td>
 														</tr>
 														<?php endfor;?>
@@ -516,12 +516,12 @@
 															</tr>
 															<?php for($i=0;$i<count($mor_hardware);$i++):?>
 															<tr class="gap col-md-12 ">
-																<td class="gap col-md-4"><input type="checkbox" value="<?php echo $mor_hardware[$i]->id?>" name="hardware_id[]"><?php echo $mor_hardware[$i]->name?></td>
-																<td class="gap col-md-3"><input class="num" name="hardware_rto[]"></td>		
-																<td class="gap col-md-3"><input class="num" name="hardware_quantity[]" ></td>
+															<td class="gap col-md-4"><input id="checkBoxHardware<?php echo $mor_hardware[$i]->id?>"type="checkbox" value="<?php echo $mor_hardware[$i]->id?>" name="hardware_id[]" onClick="checkingTableWithRadio('Hardware','checkBoxHardware<?php echo $mor_hardware[$i]->id?>')"><?php echo $mor_hardware[$i]->name?></td>
+																<td class="gap col-md-3"><input  disabled="true" id="rtoHardwareId<?php echo $mor_hardware[$i]->id?>"class="num" name="hardware_rto[]"></td>		
+																<td class="gap col-md-3"><input  disabled="true" id="quantityHardware<?php echo $mor_hardware[$i]->id?>" class="num" name="hardware_quantity[]" ></td>
 																<td class="gap col-md-5 ">
-																	<label class="label-bold radio-inline"><input  type="radio" name="is_sharing[<?php echo $mor_hardware[$i]->id?>]" value=true>Yes</label>
-																	<label class="label-bold radio-inline"><input  type="radio" name="is_sharing[<?php echo $mor_hardware[$i]->id?>]" value=false>No</label>
+																	<label class="label-bold radio-inline"><input class="radioHardware<?php echo $mor_hardware[$i]->id?>" disabled="true" type="radio" name="is_sharing[<?php echo $i?>]" value="1">Yes</label>
+																	<label class="label-bold radio-inline"><input class="radioHardware<?php echo $mor_hardware[$i]->id?>" disabled="true" type="radio" name="is_sharing[<?php echo $i?>]" value="0">No</label>
 																</td>		
 															</tr>
 															<?php endfor;?>
@@ -566,26 +566,28 @@
 												<td>
 													<table>
 														<tr class="gap col-md-12">
-															<td class="gap col-md-6"><label class="gap-narrow">Equipment</label></td>
-															<td class="gap col-md-6"><label class="gap-narrow">RTO</label></td>		
-															<td class="gap col-md-6"><label class="gap-narrow" >Quantity</label></td>
+															<td class="gap col-md-4"><label class="gap-narrow">Equipment</label></td>
+															<td class="gap col-md-4"><label class="gap-narrow">RTO</label></td>		
+															<td class="gap col-md-4"><label class="gap-narrow" >Quantity</label></td>
+															<td class="gap col-md-4"><label class="gap-narrow" >Sharing</label></td>
 														</tr>
+														<?php for ($i=0; $i<count($mor_non_it); $i++) :?>
+															
 														<tr class="gap col-md-12 ">
-															<td class="gap col-md-6"><input type="checkbox" value=""> ATK</td>
-															<td class="gap col-md-6"><input class="num" ></td>		
-															<td class="gap col-md-6"><input class="num"  ></td>
+															<td class="gap col-md-4">
+																<input name="mor_non_it_id[]" id="checkBoxNonIt<?php echo $mor_non_it[$i]->id?>" type="checkbox" value="<?php echo $mor_non_it[$i]->id?>" onClick="checkingTableWithRadio('NonIt','checkBoxNonIt<?php echo $mor_non_it[$i]->id?>')"> 
+																	<?php echo $mor_non_it[$i]->equipment?> 
+															</td>
+															<td class="gap col-md-4"><input  disabled="true" id="rtoNonItId<?php echo $mor_non_it[$i]->id?>" class="num" name="non_it_rto[]"></td>		
+															<td class="gap col-md-4"><input  disabled="true" id="quantityNonIt<?php echo $mor_non_it[$i]->id?>" class="num" name="non_it_quantity[]" ></td>
+															<td class="gap col-md-4 ">
+																<label class="label-bold radio-inline"><input class="radioNonIt<?php echo $mor_non_it[$i]->id?>" disabled="true" type="radio" name="is_sharing_non_it[<?php echo $i?>]" value="1">Yes</label>
+																<label class="label-bold radio-inline"><input class="radioNonIt<?php echo $mor_non_it[$i]->id?>" disabled="true" type="radio" name="is_sharing_non_it[<?php echo $i?>]" value="0">No</label>
+															</td>	
 														</tr>
-														<tr class="gap col-md-12 ">
-															<td class="gap col-md-6"><input type="checkbox" value=""> Paper</td>
-															<td class="gap col-md-6"><input class="num"  ></td>		
-															<td class="gap col-md-6"><input class="num" ></td>
-														</tr>
+														<?php endfor ?>
+														
 													</table>
-													<div class="form-group">
-														<label class="label-bold">Sharing? </label>
-														<label class="label-bold radio-inline"><input  type="radio" name="optradio">Yes</label>
-														<label class="label-bold radio-inline"><input  type="radio" name="optradio" >No</label>
-													</div>
 												</td>
 											</tr>
 										</table>
@@ -595,8 +597,8 @@
 												<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
 											</div>
 											<div class="col-lg-6 text-right" >
-												<a class="edit-button-gap" data-toggle="tab" href="#rec">Next
-												<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+												<button class="edit-button-gap" type="submit" onClick="inputPartialForm('myNonItForm')" data-toggle="tab" href="#rec">Next
+												<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
 											</div>
 										</div>
 									</div>
@@ -622,26 +624,28 @@
 												<td>
 													<table>
 														<tr class="gap col-md-12">
-															<td class="gap col-md-6"><label class="gap-narrow">Equipment</label></td>
-															<td class="gap col-md-6"><label class="gap-narrow">RTO</label></td>		
-															<td class="gap col-md-6"><label class="gap-narrow" >Quantity</label></td>
+															<td class="gap col-md-2"><label class="gap-narrow">Equipment</label></td>
+															<td class="gap col-md-2"><label class="gap-narrow">RTO</label></td>		
+															<td class="gap col-md-2"><label class="gap-narrow" >RPO</label></td>
+															<td class="gap col-md-2"><label class="gap-narrow" >Media</label></td>
+															<td class="gap col-md-2"><label class="gap-narrow" >Current storage location</label></td>
+															<td class="gap col-md-2"><label class="gap-narrow" >Ownership</label></td>
 														</tr>
+														<?php for ($i=0; $i<count($mor_record); $i++) :?>
+															
 														<tr class="gap col-md-12 ">
-															<td class="gap col-md-6"><input type="checkbox" value=""> Trade blotter from SUMMIT</td>
-															<td class="gap col-md-6"><input class="num" ></td>		
-															<td class="gap col-md-6"><input class="num" ></td>		
+															<td class="gap col-md-4">
+																<input name="mor_record_id[]" id="checkBoxRecord<?php echo $mor_record[$i]->id?>" type="checkbox" value="<?php echo $mor_record[$i]->id?>" onClick="checkingTableWithoutRadio('Record','checkBoxRecord<?php echo $mor_record[$i]->id?>')"> 
+																	<?php echo $mor_record[$i]->name?> 
+															</td>
+															<td class="gap col-md-2"><input  disabled="true" id="rtoRecordId<?php echo $mor_record[$i]->id?>" class="num" name="mor_record_rto[]"></td>		
+															<td class="gap col-md-2"><input  disabled="true" id="rpoRecordId<?php echo $mor_record[$i]->id?>" class="num" name="mor_record_rpo[]" ></td>
+															<td class="gap col-md-2"><input  disabled="true" id="mediaRecord<?php echo $mor_record[$i]->id?>" class="num" name="mor_record_media[]" ></td>
+															<td class="gap col-md-2"><input  disabled="true" id="currentStorageLocationRecord<?php echo $mor_record[$i]->id?>" class="num" name="mor_record_current_storage_location[]" ></td>
+															<td class="gap col-md-2"><input  disabled="true" id="ownershipRecord<?php echo $mor_record[$i]->id?>" class="num" name="mor_record_ownership[]" ></td>
 														</tr>
-														<tr class="gap col-md-12 ">
-															<td class="gap col-md-6"><input type="checkbox" value=""> Treasury Policy & Procedure</td>
-															<td class="gap col-md-6"><input class="num"  ></td>		
-															<td class="gap col-md-6"><input class="num" ></td>
-														</tr>
+														<?php endfor ?>
 													</table>
-													<div class="form-group">
-														<label class="label-bold">Sharing? </label>
-														<label class="label-bold radio-inline"><input  type="radio" name="optradio">Yes</label>
-														<label class="label-bold radio-inline"><input  type="radio" name="optradio" >No</label>
-													</div>
 												</td>
 											</tr>
 										</table>
@@ -651,7 +655,7 @@
 												<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
 											</div>
 											<div class="col-lg-6 text-right" >
-												<button class="button-gap" href="" type="submit">Save
+												<button class="button-gap" type="submit" onClick="inputPartialForm('myRecordForm')" data-toggle="tab" href="">Save
 												<span class="glyphicon glyphicon-save" aria-hidden="true"></span></button>
 											</div>
 										</div>

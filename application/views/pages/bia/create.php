@@ -10,7 +10,7 @@
 		<a class="back-button-gap" href="<?php echo base_url('bia') ?>">
 		<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
 		</a>Create New Business Activity</h3>
-		<div class="detail text-">
+		<div class="detail text">
 			<ul class="tab-switch nav nav-tabs text-center">
 				<li class="tab-gap tab active">
 					<a class="learntab" data-toggle="tab" href="#desc">Description</a>
@@ -669,4 +669,4 @@
 			</div>
 		</div>
 	</div>
-</div>	
+</div>

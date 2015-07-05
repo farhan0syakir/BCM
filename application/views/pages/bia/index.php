@@ -21,10 +21,9 @@
                     <table class="table table-striped">
                         <thead>
                             <tr class="tr-gap">
-                                <th>#</th>
+                                <th>BA Code</th>
                                 <th>Business Activity</th>
-                                <th class="td-button"></th>
-								<th></th>
+                              
                                 <th class="td-button th-gap text-right"><a href="<?php echo base_url('bia/create') ?>" class="button-gap crud">
 								New <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></th>
                             </tr>
@@ -34,15 +33,15 @@
 							<?php
                             for ($i = 0; $i < count($bia); $i++ )  : ?>
 						   <tr class="tr-gap-upper">
-						       <td><?php echo $i+1?></td>
-						       <td class="td-title"><?php echo $bia[$i]->name;?></td>
-
-						       <td  class="td-button text-right"><a class="view-button-gap crud" href="<?php echo base_url('bia/view/').'/'.$bia[$i]->id;?>">
-							   View <span class="glyphicon glyphicon-check" aria-hidden="true"></span></a></td>
-								<td  class="td-button text-right"><a class="edit-button-gap crud" href="<?php echo base_url('bia/edit/').'/'.$bia[$i]->id;?>">
-								Edit <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></td>
-								<td  class="td-button-long text-right"><a class="delete-button-gap crud" data-toggle="modal" data-target="#modalDeleteId" href="#" >
-								Delete <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
+						       <td> <?php echo "TCM-" . ($i+1) ?></td>
+						       <td class="td-title"><a href="<?php echo base_url('bia/view/').'/'.$bia[$i]->id;?>"><?php echo $bia[$i]->name;?></a></td>
+                               
+						       <td  class="td-button text-right">
+							  
+                               <a class="edit-button-gap crud" href="<?php echo base_url('bia/edit/').'/'.$bia[$i]->id;?>">
+								<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                                <a class="delete-button-gap crud" data-toggle="modal" data-target="#modalDeleteId" href="#" >
+								<span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
 							</tr>
 							<?php endfor; ?>
 						</tbody>

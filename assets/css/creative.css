@@ -616,13 +616,17 @@ nav.vertical ul li{	display:block;}/* vertical menu */
 nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
 img{max-width:100%;}
 /*end reset*/
+
 body {
-	font-family:Aller;
-    src:  url('../fonts/Aller.ttf')  format('truetype'); /* Safari, Android, iOS */
-	font-size: 100%;
-	background: #ffffff;
-	color:#555555;
+    font-family: 'Aller' !important;
+    webkit-tap-highlight-color: #222;
 }
+
+@font-face { 
+    font-family: 'Aller'!important; 
+    src: url('/assets/fonts/Aller_Rg.ttf') !important; 
+}
+
 .wrap{
 	margin:0 auto;
 	width:80%;
@@ -2016,10 +2020,10 @@ li.ganjil
 
 .title-header {
   padding-top:10px;
- 
+  margin-bottom: 20px;
   width:100%;
   float:center;
-  border-bottom: 1px solid #eee;
+  /*border-bottom: 1px solid #eee;*/
 }
 
 .label
@@ -2217,10 +2221,10 @@ th .th-gap
 {
 	margin-left:15px;
 	margin-right:10px;
-	margin-botttom:10px;
+	margin-bottom:40px !important;
     padding:10px;
 	background-color:#1dd2af;
-	border-radius:1000px;
+	border-radius:10px;
 	color:white;
 	font-size:12pt;
 
@@ -2428,4 +2432,8 @@ a.logout:hover{
 .icon-large{
     width: 100px;
     height: 100px;
+}
+
+.yellow-bg{
+    background-color:#FAA61E;
 }

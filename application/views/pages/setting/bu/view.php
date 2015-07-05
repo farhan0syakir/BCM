@@ -108,8 +108,9 @@
 				                                        <tr class="tr-gap">
 				                                            <th>Name</th>
 				                                            <th>Username</th>
-				                                     		<th/>Role<th/>
-				                                            <th class="th-gap text-right">
+				                                     		<th>Role</th>
+
+				                                           	<th class=" text-right">
 				                                            <a data-toggle="modal" data-target="#assign" class="button-gap crud">
 															Assign New Role 
 															<span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></th>
@@ -124,12 +125,12 @@
 													       <td class="td-username">
 				                                           <?php echo 'john.doe';/*$bia[$i]->name;*/ ?>
 				                                           </td>
-															<td  class=" text-right">Authorizer
+															<td >Authorizer
 				                                            </td>				      
 															<td  class=" text-right"><a class="edit-button-gap crud" data-toggle="modal" data-target="#edit">
-															Edit <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></td>
-															<td  class="td-button text-right"><a class="delete-button-gap crud" data-toggle="modal" data-target="#delete">
-															Delete <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
+															<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+															<a class="delete-button-gap crud" data-toggle="modal" data-target="#delete">
+															<span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
 														</tr>
 														<?php endfor; ?>
 													</tbody>

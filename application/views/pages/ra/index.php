@@ -17,10 +17,9 @@
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th>#</th>
+                                <th>BA Code</th>
                                 <th>Risk Assessment</th>
-                                 <th class="td-button"></th>
-                                 <th class="td-button"></th>
+                             
                                  <th class="td-button th-gap text-right"><a href="<?php echo base_url('ra/create') ?>" class="button-gap crud">
                                  New <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></th>
                             </tr>
@@ -29,15 +28,15 @@
 					   	<tbody>
 							<?php for ($i = 0; $i < count($ra); $i++ )  : ?>
 						   <tr>
-						       <td><?php echo $i+1?></td>
-						       <td><?php echo $ra[$i]->threat;?></td>
+						       <td> <?php echo "TCM-" . ($i+1) ?></td>
+						       <td><a href="<?php echo base_url('ra/view/').'/'.$ra[$i]->id;?>"><?php echo $ra[$i]->threat;?></a></td>
 
-                               <td  class="td-button text-right"><a class="view-button-gap crud" href="<?php echo base_url('ra/view/').'/'.$ra[$i]->id;?>">
-                               View <span class="glyphicon glyphicon-check" aria-hidden="true"></span></a></td>
-                               <td  class="td-button text-center"><a class="edit-button-gap crud" href="<?php echo base_url('ra/edit/').'/'.$ra[$i]->id;?>">
-                               Edit <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></td>
-                               <td  class="td-button text-right"><a onClick="changeDeleteId(<?php echo $ra[$i]->id?>)" class="delete-button-gap crud" data-toggle="modal" data-target="#modalDeleteId" href="#">
-                               Delete <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
+                                                              <td  class="td-button text-right">
+                              
+                               <a class="edit-button-gap crud" href="<?php echo base_url('ra/edit/').'/'.$ra[$i]->id;?>">
+                                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                                <a class="delete-button-gap crud" onClick="changeDeleteId(<?php echo $ra[$i]->id?>)" class="delete-button-gap crud" data-toggle="modal" data-target="#modalDeleteId" href="#" >
+                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
 						      </tr>
 							<?php endfor; ?>
 						</tbody>

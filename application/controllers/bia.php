@@ -38,7 +38,7 @@ class Bia extends MY_Controller {
 
 		$mor_record = new Mor_Record_Model();
 		$data['mor_record'] = $mor_record->getAll();
-		
+
 		$this->load->template('pages/bia/create',$data);
 	}
 
@@ -268,14 +268,14 @@ class Bia extends MY_Controller {
 		$temp_mor_normal = new Mor_Normal_Model();
 		$temp_mor_normal_id = $temp_mor_normal->where('ba_id',$ba_id)->get()->id;
 
-		for($i = 0; $i < count($result['facilities'];$i++){
+		for($i = 0; $i < count($result['facilities']);$i++){
             $mor_normal_work_facility = new Mor_Normal_Work_Facilities_Model();
             $temp_data['mor_normal_id'] = $temp_mor_normal_id;
             $temp_data['work_facility'] = $data['work_facilities'][$i];
             $mor_normal_work_facility->add($temp_data);
         }
 
-        for($i = 0; $i < count($result['skillSets'];$i++){
+        for($i = 0; $i < count($result['skillSets']);$i++){
             $mor_normal_skill_set = new Mor_Normal_Skill_Set_Model();
             $temp_data['mor_normal_id'] = $temp_mor_normal_id;
             $temp_data['skill_set'] = $data['skillSets'][$i];

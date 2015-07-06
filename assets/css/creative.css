@@ -106,6 +106,7 @@ aside {
  
     font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
     background-color: #f1c40f;
+    background-image: url('../images/bg_navbar.png');
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;
@@ -1946,7 +1947,7 @@ img.article-thumbnail
 
 .btn-sub:hover
 {
-	background-color:#1abc9c;
+	background-color:#f1c40f;
 	color:#ecf0f1;
 }
 
@@ -1959,7 +1960,7 @@ img.article-thumbnail
 
 .top-margin:hover
 {
-	background-color:#16a085;
+	background-color:#f39c12;
 	color:white;
 
 }
@@ -1991,7 +1992,7 @@ li.ganjil
 .title
 {
 	background-color:transparent;
-	color: #16a085;
+	color: #f39c12;
 	
 }
 
@@ -2038,7 +2039,7 @@ li.ganjil
 
 .label-bold
 {
-	color: #16a085;
+	color: #f39c12;
 	font-size:14px;
 	margin-bottom:10px;
 }
@@ -2095,7 +2096,7 @@ th .th-gap
 .gap-narrow
 {
     padding:5px;
-	background-color: #16a085;
+	background-color: #f39c12;
 	border-radius:5px;
 	color:white;
 
@@ -2183,7 +2184,7 @@ th .th-gap
 
 .button-gap:hover
 {
-	background-color:#1abc9c;
+	background-color:#f1c40f;
 	color:#ecf0f1;
 	text-decoration:none;
 }
@@ -2238,7 +2239,7 @@ th .th-gap
 	margin-right:10px;
 	margin-bottom:40px !important;
     padding:10px;
-	background-color:#1dd2af;
+	background-color:#f1c40f;
 	border-radius:10px;
 	color:white;
 	font-size:12pt;
@@ -2247,7 +2248,7 @@ th .th-gap
 
 .back-button-gap:hover
 {
-	background-color:#16a085;
+	background-color:#f39c12;
 	color:#ecf0f1;
 	text-decoration:none;
 }
@@ -2283,7 +2284,8 @@ th .th-gap
     border-style:block;
     border-width:1pt;
     color:red;
-    background-color: #1abc9c;
+    background-color: #f1c40f;
+    background-image: url('../images/bg_tab.png'); 
     border-radius: 5px;
 	
 }
@@ -2304,8 +2306,8 @@ li.tab-gap > a{
 }
 
 li.tab-gap > a:hover{
-     font-color:#1abc9c; 
-     color:#1abc9c;
+     font-color:#f1c40f; 
+     color:#f1c40f;
 }
 .num
 
@@ -2371,7 +2373,7 @@ tr
   padding: 20px 30px 30px;
   margin: 0 auto 20px;
   background-color: #fff;
-  border: 1px solid #1abc9c;
+  border: 1px solid #f1c40f;
   margin-top:20px;
 }
 .text-center{
@@ -2521,7 +2523,7 @@ label{
 .panel-heading{
     font-weight: bold !important;
     font-size: 16px !important;
-    color: #16a085!important;
+    color: #f39c12!important;
 }
 
 .page-header{

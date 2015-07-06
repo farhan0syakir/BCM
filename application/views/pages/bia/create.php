@@ -158,11 +158,6 @@
 											
 											<div class="top-gap row">
 												<div class="col-lg-6 text-left" >
-													<a  class="delete-button-gap">
-													<span class="glyphicon glyphicon-remove" aria-hidden="true">
-													</span>
-														Reset
-													</a>
 												</div>
 												<div class="col-lg-6 text-right" >
 													<a class="edit-button-gap" type="submit" onClick="inputPartialForm('myDescForm')" data-toggle="tab" href="#alt">Next
@@ -323,22 +318,22 @@
 															<tr>
 																<td>
 																	<label class="label-bold">Staff</label>
-																	<input  name="staffs" type="number" class="num form-control a-forth" placeholder=""/>
+																	<input  name="staffs" type="number" min="0" class="num form-control a-forth" placeholder=""/>
 																</td>
 																<td>
 																	<label class="label-bold">Shift</label>
-																	<input  name="shifts" type="number" class="num form-control a-forth" placeholder=""/>
+																	<input  name="shifts" type="number" min="0" class="num form-control a-forth" placeholder=""/>
 																</td>
 															</tr>
 														</table>
 													</div>
 													<div class="form-group">
 														<label class="label-bold">Workstations (Cubicle)</label>
-														<input name="cubicles" type="number" class="num  form-control" placeholder="">
+														<input name="cubicles" type="number" min="0" class="num  form-control" placeholder="">
 													</div>
 													<div class="form-group">
 														<label class="label-bold">PC/Notebook</label>
-														<input name="notebooks" type="number" class="num form-control" placeholder="">
+														<input name="notebooks" type="number" min="0" class="num form-control" placeholder="">
 													</div>
 													<div class="form-group" id="workFacilitiesId">
 														<label class="label-bold">Work Facility</label>
@@ -384,7 +379,7 @@
 																		<?php for($i=0;$i<count($impactLabel);$i++):?>
 																			<div class="gap col-md-2 ">
 																				<label class="gap-narrow"> <?php echo $impactLabel[$i];?> </label>
-																				<input name="morNormalStaffs[]" class="num" type="number" ></input>
+																				<input name="morNormalStaffs[]" class="num" type="number" min="0" ></input>
 																			</div>
 																		<?php endfor;?>
 																	</div>
@@ -400,7 +395,7 @@
 																			<?php for($i=0;$i<count($impactLabel);$i++):?>
 																			<div class="gap col-md-2 ">
 																				<label class="gap-narrow"> <?php echo $impactLabel[$i];?> </label>
-																				<input name="morWorkAreaRecoveries[]" class="num" type="number" ></input>
+																				<input name="morWorkAreaRecoveries[]" class="num" type="number" min="0" ></input>
 																			</div>
 																			<?php endfor;?>
 																		</div>
@@ -416,7 +411,7 @@
 																			<?php for($i=0;$i<count($impactLabel);$i++):?>
 																			<div class="gap col-md-2 ">
 																				<label class="gap-narrow"> <?php echo $impactLabel[$i];?> </label>
-																				<input name="morNotebook[]" class="num" type="number" ></input>
+																				<input name="morNotebook[]" class="num" type="number" min="0" ></input>
 																			</div>
 																			<?php endfor;?>	
 																		</div>	
@@ -660,7 +655,7 @@
 												<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
 											</div>
 											<div class="col-lg-6 text-right" >
-												<a class="button-gap" type="submit" onClick="inputPartialForm('myRecordForm')" data-toggle="tab" href="<?echo $base_url('/bia')?>">Save
+												<a class="button-gap" type="submit" onClick="inputPartialForm('myRecordForm')" data-toggle="tab" href="<?php echo base_url('/bia')?>">Save
 												<span class="glyphicon glyphicon-save" aria-hidden="true"></span></a>
 											</div>
 										</div>

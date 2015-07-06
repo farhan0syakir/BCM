@@ -14,7 +14,7 @@
 	<label class="label-bold">RTO</label>
 </div>
 <div class="form-group">
-	<input type="number" class="" placeholder="RTO" name="rto<?php echo $stream?>[]">
+	<input class ="num" type="number" min="0" class="" placeholder="RTO" name="rto<?php echo $stream?>[]">
 	<select class="" placeholder="RTO" name="rtoType<?php echo $stream?>[]">
 		<option value="">NA</option>
 		<option value="hours">Hours</option>

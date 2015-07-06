@@ -369,20 +369,20 @@
 															<tr>
 																<td>
 																	<label class="label-bold">Staff</label>
-																	<input  type="number" class="num form-control a-forth" placeholder=""/>
+																	<input  type="number" min="0" class="num form-control a-forth" placeholder=""/>
 																</td>
 																<td>
 																	<label class="label-bold">Shift</label>
-																	<input  type="number" class="num form-control a-forth" placeholder=""/>
+																	<input  type="number" min="0" class="num form-control a-forth" placeholder=""/>
 																</td>
 															</tr>
 														</table>
 													</div>
 													<div class="form-group">
-														<label class="label-bold">Workstations (Cubicle)</label><input type="number" class="num  form-control" placeholder="">
+														<label class="label-bold">Workstations (Cubicle)</label><input type="number" min="0" class="num  form-control" placeholder="">
 													</div>
 													<div class="form-group">
-														<label class="label-bold">PC/Notebook</label><input type="number" class="num form-control" placeholder="">
+														<label class="label-bold">PC/Notebook</label><input type="number" min="0" class="num form-control" placeholder="">
 													</div>
 													<div class="form-group">
 														<label class="label-bold">Work Facility</label><input class="form-control" placeholder="">
@@ -426,27 +426,27 @@
 																	<div class="gap col-md-12  ">
 																		<div class="gap col-md-2 ">
 																			<label class="gap-narrow"> <4-h  </label>
-																			<input class="num" type="number" ></label>
+																			<input class="num" type="number" min="0" ></label>
 																		</div>
 																		<div class="gap col-md-2 ">
 																			<label class="gap-narrow"><1-d </label>
-																			<input class="num" type="number" ></label>
+																			<input class="num" type="number" min="0" ></label>
 																		</div>
 																		<div class="gap col-md-2 ">
 																			<label class="gap-narrow"><2-d  </label>
-																			<input class="num" type="number" ></label>
+																			<input class="num" type="number" min="0" ></label>
 																		</div>
 																		<div class="gap col-md-2 ">
 																			<label class="gap-narrow"> <3-d  </label>
-																			<input class="num" type="number" ></label>
+																			<input class="num" type="number" min="0" ></label>
 																		</div>
 																			<div class="gap col-md-2 ">
 																				<label class="gap-narrow"> <7-d  </label>
-																				<input class="num" type="number" ></label>
+																				<input class="num" type="number" min="0" ></label>
 																			</div>
 																			<div class="gap col-md-2 ">
 																				<label class="gap-narrow"> >7-d  </label>
-																				<input class="num" type="number" ></label>
+																				<input class="num" type="number" min="0" ></label>
 																			</div>
 																		</div>
 																	</td>
@@ -460,27 +460,27 @@
 																		<div class="gap col-md-12  ">
 																		<div class="gap col-md-2 ">
 																			<label class="gap-narrow"> <4-h  </label>
-																			<input class="num" type="number" ></label>
+																			<input class="num" type="number" min="0" ></label>
 																		</div>
 																		<div class="gap col-md-2 ">
 																			<label class="gap-narrow"><1-d </label>
-																			<input class="num" type="number" ></label>
+																			<input class="num" type="number" min="0" ></label>
 																		</div>
 																		<div class="gap col-md-2 ">
 																			<label class="gap-narrow"><2-d  </label>
-																			<input class="num" type="number" ></label>
+																			<input class="num" type="number" min="0" ></label>
 																		</div>
 																		<div class="gap col-md-2 ">
 																			<label class="gap-narrow"> <3-d  </label>
-																			<input class="num" type="number" ></label>
+																			<input class="num" type="number" min="0" ></label>
 																		</div>
 																		<div class="gap col-md-2 ">
 																			<label class="gap-narrow"> <7-d  </label>
-																			<input class="num" type="number" ></label>
+																			<input class="num" type="number" min="0" ></label>
 																		</div>
 																			<div class="gap col-md-2 ">
 																				<label class="gap-narrow"> >7-d  </label>
-																				<input class="num" type="number" ></label>
+																				<input class="num" type="number" min="0" ></label>
 																			</div>
 																		</div>
 																	</td>
@@ -494,27 +494,27 @@
 																		<div class="gap col-md-12  ">
 																			<div class="gap col-md-2 ">
 																				<label class="gap-narrow"> <4-h  </label>
-																				<input class="num" type="number" ></label>
+																				<input class="num" type="number" min="0" ></label>
 																			</div>
 																			<div class="gap col-md-2 ">
 																				<label class="gap-narrow"><1-d </label>
-																				<input class="num" type="number" ></label>
+																				<input class="num" type="number" min="0" ></label>
 																			</div>
 																			<div class="gap col-md-2 ">
 																				<label class="gap-narrow"><2-d  </label>
-																				<input class="num" type="number" ></label>
+																				<input class="num" type="number" min="0" ></label>
 																			</div>
 																			<div class="gap col-md-2 ">
 																				<label class="gap-narrow"> <3-d  </label>
-																				<input class="num" type="number" ></label>
+																				<input class="num" type="number" min="0" ></label>
 																			</div>
 																			<div class="gap col-md-2 ">
 																				<label class="gap-narrow"> <7-d  </label>
-																				<input class="num" type="number" ></label>
+																				<input class="num" type="number" min="0" ></label>
 																			</div>
 																			<div class="gap col-md-2 ">
 																				<label class="gap-narrow"> >7-d  </label>
-																				<input class="num" type="number" ></label>
+																				<input class="num" type="number" min="0" ></label>
 																			</div>	
 																		</div>	
 																	</td>

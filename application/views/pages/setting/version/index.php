@@ -21,6 +21,7 @@
                                 <th class="col-md-3 text-right">
                                     <a class="button-gap crud"  data-toggle="modal" data-target="#add" href="#">
                                      Add New Version<span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
+                                     Add New Version <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
                                      <div class="modal fade" id="add">
                                         <div class="top-padding modal-dialog">
                                             <div class="top-gap modal-content">

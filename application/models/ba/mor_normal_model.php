@@ -72,11 +72,10 @@ class Mor_Normal_Model extends DataMapper {
     function addDetails($data){
         $temp = new Mor_Normal_Model();
         $temp->ba_id = $data['ba_id'];
-        $temp->skill_set = $data['skill_set'];
         $temp->location = $data['location'];
         $temp->staff = $data['staff'];
         $temp->shift = $data['shift'];
-        $temp->location = $data['location'];
+        $temp->work_station = $data['work_station'];
         $temp->pc = $data['pc'];
         $temp->s_less_4h = $data['s_less_4h'];
         $temp->s_less_1d = $data['s_less_1d'];

@@ -21,6 +21,7 @@
             <div class="panel-body">
                 <div class="table-responsive">
                     <table class="table table-striped">
+                        <div>
                         <thead>
                             <tr class="tr-gap">
                                 <th>BA Code</th>
@@ -47,7 +48,7 @@
 							</tr>
 							<?php endfor; ?>
 						</tbody>
-						
+						</div>
                     </table>
                 </div>
                 <!-- /.table-responsive -->

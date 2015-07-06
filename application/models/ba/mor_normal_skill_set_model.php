@@ -1,6 +1,6 @@
 <?php
 
-class Mor_Skill_Set_Model extends DataMapper {
+class Mor_Normal_Skill_Set_Model extends DataMapper {
 
     var $table = 'mor_normal_skill_set';
 
@@ -12,7 +12,7 @@ class Mor_Skill_Set_Model extends DataMapper {
     }
     
     function getAll(){
-        $bas = new Mor_Skill_Set_Model();
+        $bas = new Mor_Normal_Skill_Set_Model();
         $bas->get();
         $result = array();
         foreach ($bas as $ba)
@@ -47,7 +47,7 @@ class Mor_Skill_Set_Model extends DataMapper {
     }
 
     function addDetails($data){
-        $temp = new Mor_Skill_Set_Model();
+        $temp = new Mor_Normal_Skill_Set_Model();
         $temp->mor_normal_id = $data['mor_normal_id'];
         $temp->skill_set = $data['skill_set'];
         return $temp;

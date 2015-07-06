@@ -9,7 +9,46 @@ class Bia extends MY_Controller {
 
 	public function view($id)
 	{
-		$this->load->template('pages/bia/view',$id);
+		$ba = new BA_Model();
+		$ba_impact = new BA_Impact_Model();
+		$alternative_method = new BA_Alternative_Model();
+		$dependencies = new BA_Dependencies_Model();
+		$mor_normal = new Mor_Normal_Model();
+		$mor_normal_work_facility = new Mor_Normal_Work_Facility_Model();
+		$mor_normal_skill_set = new Mor_Normal_Skill_Set_Model();
+		
+		$mor_software = new Mor_Software_Model();
+		$mor_software_ba = new Mor_Software_BA_Model();
+		
+		$mor_hardware = new Mor_Hardware_Model();
+		$mor_hardware_ba = new Mor_Hardware_BA_Model();
+
+		$mor_non_it = new Mor_Non_It_Model();
+		$mor_non_it_ba = new Mor_Non_It_BA_Model();
+
+		$mor_record = new Mor_Record_Model();
+		$mor_record_ba = new Mor_Record_BA_Model();
+
+		$data['ba'] = $ba->where('id',$id)->get();
+		$data['ba_impact'] = $ba_impact->getAll();
+		$data['alternative_method'] = $alternative_method->where('ba_id',$ba->id)->get();
+		$data['dependencies'] = $dependencies->where('ba_id',$ba->id)->get();
+		$data['mor_normal'] = $mor_normal->where('ba_id',$ba->id)->get();
+		$data['mor_normal_work_facility'] = $mor_normal_work_facility->where('mor_normal_id',$mor_normal->id)->get();
+		$data['mor_normal_skill_set'] = $mor_normal_skill_set->where('mor_normal_id',$mor_normal->id)->get();
+		
+		$data['mor_software'] = $mor_software->get();
+		$data['mor_hardware'] = $mor_hardware->get();
+		$data['mor_software_bas'] = $mor_software_ba->where('ba_id',$ba->id)->get();
+		$data['mor_hardware_bas'] = $mor_hardware_ba->where('ba_id',$ba->id)->get();
+		
+		$data['mor_non_it'] = $mor_non_it->get();
+		$data['mor_non_it_bas'] = $mor_non_it_ba->where('ba_id',$ba->id)->get();
+
+		$data['mor_record'] = $mor_record->get();
+		$data['mor_record_bas'] = $mor_record_ba->where('ba_id',$ba->id)->get();
+
+		$this->load->template('pages/bia/view',$data);
 	}
 
 	public function edit($id)
@@ -154,14 +193,14 @@ class Bia extends MY_Controller {
 
 	function addMorIt($result){
 		// Create objects
-		// var_dump($result);
-		//die();
 		$ba = new BA_Model();
 		$name = $result['name'];
 		$ba_id = $ba->where('name',$name)->get()->id;
 		
 		for($i = 0; $i < count($result['software_name']); $i++) {
 			$soft = new Mor_Software_BA_Model();
+		// var_dump($result);
+		// die();
 			$data['mor_software_id']=$result['software_name'][$i];
 			$data['ba_id'] = $ba_id;
 			$data['rto'] = $result['software_rto'][$i];
@@ -232,8 +271,8 @@ class Bia extends MY_Controller {
 	}
 
 	function addMorNormal($result){
-		var_dump($result);
-		die();
+		// var_dump($result);
+		// die();
 		$ba = new BA_Model();
 		$name = $result['name'];
 		$ba_id = $ba->where('name',$name)->get()->id;
@@ -241,10 +280,10 @@ class Bia extends MY_Controller {
 		$mor_normal = new Mor_Normal_Model();
 		$data['ba_id']=$ba_id;
 		$data['location']=$result['location'];
-		$data['staff']=$result['staff'];
-		$data['skill']=$result['skill'];
-        $data['location']=$result['location'];
-        $data['pc']=$result['pc'];
+		$data['staff']=$result['staffs'];
+		$data['shift']=$result['shifts'];
+        $data['work_station']=$result['cubicles'];
+        $data['pc']=$result['notebooks'];
         $data['s_less_4h']=$result['morNormalStaffs'][0];
         $data['s_less_1d']=$result['morNormalStaffs'][1];
         $data['s_less_2d']=$result['morNormalStaffs'][2];
@@ -266,19 +305,18 @@ class Bia extends MY_Controller {
 		$mor_normal->add($data);
 
 		$temp_mor_normal = new Mor_Normal_Model();
-		$temp_mor_normal_id = $temp_mor_normal->where('ba_id',$ba_id)->get()->id;
-
+		$temp_mor_normal->where('ba_id',$ba_id)->get();
+		$temp_mor_normal_id = $temp_mor_normal->id;
 		for($i = 0; $i < count($result['facilities']);$i++){
-            $mor_normal_work_facility = new Mor_Normal_Work_Facilities_Model();
+            $mor_normal_work_facility = new Mor_Normal_Work_Facility_Model();
             $temp_data['mor_normal_id'] = $temp_mor_normal_id;
-            $temp_data['work_facility'] = $data['work_facilities'][$i];
+            $temp_data['work_facility'] = $result['facilities'][$i];
             $mor_normal_work_facility->add($temp_data);
         }
-
         for($i = 0; $i < count($result['skillSets']);$i++){
             $mor_normal_skill_set = new Mor_Normal_Skill_Set_Model();
             $temp_data['mor_normal_id'] = $temp_mor_normal_id;
-            $temp_data['skill_set'] = $data['skillSets'][$i];
+            $temp_data['skill_set'] = $result['skillSets'][$i];
             $mor_normal_skill_set->add($temp_data);
         }
 		

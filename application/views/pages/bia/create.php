@@ -657,7 +657,7 @@
 												<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
 											</div>
 											<div class="col-lg-6 text-right" >
-												<a class="button-gap" type="submit" onClick="inputPartialForm('myRecordForm')" data-toggle="tab" href="">Save
+												<a class="button-gap" type="submit" onClick="inputPartialForm('myRecordForm')" data-toggle="tab" href="<?echo $base_url('/bia')?>">Save
 												<span class="glyphicon glyphicon-save" aria-hidden="true"></span></a>
 											</div>
 										</div>

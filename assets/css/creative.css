@@ -625,7 +625,7 @@ body {
 
 @font-face { 
     font-family: 'Aller'!important; 
-    src: url('/assets/fonts/Aller_Rg.ttf') !important; 
+    src: url('../fonts/Aller_Rg.ttf') !important; 
 }
 
 .wrap{

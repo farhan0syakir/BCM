@@ -54,7 +54,7 @@ $db['default']['hostname'] = 'localhost';
 // $db['default']['database'] = $_ENV['DB_NAME'];
 
 $db['default']['username'] = 'root';
-$db['default']['password'] = '';
+$db['default']['password'] = '123';
 $db['default']['database'] = 'db_bcm';
 
 $db['default']['dbdriver'] = 'mysql';

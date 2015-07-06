@@ -18,9 +18,9 @@
 					<div class="row"> 
 							<div class="padding-leftt-narrow text-left col-lg-12">
 									<div class="col-lg-12 text-center">
-										<a type = "submit" class="button-gap">Login 
+										<button href = "#" type = "submit" class="button-gap">Login 
 											<span class="left-gap glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
-										</a>
+										</button>
 									</div>
 								</div>
 							</div>

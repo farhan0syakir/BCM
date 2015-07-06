@@ -45,7 +45,7 @@ $(document).ready(function() {
 
     var addInputCounter = 0;
     var limit = 10;
-    var isShowAlert = True;
+    var isShowAlert = true;
     function addInput(divName, nameForInput,myLimit,myIsShowAlert){
          limit = myLimit;
          isShowAlert = myIsShowAlert;

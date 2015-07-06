@@ -15,19 +15,17 @@
 			
 				
 				<div class="modal-body">
-					<div class="row"> 
-							<div class="padding-leftt-narrow text-left col-lg-12">
-									<div class="col-lg-12 text-center">
+					<div class="row text-center"> 
+							
 										<button href = "#" type = "submit" class="button-gap">Login 
 											<span class="left-gap glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
 										</button>
-									</div>
-								</div>
-							</div>
-						</div>
-                 
+					</div>
 				</div>
+		</div>
 </div>
+                 
+
 				<?php if(!empty($error_message)){
 					echo $error_message;
 				}?>

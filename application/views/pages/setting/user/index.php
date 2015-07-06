@@ -2,7 +2,7 @@
 <div  class="left-gap content-wrapper">
 <div  class="row">
                 <div class=" col-lg-12">
-                    <h3 class="title page-header">List of Users</h3>
+                    <h3 class="title page-header">Users</h3>
                 </div>
                 <!-- /.col-lg-12 -->
             
@@ -83,15 +83,11 @@
 
                         </div>  
 
-                        <div class="row">
-                            <div class="col-lg-12 text-right">
-                                <a href="#" class="edit-button-gap ">Add User <span class="glyph-pad glyphicon glyphicon-user" aria-hidden="true"></span> </a>
-                            </div>
-                        </div>
+                      
                       </div>
                       <div class="modal-footer text-right">
                         
-                        <a data-dismiss="modal" class="button-gap">Save</a>
+                        <a href="#" class="edit-button-gap ">Add User <span class="glyph-pad glyphicon glyphicon-user" aria-hidden="true"></span> </a>
                       </div>
                     </div><!-- /.modal-content -->
                   </div><!-- /.modal-dialog -->

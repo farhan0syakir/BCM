@@ -2,7 +2,7 @@
 <div  class="left-gap content-wrapper">
 <div  class="row">
     <div class=" col-lg-12">
-         <h3 class="title page-header">List of Requirements</h3>
+         <h3 class="title page-header">Requirements</h3>
      </div>
 </div>
 
@@ -10,7 +10,7 @@
     <div class="col-lg-12">
         <div class="panel panel-default">        
             <div class="panel-heading">
-                <h4>Requirements</h4>
+                <h4>List of Requirements</h4>
             </div>                               
             <div class="panel-body">
                 <div class="table-responsive">
@@ -23,10 +23,9 @@
                                         <label>Email</label>
                                     </td>
                                     <td class="col-md-4 text-right"><a class="edit-button-gap crud"  data-toggle="modal" data-target="#modalDeleteId" href="#">
-                                        Edit <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-                                    </td>
-                                    <td class="col-md-3 text-right"><a class="delete-button-gap crud" data-toggle="modal" data-target="#del-soft-email" href="#">
-                                        Delete <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+                                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                                        <a class="delete-button-gap crud" data-toggle="modal" data-target="#del-soft-email" href="#">
+                                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
                                         <div class="modal fade" id="del-soft-email">
                                             <div class="top-padding modal-dialog">
                                                 <div class="top-gap modal-content">
@@ -50,12 +49,12 @@
                                     <td class="col-md-6">
                                         <label>Database</label>
                                     </td>
+                                    
                                     <td class="col-md-4 text-right"><a class="edit-button-gap crud"  data-toggle="modal" data-target="#modalDeleteId" href="#">
-                                        Edit <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-                                    </td>
-                                    <td class="col-md-3 text-right"><a class="delete-button-gap crud" data-toggle="modal" data-target="#del-soft-db" href="#">
-                                        Delete <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
-                                        <div class="modal fade" id="del-soft-db">
+                                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                                        <a class="delete-button-gap crud" data-toggle="modal" data-target="#del-soft-email" href="#">
+                                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+                                        <div class="modal fade" id="del-soft-email">
                                             <div class="top-padding modal-dialog">
                                                 <div class="top-gap modal-content">
                                                     <div class="modal-header">
@@ -63,7 +62,7 @@
                                                         <h4 class="modal-title text-center">Delete Version</h4>
                                                     </div>
                                                     <div class="text-center left-gap right-gap modal-body">
-                                                        <h5>Are you sure want to delete 'Database' from List of Software Requirements? </h5>
+                                                        <h5>Are you sure want to delete 'Email' from List of Software Requirements? </h5>
                                                     </div>
                                                     <div class="top-gap-narrow bottom-gap-narrow modal-footer text-center">
                                                         <a data-dismiss="modal" href="#" class="delete-button-gap">Cancel</a>
@@ -78,9 +77,8 @@
                                     <td class="col-md-6">
                                         <input type="Add" class="form-control" placeholder="Name of Software">
                                     </td>
-                                    <td></td>
-                                    <td class="col-md-3 text-right"> <a class="button-gap">
-                                        Add<span class="glyphicon glyphicon-ok" aria-hidden="true"></span></a>
+                                     <td class="col-md-3 text-right"> <a class="button-gap">
+                                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
                                     </td>
                                 </tr>
                             </table>
@@ -94,11 +92,10 @@
                                         <label>PC</label>
                                     </td>
                                     <td class="col-md-4 text-right"><a class="edit-button-gap crud"  data-toggle="modal" data-target="#modalDeleteId" href="#">
-                                        Edit <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-                                    </td>
-                                    <td class="col-md-3 text-right"><a class="delete-button-gap crud" data-toggle="modal" data-target="#del-hard-pc" href="#">
-                                        Delete <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
-                                        <div class="modal fade" id="del-hard-pc">
+                                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                                        <a class="delete-button-gap crud" data-toggle="modal" data-target="#del-soft-email" href="#">
+                                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+                                        <div class="modal fade" id="del-soft-email">
                                             <div class="top-padding modal-dialog">
                                                 <div class="top-gap modal-content">
                                                     <div class="modal-header">
@@ -106,7 +103,7 @@
                                                         <h4 class="modal-title text-center">Delete Version</h4>
                                                     </div>
                                                     <div class="text-center left-gap right-gap modal-body">
-                                                        <h5>Are you sure want to delete 'PC' from List of Hardware Requirements? </h5>
+                                                        <h5>Are you sure want to delete 'Email' from List of Software Requirements? </h5>
                                                     </div>
                                                     <div class="top-gap-narrow bottom-gap-narrow modal-footer text-center">
                                                         <a data-dismiss="modal" href="#" class="delete-button-gap">Cancel</a>
@@ -122,11 +119,10 @@
                                         <label>Server</label>
                                     </td>
                                     <td class="col-md-4 text-right"><a class="edit-button-gap crud"  data-toggle="modal" data-target="#modalDeleteId" href="#">
-                                        Edit <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-                                    </td>
-                                    <td class="col-md-3 text-right"><a class="delete-button-gap crud" data-toggle="modal" data-target="#del-hard-ser" href="#">
-                                        Delete <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
-                                        <div class="modal fade" id="del-hard-ser">
+                                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                                        <a class="delete-button-gap crud" data-toggle="modal" data-target="#del-soft-email" href="#">
+                                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+                                        <div class="modal fade" id="del-soft-email">
                                             <div class="top-padding modal-dialog">
                                                 <div class="top-gap modal-content">
                                                     <div class="modal-header">
@@ -134,7 +130,7 @@
                                                         <h4 class="modal-title text-center">Delete Version</h4>
                                                     </div>
                                                     <div class="text-center left-gap right-gap modal-body">
-                                                        <h5>Are you sure want to delete 'Server' from List of Hardware Requirements? </h5>
+                                                        <h5>Are you sure want to delete 'Email' from List of Software Requirements? </h5>
                                                     </div>
                                                     <div class="top-gap-narrow bottom-gap-narrow modal-footer text-center">
                                                         <a data-dismiss="modal" href="#" class="delete-button-gap">Cancel</a>
@@ -149,9 +145,8 @@
                                     <td class="col-md-6">
                                         <input type="Add" class="form-control" placeholder="Name of Hardware">
                                     </td>
-                                    <td></td>
-                                    <td class="col-md-3 text-right"> <a class="button-gap">
-                                        Add<span class="glyphicon glyphicon-ok" aria-hidden="true"></span></a>
+                                   <td class="col-md-3 text-right"> <a class="button-gap">
+                                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
                                     </td>
                                 </tr>
                             </table>
@@ -164,11 +159,10 @@
                                         <label>Note</label>
                                     </td>
                                     <td class="col-md-4 text-right"><a class="edit-button-gap crud"  data-toggle="modal" data-target="#modalDeleteId" href="#">
-                                        Edit <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-                                    </td>
-                                    <td class="col-md-3 text-right"><a class="delete-button-gap crud" data-toggle="modal" data-target="#del-eq-note" href="#">
-                                        Delete <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
-                                        <div class="modal fade" id="del-eq-note">
+                                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                                        <a class="delete-button-gap crud" data-toggle="modal" data-target="#del-soft-email" href="#">
+                                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+                                        <div class="modal fade" id="del-soft-email">
                                             <div class="top-padding modal-dialog">
                                                 <div class="top-gap modal-content">
                                                     <div class="modal-header">
@@ -176,7 +170,7 @@
                                                         <h4 class="modal-title text-center">Delete Version</h4>
                                                     </div>
                                                     <div class="text-center left-gap right-gap modal-body">
-                                                        <h5>Are you sure want to delete 'Note' from List of Equipment Requirements? </h5>
+                                                        <h5>Are you sure want to delete 'Email' from List of Software Requirements? </h5>
                                                     </div>
                                                     <div class="top-gap-narrow bottom-gap-narrow modal-footer text-center">
                                                         <a data-dismiss="modal" href="#" class="delete-button-gap">Cancel</a>
@@ -191,12 +185,12 @@
                                     <td class="col-md-6">
                                         <label>Freezer</label>
                                     </td>
+                                    
                                     <td class="col-md-4 text-right"><a class="edit-button-gap crud"  data-toggle="modal" data-target="#modalDeleteId" href="#">
-                                        Edit <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-                                    </td>
-                                    <td class="col-md-3 text-right"><a class="delete-button-gap crud" data-toggle="modal" data-target="#del-eq-freezer" href="#">
-                                        Delete <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
-                                        <div class="modal fade" id="del-eq-freezer">
+                                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                                        <a class="delete-button-gap crud" data-toggle="modal" data-target="#del-soft-email" href="#">
+                                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+                                        <div class="modal fade" id="del-soft-email">
                                             <div class="top-padding modal-dialog">
                                                 <div class="top-gap modal-content">
                                                     <div class="modal-header">
@@ -204,7 +198,7 @@
                                                         <h4 class="modal-title text-center">Delete Version</h4>
                                                     </div>
                                                     <div class="text-center left-gap right-gap modal-body">
-                                                        <h5>Are you sure want to delete 'Freezer' from List of Equipment Requirements? </h5>
+                                                        <h5>Are you sure want to delete 'Email' from List of Software Requirements? </h5>
                                                     </div>
                                                     <div class="top-gap-narrow bottom-gap-narrow modal-footer text-center">
                                                         <a data-dismiss="modal" href="#" class="delete-button-gap">Cancel</a>
@@ -219,9 +213,9 @@
                                     <td class="col-md-6">
                                         <input type="Add" class="form-control" placeholder="Name of Equipment">
                                     </td>
-                                    <td></td>
+                                    
                                     <td class="col-md-3 text-right"> <a class="button-gap">
-                                        Add<span class="glyphicon glyphicon-ok" aria-hidden="true"></span></a>
+                                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
                                     </td>
                                 </tr>
                             </table>
@@ -234,11 +228,10 @@
                                         <label>Document No.123</label>
                                     </td>
                                     <td class="col-md-4 text-right"><a class="edit-button-gap crud"  data-toggle="modal" data-target="#modalDeleteId" href="#">
-                                        Edit <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-                                    </td>
-                                    <td class="col-md-3 text-right"><a class="delete-button-gap crud" data-toggle="modal" data-target="#del-rec" href="#">
-                                        Delete <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
-                                        <div class="modal fade" id="del-rec">
+                                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                                        <a class="delete-button-gap crud" data-toggle="modal" data-target="#del-soft-email" href="#">
+                                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+                                        <div class="modal fade" id="del-soft-email">
                                             <div class="top-padding modal-dialog">
                                                 <div class="top-gap modal-content">
                                                     <div class="modal-header">
@@ -246,7 +239,7 @@
                                                         <h4 class="modal-title text-center">Delete Version</h4>
                                                     </div>
                                                     <div class="text-center left-gap right-gap modal-body">
-                                                        <h5>Are you sure want to delete 'Document No.123' from List of Record, Item, Clerical Requirements? </h5>
+                                                        <h5>Are you sure want to delete 'Email' from List of Software Requirements? </h5>
                                                     </div>
                                                     <div class="top-gap-narrow bottom-gap-narrow modal-footer text-center">
                                                         <a data-dismiss="modal" href="#" class="delete-button-gap">Cancel</a>
@@ -262,11 +255,10 @@
                                         <label>Document No.123</label>
                                     </td>
                                     <td class="col-md-4 text-right"><a class="edit-button-gap crud"  data-toggle="modal" data-target="#modalDeleteId" href="#">
-                                        Edit <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-                                    </td>
-                                    <td class="col-md-3 text-right"><a class="delete-button-gap crud" data-toggle="modal" data-target="#del-rec" href="#">
-                                        Delete <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
-                                        <div class="modal fade" id="del-rec">
+                                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                                        <a class="delete-button-gap crud" data-toggle="modal" data-target="#del-soft-email" href="#">
+                                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+                                        <div class="modal fade" id="del-soft-email">
                                             <div class="top-padding modal-dialog">
                                                 <div class="top-gap modal-content">
                                                     <div class="modal-header">
@@ -274,7 +266,7 @@
                                                         <h4 class="modal-title text-center">Delete Version</h4>
                                                     </div>
                                                     <div class="text-center left-gap right-gap modal-body">
-                                                        <h5>Are you sure want to delete 'Document No.123' from List of Record, Item, Clerical Requirements? </h5>
+                                                        <h5>Are you sure want to delete 'Email' from List of Software Requirements? </h5>
                                                     </div>
                                                     <div class="top-gap-narrow bottom-gap-narrow modal-footer text-center">
                                                         <a data-dismiss="modal" href="#" class="delete-button-gap">Cancel</a>
@@ -289,9 +281,8 @@
                                     <td class="col-md-6">
                                         <input type="Add" class="form-control" placeholder="Name of  Record, Item, Clerical">
                                     </td>
-                                    <td></td>
                                     <td class="col-md-3 text-right"> <a class="button-gap">
-                                        Add<span class="glyphicon glyphicon-ok" aria-hidden="true"></span></a>
+                                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
                                     </td>
                                 </tr>
                             </table>

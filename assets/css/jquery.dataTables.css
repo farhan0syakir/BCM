@@ -101,7 +101,8 @@ table.dataTable thead .sorting_desc_disabled {
   cursor: pointer;
   *cursor: hand;
   color: #333 !important;
-  border: 1px solid transparent;
+  max-height: 36px !important;
+  /*border: 1px solid transparent;*/
 }
 .dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
   color: #333 !important;

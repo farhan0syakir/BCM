@@ -105,7 +105,7 @@ aside {
 .navbar-default {
  
     font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
-    background-color: #16a085;
+    background-color: #f1c40f;
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;
@@ -150,7 +150,7 @@ aside {
 @media(min-width:768px) {
     .navbar-default {
         border-color: rgba(255,255,255,.3);
-        background-color: #1abc9c;
+        background-color: #f1c40f;
     }
 
     .navbar-default .navbar-header .navbar-brand {
@@ -1981,9 +1981,11 @@ img.notif
 
 li.ganjil
 {
-	background-color:#1ABD9E;
+	background-color:transparent;
 
 }
+
+
 
 
 .title
@@ -2114,7 +2116,13 @@ th .th-gap
 }
 .top-gap-narrow
 {
-    margin-top:10px;
+    margin-top:10px !important;
+
+}
+
+.top-button-gap
+{
+    margin-top:200px !important;
 
 }
 
@@ -2527,3 +2535,15 @@ label{
   float:center;
   /*border-bottom: 1px solid #eee;*/
 }
+
+.form-login{
+    padding-top:5px !important;
+    padding-bottom:10px !important;
+}
+
+input[type="search"]{
+
+    border-radius: 100px;
+    border-style:dotted 1px #bdc3c7 !important;
+}
+

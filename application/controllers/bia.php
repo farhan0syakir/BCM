@@ -58,7 +58,10 @@ class Bia extends MY_Controller {
 
 	public function delete($id)
 	{
-		// $this->load->template('pages/bia/edit',$id);
+		$ba = new BA_Model();
+		$ba->where('id', $id)->get();
+		$ba->delete();
+		$this->index();
 	}
 
 	public function create()

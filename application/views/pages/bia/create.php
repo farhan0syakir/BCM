@@ -165,9 +165,9 @@
 													</a>
 												</div>
 												<div class="col-lg-6 text-right" >
-													<button class="edit-button-gap" type="submit" onClick="inputPartialForm('myDescForm')" data-toggle="tab" href="#alt">Next
-													<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-													</button>
+													<a class="edit-button-gap" type="submit" onClick="inputPartialForm('myDescForm')" data-toggle="tab" href="#alt">Next
+													<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+													</a>
 												</div>
 											</div>
 										</table>
@@ -192,7 +192,7 @@
 										<table  class="bia-detail">
 											<tr class="tr-gap">
 												<td>
-													<div class="form-group" id="alternativeMethodsId">
+													<div class="bottom-gap-narrow form-group" id="alternativeMethodsId">
 														<label class="label-bold">Add Alternative Methods/Contingency Plans</label>
 														<input class="form-control" name="alternativeMethods[]" placeholder="Input the contingency plan here!">
 													</div>	
@@ -206,14 +206,16 @@
 											</tr>
 										</table>
 										<div class="top-gap row">
-											<div class="col-lg-6 text-left" >
-												<a class="edit-button-gap" data-toggle="tab" href="#desc">
-												<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-														Previous</a>
-											</div>
-											<div class="col-lg-12 text-right" >
-												<button class="edit-button-gap" type="submit" onClick="inputPartialForm('myAlternativeForm')" data-toggle="tab" href="#dep">Next
-													<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+											<div class="col-lg-12" >
+												<div class="col-lg-6 text-left" >
+													<a class="edit-button-gap" data-toggle="tab" href="#desc">
+													<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+															Previous</a>
+												</div>
+												<div class="col-lg-6 text-right" >
+													<a class="edit-button-gap" type="submit" onClick="inputPartialForm('myAlternativeForm')" data-toggle="tab" href="#dep">Next
+														<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -243,7 +245,7 @@
 														</label>
 													</div>
 															<!--insert dependencies Form-->
-													<div id="contentDependenciesFormUpstream">
+													<div class="bottom-gap-narrow" id="contentDependenciesFormUpstream">
 														<?php $this->load->view('pages/bia/dependenciesForm',array('stream'=>'Upstream','counter'=>'0'));?>
 													</div>
 													<div class="row  bottom-gap-narrow">
@@ -263,7 +265,7 @@
 																<h4 class="title-header ">Downstream</h4>
 															</label>
 														</div>
-														<div id="contentDependenciesFormDownstream">
+														<div  id="contentDependenciesFormDownstream">
 															<?php $this->load->view('pages/bia/dependenciesForm',array('stream'=>'Downstream','counter'=>'0'));?>
 														</div>
 														<div class="row  bottom-gap-narrow">
@@ -283,9 +285,9 @@
 												Previous</a>
 											</div>
 											<div class="col-lg-6 text-right" >
-												<button class="edit-button-gap" type="submit" onClick="inputPartialForm('myDependenciesForm')" data-toggle="tab" href="#norm">Next
+												<a class="edit-button-gap" type="submit" onClick="inputPartialForm('myDependenciesForm')" data-toggle="tab" href="#norm">Next
 													<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-												</button>
+												</a>
 											</div>
 										</div>
 									</div>
@@ -433,9 +435,9 @@
 													Previous</a>
 											</div>
 											<div class="col-lg-6 text-right" >
-												<button class="edit-button-gap" type="submit" onClick="inputPartialForm('myNormalForm')" data-toggle="tab" href="#it">Next
+												<a class="edit-button-gap" type="submit" onClick="inputPartialForm('myNormalForm')" data-toggle="tab" href="#it">Next
 													<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-												</button>
+												</a>
 											</div>
 										</div>
 									</div>
@@ -539,8 +541,8 @@
 												<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
 											</div>
 											<div class="col-lg-6 text-right" >
-												<button class="edit-button-gap" type="submit" onClick="inputPartialForm('myItForm')" data-toggle="tab" href="#nonit">Next
-												<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
+												<a class="edit-button-gap" type="submit" onClick="inputPartialForm('myItForm')" data-toggle="tab" href="#nonit">Next
+												<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
 											</div>
 										</div>
 									</div>
@@ -597,8 +599,8 @@
 												<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
 											</div>
 											<div class="col-lg-6 text-right" >
-												<button class="edit-button-gap" type="submit" onClick="inputPartialForm('myNonItForm')" data-toggle="tab" href="#rec">Next
-												<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
+												<a class="edit-button-gap" type="submit" onClick="inputPartialForm('myNonItForm')" data-toggle="tab" href="#rec">Next
+												<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
 											</div>
 										</div>
 									</div>
@@ -655,8 +657,8 @@
 												<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
 											</div>
 											<div class="col-lg-6 text-right" >
-												<button class="button-gap" type="submit" onClick="inputPartialForm('myRecordForm')" data-toggle="tab" href="">Save
-												<span class="glyphicon glyphicon-save" aria-hidden="true"></span></button>
+												<a class="button-gap" type="submit" onClick="inputPartialForm('myRecordForm')" data-toggle="tab" href="">Save
+												<span class="glyphicon glyphicon-save" aria-hidden="true"></span></a>
 											</div>
 										</div>
 									</div>

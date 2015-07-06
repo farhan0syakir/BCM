@@ -52,7 +52,7 @@
 															</div>
 															</td>
 														</tr>
-															<tr class="tr-gap">
+															<tr>
 															<td class="td-label">
 															<label class="label-bold">Impact Scale Parameter </label>
 															</td>

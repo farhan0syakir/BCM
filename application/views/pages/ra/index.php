@@ -1,3 +1,5 @@
+
+<div  class="left-gap content-wrapper">
 <div class="row">
     <div class=" col-lg-12">
         <h3 class="title page-header">Risk Assessment</h3>
@@ -49,5 +51,6 @@
         </div>
         <!-- /.panel -->
     </div>
+</div>
 </div>
 <?php $this->load->view('pages/general/modalDelete');?>

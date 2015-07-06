@@ -21,7 +21,7 @@
 		<option value="weeks">Weeks</option>
 	</select>
 </div>
-<div class="form-group">
+<div class="border-gap-bottom form-group">
 	<label class="label-bold">
 		BCM Arrangement in Place?
 	</label>

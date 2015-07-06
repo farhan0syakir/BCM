@@ -1,4 +1,5 @@
 
+<div  class="left-gap content-wrapper">
 <div  class="row">
                 <div class=" col-lg-12">
                     <h3 class="title page-header">Business Units</h3>
@@ -73,15 +74,11 @@
                     </div><!-- /.modal-content -->
                   </div><!-- /.modal-dialog -->
                 </div><!-- /.modal -->
+
+</div>
 		
 
                         <!-- /.panel-body -->
-						
-						
-						
-                    </div>
-                    <!-- /.panel -->
-                </div>
-			</div>
+		
 			
 			

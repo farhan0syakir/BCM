@@ -1,5 +1,7 @@
 
+ <div  class="left-gap content-wrapper">
 <div  class="row">
+
     <div class=" col-lg-12">
         <h3 class="title page-header">Business Impact Analysis</h3>
     </div>
@@ -13,7 +15,7 @@
 	<div class="col-lg-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h4>List of Business Activities</h4>
+                <h5>List of Business Activities</h5>
             </div>
             <!-- /.panel-heading -->
             <div class="panel-body">
@@ -55,4 +57,6 @@
         <!-- /.panel -->
     </div>
 </div>
+</div>
+
 <?php $this->load->view('pages/general/modalDelete');?>

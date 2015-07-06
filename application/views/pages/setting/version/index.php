@@ -1,13 +1,14 @@
+<div class="left-gap content-wrapper">
 <div  class="row">
     <div class=" col-lg-12">
-         <h3 class="title page-header">Setting</h3>
+         <h3 class="title page-header">Version</h3>
      </div>
 </div>
 <div class="row">
     <div class="col-lg-12">
         <div class="panel panel-default">        
             <div class="panel-heading">
-                <h4>Buisiness Unit</h4>
+                <h4>List of Versions</h4>
             </div>                               
              <div class="panel-body">
                 <div class="table-responsive">
@@ -193,4 +194,5 @@
             </div>
         </div>
     </div>
+</div>
 </div>

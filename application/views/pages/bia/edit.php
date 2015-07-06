@@ -187,12 +187,12 @@
 										<table  class="bia-detail">
 											<tr class="tr-gap">
 												<td>
-													<div class="form-group" id="alternativeMethodsId">
+													<div class=" form-group" id="alternativeMethodsId">
 														<label class="label-bold">Edit Alternative Methods/Contingency Plans</label>
-														<input class="form-control" value="Contingency plan 1">
+														<input class="bottom-gap-narrow form-control" value="Contingency plan 1">
 														<input class="top-paddding-narrow form-control" value="Contingency plan 2">
 													</div>	
-													<div class="row  bottom-gap-narrow">
+													<div class="row bottom-gap-narrow">
 														<div class="col-lg-12 text-right">
 															<a class="button-gap" onClick="addInput('alternativeMethodsId', 'alternativeMethodsId',5,true)">Add
 															<span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
@@ -207,7 +207,7 @@
 												<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
 														Previous</a>
 											</div>
-											<div class="col-lg-12 text-right" >
+											<div class="col-lg-6 text-right" >
 												<a class="edit-button-gap" data-toggle="tab" href="#dep">Next
 												<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
 											</div>
@@ -740,7 +740,7 @@
 												<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
 											</div>
 											<div class="col-lg-6 text-right" >
-												<a class="button-gap" href="" type="submit">Edit
+												<a class="button-gap" href="" type="submit">Save
 												<span class="glyphicon glyphicon-save" aria-hidden="true"></span></a>
 											</div>
 										</div>

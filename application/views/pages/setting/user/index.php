@@ -1,4 +1,5 @@
 
+<div  class="left-gap content-wrapper">
 <div  class="row">
                 <div class=" col-lg-12">
                     <h3 class="title page-header">List of Users</h3>
@@ -23,7 +24,7 @@
                                         <tr class="tr-gap">
                                             <th>Name</th>
                                             <th>Username</th>
-                                     		<th/>
+                                     		
                                             <th class="th-gap text-right"><a href="#" data-toggle="modal" data-target="#create" class="button-gap crud">
 											Add User <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></th>
                                         </tr>
@@ -35,11 +36,18 @@
 									   <tr class="tr-gap-upper">
 									       <td>John Doe Hopkins</td>
 									       <td class="td-username"><?php echo 'john.doe';/*$bia[$i]->name;*/ ?></td>
-																	      
-											<td  class=" text-right"><a class="edit-button-gap crud" href="#" data-toggle="modal" data-target="#edit">
-											Edit <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></td>
-											<td  class="td-button text-right"><a class="delete-button-gap crud" href="#" data-toggle="modal" data-target="#delete" >
-											Delete <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
+							
+											
+                        <td  class="td-button text-right">
+                
+                               <a class="right-gap-narrow edit-button-gap crud" href="#" data-toggle="modal" data-target="#edit">
+                                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                               </a>
+                                <a class="delete-button-gap crud" href="#" data-toggle="modal" data-target="#delete" >
+                                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                </a>
+                        </td>
+
 										</tr>
 										<?php endfor; ?>
 									</tbody>
@@ -113,11 +121,11 @@
 
                       </div>
                       <div class="modal-footer ">
-                          <div class="col-lg-6 text-left"> 
-                            <a data-dismiss="modal" href="#" class="delete-button-gap">Cancel</a>
+                          <div class="top-gap-narrow bottom-gap-narrow col-lg-6 text-left"> 
+                            <a data-dismiss="modal" href="#" class=" bottom-gap-narrow delete-button-gap">Cancel</a>
                           </div>
-                          <div class="col-lg-6 text-right">
-                            <a data-dismiss="modal" class="button-gap">Save</a>
+                          <div class="top-gap-narrow bottom-gap-narrow col-lg-6 text-right">
+                            <a data-dismiss="modal" href="#" class="bottom-gap-narrow button-gap">Save</a>
                           </div>
                       </div>
                     </div><!-- /.modal-content -->
@@ -143,7 +151,7 @@
                   </div><!-- /.modal-dialog -->
                 </div><!-- /.modal -->
 
-                
+</div>
                         <!-- /.panel-body -->
 			
 			

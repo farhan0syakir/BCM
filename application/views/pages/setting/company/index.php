@@ -1,4 +1,5 @@
 
+<div  class="left-gap content-wrapper">
 <div  class="row">
                 <div class=" col-lg-12">
                     <h3 class="title page-header">Company Profile</h3>
@@ -16,7 +17,7 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-6">
-                            <table  class="bia-detail">
+                            <table  class="left-gap bia-detail">
                                 <tr class="tr-gap">
                                     <td class="td-label">
                                         <label class="label-bold">Name</label>
@@ -63,8 +64,8 @@
                         </div>
                         <div class="row">
 
-                        <div class="top-gap col-lg-12 text-right">
-                            <a class="edit-button-gap crud" href="<?php echo base_url('company/edit/');?>">
+                        <div class="bottom-gap-narrow top-gap col-lg-12 text-right">
+                            <a class="right-gap  edit-button-gap crud" href="<?php echo base_url('company/edit/1');?>">
                             Edit <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
                         </div>
                         </div>
@@ -174,14 +175,7 @@
                                 </table>
                             </div-->
                             <!-- /.table-responsive -->
-                        </div-->
+                        </div>
                         <!-- /.panel-body -->
-						
-						
-						
-                    </div>
-                    <!-- /.panel -->
-                </div>
-			</div>
-			
+
 			

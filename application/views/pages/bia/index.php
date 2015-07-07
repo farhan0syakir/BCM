@@ -37,7 +37,7 @@
                             for ($i = 0; $i < count($bia); $i++ )  : ?>
 						   <tr class="tr-gap-upper">
 						       <td> <?php echo "TCM-" . ($i+1) ?></td>
-						       <td class="td-title"><a href="<?php echo base_url('bia/view/').'/'.$bia[$i]->id;?>"><?php echo $bia[$i]->name;?></a></td>
+						       <td class="td-title"><a class="link-list" href="<?php echo base_url('bia/view/').'/'.$bia[$i]->id;?>"><?php echo $bia[$i]->name;?></a></td>
                                
 						       <td  class="td-button text-right">
 							  

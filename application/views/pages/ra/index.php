@@ -31,7 +31,7 @@
 							<?php for ($i = 0; $i < count($ra); $i++ )  : ?>
 						   <tr>
 						       <td> <?php echo "TCM-" . ($i+1) ?></td>
-						       <td><a href="<?php echo base_url('ra/view/').'/'.$ra[$i]->id;?>"><?php echo $ra[$i]->threat;?></a></td>
+						       <td><a class="link-list" href="<?php echo base_url('ra/view/').'/'.$ra[$i]->id;?>"><?php echo $ra[$i]->threat;?></a></td>
 
                                                               <td  class="td-button text-right">
                               

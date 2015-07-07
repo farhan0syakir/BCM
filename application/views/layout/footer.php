@@ -114,7 +114,7 @@ $(document).ready(function() {
       }
     }
 
-    function inputPartialForm(divName){
+    function next(divName){
       if(divName=='myDescForm'){
         $('#tabUl a[href="#alt"]').trigger('click');
       }
@@ -140,7 +140,9 @@ $(document).ready(function() {
       }
 
 
-
+    }
+    function inputPartialForm(divName){
+      next(divName);
       var biaName = document.getElementById('bussinessNameId').value;//ini perlu karena nama bia ga masuk form
       var temporaryDiv = document.getElementById(divName);
       var data_to_send = $(temporaryDiv).serializeArray();

@@ -12,29 +12,29 @@
 											<div class="panel-body">
 												<div class="row">
 													<div class="col-lg-12">
-														<form role="form">
+														<?php echo form_open("bu/make") ?>
 														
 																					
 															<div class="form-group">
 																<label class="label-bold">BU Code</label>
-																<input class="a-forth form-control" placeholder="Enter Business Unit code here"/>
+																<input name="bu_code" class="a-forth form-control" placeholder="Enter Business Unit code here"/>
 															</div>
 															<div class="form-group">
 																<label class="label-bold">Unit Name</label>
-																<input  class="form-control" placeholder="Enter the name of Business Unit here">
+																<input name="name" class="form-control" placeholder="Enter the name of Business Unit here">
 															</div>
 															<div class="form-group">
 																	
 																	<label class="label-bold">MTPD</label>
 																	<div class="row text-left">
 																	<div class="col-md-2">
-																		<input class=" form-control" placeholder="Enter MTPD">
+																		<input name="mtpd" class=" form-control" placeholder="Enter MTPD">
 																	</div>
 																	<div class="col-md-2">
-																		<select class="form-control">
-																			<option>hour(s)</option>
-																			<option>day(s)</option>
-																			<option>month(s)</option>
+																		<select id="mtpd_type_id" name="mtpd_type" class="form-control">
+																			<option value="0">hour(s)</option>
+																			<option value="1">day(s)</option>
+																			<option value="2">month(s)</option>
 																		</select>
 																	</div>
 																	</div>
@@ -46,33 +46,33 @@
 																	
 																	<div class="bottom-gap-narrow row text-left">
 																	<div class="col-md-2">
-																		<input class=" form-control" placeholder="Enter Parameter">
+																		<input name="impact_parameter" class=" form-control" placeholder="Enter Parameter">
 																	</div>
 																	<div class="col-md-2">
-																		<select class="form-control">
-																			<option>hour(s)</option>
-																			<option>day(s)</option>
-																			<option>month(s)</option>
+																		<select name="impact_parameter_type" class="form-control">
+																			<option value="0">hour(s)</option>
+																			<option value="1">day(s)</option>
+																			<option value="2">month(s)</option>
 																		</select>
 																	</div>
 																	<div class="col-md-2">
-																		<input class=" form-control" placeholder="Enter Parameter">
+																		<input name="impact_parameter_2" class=" form-control" placeholder="Enter Parameter">
 																	</div>
 																	<div class="col-md-2">
-																		<select class="form-control">
-																			<option>hour(s)</option>
-																			<option>day(s)</option>
-																			<option>month(s)</option>
+																		<select name="impact_parameter_type_2" class="form-control">
+																			<option value="0">hour(s)</option>
+																			<option value="1">day(s)</option>
+																			<option value="2">month(s)</option>
 																		</select>
 																	</div>
 																	<div class="col-md-2">
-																		<input class=" form-control" placeholder="Enter Parameter">
+																		<input name="impact_parameter_3" class=" form-control" placeholder="Enter Parameter">
 																	</div>
 																	<div class="col-md-2">
-																		<select class="form-control">
-																			<option>hour(s)</option>
-																			<option>day(s)</option>
-																			<option>month(s)</option>
+																		<select name="impact_parameter_type_3" class="form-control">
+																			<option value="0">hour(s)</option>
+																			<option value="1">day(s)</option>
+																			<option value="2">month(s)</option>
 																		</select>
 																	</div>
 
@@ -80,23 +80,23 @@
 
 																	<div class="row text-left">
 																	<div class="col-md-2">
-																		<input class=" form-control" placeholder="Enter Parameter">
+																		<input name="impact_parameter_4" class=" form-control" placeholder="Enter Parameter">
 																	</div>
 																	<div class="col-md-2">
-																		<select class="form-control">
-																			<option>hour(s)</option>
-																			<option>day(s)</option>
-																			<option>month(s)</option>
+																		<select name="impact_parameter_type_4" class="form-control">
+																			<option value="0">hour(s)</option>
+																			<option value="1">day(s)</option>
+																			<option value="2">month(s)</option>
 																		</select>
 																	</div>
 																	<div class="col-md-2">
-																		<input class=" form-control" placeholder="Enter Parameter">
+																		<input name="impact_parameter_5" class=" form-control" placeholder="Enter Parameter">
 																	</div>
 																	<div class="col-md-2">
-																		<select class="form-control">
-																			<option>hour(s)</option>
-																			<option>day(s)</option>
-																			<option>month(s)</option>
+																		<select name="impact_parameter_type_5" class="form-control">
+																			<option value="0">hour(s)</option>
+																			<option value="1">day(s)</option>
+																			<option value="2">month(s)</option>
 																		</select>
 																	</div>
 																	
@@ -113,12 +113,12 @@
 																					</a>
 																				</div>
 																				<div class="col-lg-6 text-right" >
-																					<a class="button-gap" href="<?php echo base_url('bu/view/1'); ?>">Save
+																					<button class="button-gap" type= "submit" href="<?php echo base_url('bu/view/1'); ?>">Save
 																					<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-																					</a>
+																					</button>
 																				</div>
 															</div>
-														</form>
+														<?php echo form_close() ?>
 													</div>
 
 													<!-- /.col-lg-6 (nested) -->

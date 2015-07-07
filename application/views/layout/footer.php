@@ -30,7 +30,7 @@ $(document).ready(function() {
     $('.table').dataTable({
       });
 
-
+    
 } );
     
     var getDependenciesCounter = 1;
@@ -115,6 +115,32 @@ $(document).ready(function() {
     }
 
     function inputPartialForm(divName){
+      if(divName=='myDescForm'){
+        $('#tabUl a[href="#alt"]').trigger('click');
+      }
+
+      else if(divName=='myAlternativeForm'){
+        $('#tabUl a[href="#dep"]').trigger('click');
+      }
+
+      else if(divName=='myDependenciesForm'){
+        $('#tabUl a[href="#norm"]').trigger('click');
+      }
+
+      else if(divName=='myNormalForm'){
+        $('#tabUl a[href="#it"]').trigger('click');
+      }
+
+      else if(divName=='myItForm'){
+        $('#tabUl a[href="#nonit"]').trigger('click');
+      }
+
+      else if(divName=='myNonItForm'){
+        $('#tabUl a[href="#rec"]').trigger('click');
+      }
+
+
+
       var biaName = document.getElementById('bussinessNameId').value;//ini perlu karena nama bia ga masuk form
       var temporaryDiv = document.getElementById(divName);
       var data_to_send = $(temporaryDiv).serializeArray();
@@ -130,6 +156,34 @@ $(document).ready(function() {
             }
         });
         // alert('fahran');
+    }
+
+    function previous(divName){
+        
+        if(divName=='myAlternativeForm'){
+          $('#tabUl a[href="#desc"]').trigger('click');
+        }
+
+        else if(divName=='myDependenciesForm'){
+          $('#tabUl a[href="#alt"]').trigger('click');
+        }
+
+        else if(divName=='myNormalForm'){
+          $('#tabUl a[href="#dep"]').trigger('click');
+        }
+
+        else if(divName=='myItForm'){
+          $('#tabUl a[href="#norm"]').trigger('click');
+        }
+
+        else if(divName=='myNonItForm'){
+          $('#tabUl a[href="#it"]').trigger('click');
+        }
+        else if(divName=='myRecordForm'){
+          $('#tabUl a[href="#nonit"]').trigger('click');
+        }
+
+
     }
 
     function checkingTableWithRadio(hardwareOrNonIt,theId) {

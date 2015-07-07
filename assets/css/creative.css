@@ -105,7 +105,7 @@ aside {
 .navbar-default {
  
     font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
-    background-color: #f1c40f;
+    background-color: #FACD19;
     background-image: url('../images/bg_navbar.png');
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
@@ -2549,3 +2549,7 @@ input[type="search"]{
     border-style:dotted 1px #bdc3c7 !important;
 }
 
+ .content-bg{
+    /*background-image: url(../images/content-bg.png) !important;*/
+   
+ }

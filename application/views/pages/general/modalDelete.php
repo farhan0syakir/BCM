@@ -8,7 +8,7 @@
             <h4 class="modal-title ">Delete Confirmation</h4>
           </div>
           <div class="modal-body">
-            <p>'Are you sure to delete Liquidity Management MM' ?</p>
+            <p id="paragraphId">'Are you sure to delete ' ?</p>
           </div>
           <div class="bottom-gap modal-body">
             <div class="row"> 

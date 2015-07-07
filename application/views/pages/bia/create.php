@@ -146,7 +146,7 @@
 													<option value="3" onClick="removeDiv('popUpFreeText')">weekly</option>
 													<option value="4" onClick="removeDiv('popUpFreeText')">monthly</option>     
 													<option value="5" onClick="removeDiv('popUpFreeText')">yearly</option> 
-													<option value="5" onClick = "addInput('popUpFreeText','cto_notes',1,false)">others</option> 
+													<option value="6" onClick = "addInput('popUpFreeText','cto_notes',1,false)">others</option> 
 												</select>
 											</div>
 											<div id="popUpFreeText">
@@ -189,7 +189,7 @@
 												<td>
 													<div class="bottom-gap-narrow form-group" id="alternativeMethodsId">
 														<label class="label-bold">Add Alternative Methods/Contingency Plans</label>
-														<input class="form-control" name="alternativeMethods[]" placeholder="Input the contingency plan here!">
+														<input class="form-control" name="alternativeMethods[]" placeholder="Input the contingency plan here!" required="true">
 													</div>	
 													<div class="row  bottom-gap-narrow">
 														<div class="col-lg-12 text-right">

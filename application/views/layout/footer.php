@@ -27,7 +27,8 @@
 
 <script>
 $(document).ready(function() {
-    $('.table').dataTable();
+    $('.table').dataTable({
+      });
 
 
 } );
@@ -65,8 +66,9 @@ $(document).ready(function() {
       document.getElementById(divName).innerHTML="";
     }
 
-    function changeDeleteId(id){
+    function changeDeleteId(id,name){
       $('#linkDeleteButtonModal').attr("href", "<?php echo current_url().'/delete/'?>"+id);
+      document.getElementById('paragraphId').innerHTML="Are you sure you want to delete "+name;
     }
 
     function disableMyRight(selectId,myNumber,Length){

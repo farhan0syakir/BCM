@@ -40,44 +40,6 @@
 										<div class="gap col-md-12  ">
 										<div class="gap col-md-2 ">
 												<label class="gap-narrow"> < 4-hour  </label>
-												<label class=""><?php echo $ba_impact[$ba->non_less_4h]->type?></label>
-											</div>
-															
-											<div class="gap col-md-2 ">
-												<label class="gap-narrow"> < 1-day </label>
-												<label class=""><?php echo $ba_impact[$ba->non_less_1d]->type?></label>
-											</div>
-																
-											<div class="gap col-md-2 ">
-												<label class="gap-narrow"> < 2-day  </label>
-												<label class=""><?php echo $ba_impact[$ba->non_less_2d]->type?></label>
-											</div>
-																
-											<div class="gap col-md-2 ">
-												<label class="gap-narrow"> < 3-day  </label>
-												<label class=""><?php echo $ba_impact[$ba->non_less_3d]->type?></label>
-											</div>
-														
-											<div class="gap col-md-2 ">
-												<label class="gap-narrow">< 7-day  </label>
-												<label class=""><?php echo $ba_impact[$ba->non_less_7d]->type?></label>
-											</div>
-													
-											<div class="gap col-md-2 ">
-												<label class="gap-narrow">> 7-day  </label>
-												<label class=""><?php echo $ba_impact[$ba->non_more_7d]->type?></label>
-											</div>
-										</div>
-									</td>
-								</tr>
-								<tr class="tr-gap">
-									<td class="td-label">
-										<label class="label-bold">Non Financial Impact </label>
-									</td>
-									<td>
-										<div class="gap col-md-12  ">
-											<div class="gap col-md-2 ">
-												<label class="gap-narrow"> < 4-hour  </label>
 												<label class=""><?php echo $ba_impact[$ba->less_4h]->type?></label>
 											</div>
 															
@@ -104,6 +66,44 @@
 											<div class="gap col-md-2 ">
 												<label class="gap-narrow">> 7-day  </label>
 												<label class=""><?php echo $ba_impact[$ba->more_7d]->type?></label>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr class="tr-gap">
+									<td class="td-label">
+										<label class="label-bold">Non Financial Impact </label>
+									</td>
+									<td>
+										<div class="gap col-md-12  ">
+											<div class="gap col-md-2 ">
+												<label class="gap-narrow"> < 4-hour  </label>
+												<label class=""><?php echo $ba_impact[$ba->non_less_4h]->type?></label>
+											</div>
+															
+											<div class="gap col-md-2 ">
+												<label class="gap-narrow"> < 1-day </label>
+												<label class=""><?php echo $ba_impact[$ba->non_less_1d]->type?></label>
+											</div>
+																
+											<div class="gap col-md-2 ">
+												<label class="gap-narrow"> < 2-day  </label>
+												<label class=""><?php echo $ba_impact[$ba->non_less_2d]->type?></label>
+											</div>
+																
+											<div class="gap col-md-2 ">
+												<label class="gap-narrow"> < 3-day  </label>
+												<label class=""><?php echo $ba_impact[$ba->non_less_3d]->type?></label>
+											</div>
+														
+											<div class="gap col-md-2 ">
+												<label class="gap-narrow">< 7-day  </label>
+												<label class=""><?php echo $ba_impact[$ba->non_less_7d]->type?></label>
+											</div>
+													
+											<div class="gap col-md-2 ">
+												<label class="gap-narrow">> 7-day  </label>
+												<label class=""><?php echo $ba_impact[$ba->non_more_7d]->type?></label>
 											</div>
 										</div>
 									</td>
@@ -200,12 +200,12 @@
 							<div id="dep" class="tab-pane fade">
 								<?php for ($i = 0; $i<2;$i++) :?>
 								<div class="col-lg-12">
-									<?php foreach ($dependencies->where('type_stream',$i)->get() as $key) :?>
 									<div class="panel panel-default">	
 										<div class="panel-heading">
 											<?php echo $i==0?"Upstream":"Downstream"?>
 										</div>									
 										<div class="panel-body">
+									<?php foreach ($dependencies->where('type_stream',$i)->where('ba_id',$ba->id)->get() as $key) :?>
 											<div class="row">
 												<div class="col-lg-6">
 													<table>
@@ -262,9 +262,9 @@
 													</table>
 												</div>
 											</div>
+									<?php endforeach;?>
 										</div>
 									</div>
-									<?php endforeach;?>
 								</div>
 								<?php endfor;?>
 							</div>
@@ -298,6 +298,17 @@
 															<td>
 																<label class="num ">
 																	<?php echo $mor_normal->staff?>
+																</label>
+															</td>
+														</tr>
+
+														<tr class="tr-gap">
+															<td class="td-label">
+																<label class="label-bold">Shift</label>
+															</td>
+															<td>
+																<label class="num ">
+																	<?php echo $mor_normal->shift?>
 																</label>
 															</td>
 														</tr>

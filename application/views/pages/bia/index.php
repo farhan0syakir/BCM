@@ -43,7 +43,7 @@
 							  
                                <a class="edit-button-gap crud" href="<?php echo base_url('bia/edit/').'/'.$bia[$i]->id;?>">
 								<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-                                <a class="delete-button-gap crud" data-toggle="modal" data-target="#modalDeleteId" href="#" onClick="changeDeleteId(<?php echo $bia[$i]->id?>)">
+                                <a class="delete-button-gap crud" data-toggle="modal" data-target="#modalDeleteId" href="#" onClick="changeDeleteId(<?php echo $bia[$i]->id?>,'<?php echo $bia[$i]->name?>')">
 								<span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
 							</tr>
 							<?php endfor; ?>

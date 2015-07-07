@@ -46,4 +46,4 @@
     <![endif]-->
 
 </head>
-<body>
+<body class="content-bg">

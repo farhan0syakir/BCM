@@ -1,4 +1,4 @@
-<div class="top-padding text-center">
+<div class=" top-padding text-center">
 		<h4>Login to Your Account</h4>
 		<div class="form-login">
 			<?php echo form_open("login/process")?>

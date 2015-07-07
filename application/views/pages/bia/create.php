@@ -11,7 +11,7 @@
 		<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
 		</a>Create New Business Activity</h3>
 		<div class="detail text">
-			<ul class="tab-switch nav nav-tabs text-center">
+			<ul class="tab-switch nav nav-tabs text-center" id="tabUl">
 				<li class="tab-gap tab active">
 					<a class="learntab" data-toggle="tab" href="#desc">Description</a>
 				</li>
@@ -157,7 +157,7 @@
 											</div>
 											
 											<div class="top-gap row">
-												<div class="col-lg-6 text-left" >
+												<div class="col-lg-6 text-left" type="submit" onClick="previous('myDescForm')" >
 												</div>
 												<div class="col-lg-6 text-right" >
 													<a class="edit-button-gap" type="submit" onClick="inputPartialForm('myDescForm')" data-toggle="tab" href="#alt">Next
@@ -203,7 +203,7 @@
 										<div class="top-gap row">
 											<div class="col-lg-12" >
 												<div class="col-lg-6 text-left" >
-													<a class="edit-button-gap" data-toggle="tab" href="#desc">
+													<a class="edit-button-gap" data-toggle="tab" type="submit" onClick="previous('myAlternativeForm')"  href="#desc">
 													<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
 															Previous</a>
 												</div>
@@ -275,7 +275,7 @@
 										</table>
 										<div class="top-gap row">
 											<div class="col-lg-6 text-left" >
-												<a class="edit-button-gap" data-toggle="tab" href="#alt">
+												<a class="edit-button-gap" data-toggle="tab" type="submit" onClick="previous('myDependenciesForm')" href="#alt">
 												<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
 												Previous</a>
 											</div>
@@ -425,7 +425,7 @@
 										</table>
 										<div class="top-gap row">
 											<div class="col-lg-6 text-left" >
-												<a class="edit-button-gap" data-toggle="tab" href="#dep">
+												<a class="edit-button-gap" data-toggle="tab" href="#dep" type="submit" onClick="previous('myNormalForm')">
 												<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
 													Previous</a>
 											</div>
@@ -535,7 +535,7 @@
 										</table>
 										<div class="top-gap row">
 											<div class="col-lg-6 text-left" >
-												<a class="edit-button-gap" data-toggle="tab" href="#norm">
+												<a class="edit-button-gap" data-toggle="tab" href="#norm" type="submit" onClick="previous('myItForm')">
 												<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
 											</div>
 											<div class="col-lg-6 text-right" >
@@ -593,7 +593,7 @@
 										</table>
 										<div class="top-gap row">
 											<div class="col-lg-6 text-left" >
-												<a class="edit-button-gap" data-toggle="tab" href="#it">
+												<a class="edit-button-gap" data-toggle="tab" href="#it" type="submit" onClick="previous('myNonItForm')">
 												<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
 											</div>
 											<div class="col-lg-6 text-right" >
@@ -651,7 +651,7 @@
 										</table>
 										<div class="top-gap row">
 											<div class="col-lg-6 text-left" >
-												<a class="edit-button-gap" data-toggle="tab" href="#nonit">
+												<a class="edit-button-gap" data-toggle="tab" href="#nonit" type="submit" onClick="previous('myRecordForm')">
 												<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
 											</div>
 											<div class="col-lg-6 text-right" >

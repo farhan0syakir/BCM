@@ -2545,11 +2545,33 @@ label{
 
 input[type="search"]{
 
-    border-radius: 100px;
+    border-radius: 5px;
     border-style:dotted 1px #bdc3c7 !important;
 }
 
  .content-bg{
     /*background-image: url(../images/content-bg.png) !important;*/
    
+ }
+
+ a.link-list{
+    font-size: 15px !important;
+    color:#2c3e50 !important;
+
+ }
+
+  a.link-list:hover{
+    font-size: 16px !important;
+    color:#f1c40f !important;
+    text-decoration: none !important;
+    font-weight: bold !important;
+    
+ }
+
+ a.link-sidebar{
+    font-size: 12px !important;
+ }
+
+ a.link-sidebar:hover{
+    font-size: 13px !important;
  }

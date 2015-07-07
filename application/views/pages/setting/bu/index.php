@@ -35,7 +35,7 @@
                                         for ($i = 0; $i < count($bia); $i++ )  : ?>
 									   <tr class="tr-gap-upper">
 									     <td>TCM</td>
-									     <td><a href="<?php echo base_url('bu/view/').'/'.$bia[$i]->id;?>" > <?php echo 'Treasury and Capital Management';?></a></td>
+									     <td><a  class="link-list" href="<?php echo base_url('bu/view/').'/'.$bia[$i]->id;?>" > <?php echo 'Treasury and Capital Management';?></a></td>
                        <td  class="td-button text-right">
                        <a class="edit-button-gap crud" href="<?php echo base_url('bu/edit/').'/'.$bia[$i]->id;?>">
                         <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>

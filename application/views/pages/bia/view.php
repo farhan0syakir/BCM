@@ -39,33 +39,29 @@
 									<td>
 										<div class="gap col-md-12  ">
 										<div class="gap col-md-2 ">
-												<label class="gap-narrow"> < 4-hour  </label>
-												<label class=""><?php echo $ba_impact[$ba->less_4h]->type?></label>
+												<div class="row"><label class="gap-narrow"> < 4-hour  </label></div>
+												<div class="row"><label class=""><?php echo $ba_impact[$ba->less_4h]->type?></label></div>
 											</div>
 															
 											<div class="gap col-md-2 ">
-												<label class="gap-narrow"> < 1-day </label>
-												<label class=""><?php echo $ba_impact[$ba->less_1d]->type?></label>
+												<div class="row"><label class="gap-narrow"> < 1-day </label></div>
+												<div class="row"><label class=""><?php echo $ba_impact[$ba->less_1d]->type?></label></div>
 											</div>
 																
 											<div class="gap col-md-2 ">
-												<label class="gap-narrow"> < 2-day  </label>
-												<label class=""><?php echo $ba_impact[$ba->less_2d]->type?></label>
+												<div class="row"><label class="gap-narrow"> < 2-day  </label></div>
+												<div class="row"><label class=""><?php echo $ba_impact[$ba->less_2d]->type?></label></div>
 											</div>
 																
+																							
 											<div class="gap col-md-2 ">
-												<label class="gap-narrow"> < 3-day  </label>
-												<label class=""><?php echo $ba_impact[$ba->less_3d]->type?></label>
-											</div>
-														
-											<div class="gap col-md-2 ">
-												<label class="gap-narrow">< 7-day  </label>
-												<label class=""><?php echo $ba_impact[$ba->less_7d]->type?></label>
+												<div class="row"><label class="gap-narrow">< 7-day  </label></div>
+												<div class="row"><label class=""><?php echo $ba_impact[$ba->less_7d]->type?></label></div>
 											</div>
 													
 											<div class="gap col-md-2 ">
-												<label class="gap-narrow">> 7-day  </label>
-												<label class=""><?php echo $ba_impact[$ba->more_7d]->type?></label>
+												<div class="row"><label class="gap-narrow">> 7-day  </label></div>
+												<div class="row"><label class=""><?php echo $ba_impact[$ba->more_7d]->type?></label></div>
 											</div>
 										</div>
 									</td>
@@ -77,33 +73,29 @@
 									<td>
 										<div class="gap col-md-12  ">
 											<div class="gap col-md-2 ">
-												<label class="gap-narrow"> < 4-hour  </label>
-												<label class=""><?php echo $ba_impact[$ba->non_less_4h]->type?></label>
+												<div class="row"><label class="gap-narrow"> < 4-hour  </label></div>
+												<div class="row"><label class=""><?php echo $ba_impact[$ba->non_less_4h]->type?></label></div>
 											</div>
 															
 											<div class="gap col-md-2 ">
-												<label class="gap-narrow"> < 1-day </label>
-												<label class=""><?php echo $ba_impact[$ba->non_less_1d]->type?></label>
+												<div class="row"><label class="gap-narrow"> < 1-day </label></div>
+												<div class="row"><label class=""><?php echo $ba_impact[$ba->non_less_1d]->type?></label></div>
 											</div>
 																
 											<div class="gap col-md-2 ">
-												<label class="gap-narrow"> < 2-day  </label>
-												<label class=""><?php echo $ba_impact[$ba->non_less_2d]->type?></label>
+												<div class="row"><label class="gap-narrow"> < 2-day  </label></div>
+												<div class="row"><label class=""><?php echo $ba_impact[$ba->non_less_2d]->type?></label></div>
 											</div>
 																
+												
 											<div class="gap col-md-2 ">
-												<label class="gap-narrow"> < 3-day  </label>
-												<label class=""><?php echo $ba_impact[$ba->non_less_3d]->type?></label>
-											</div>
-														
-											<div class="gap col-md-2 ">
-												<label class="gap-narrow">< 7-day  </label>
-												<label class=""><?php echo $ba_impact[$ba->non_less_7d]->type?></label>
+												<div class="row"><label class="gap-narrow">< 7-day  </label></div>
+												<div class="row"><label class=""><?php echo $ba_impact[$ba->non_less_7d]->type?></label></div>
 											</div>
 													
 											<div class="gap col-md-2 ">
-												<label class="gap-narrow">> 7-day  </label>
-												<label class=""><?php echo $ba_impact[$ba->non_more_7d]->type?></label>
+												<div class="row"><label class="gap-narrow">> 7-day  </label></div>
+												<div class="row"><label class=""><?php echo $ba_impact[$ba->non_more_7d]->type?></label></div>
 											</div>
 										</div>
 									</td>
@@ -296,9 +288,9 @@
 																<label class="label-bold">Staff</label>
 															</td>
 															<td>
-																<label class="num ">
+																<div class="gap col-md-12  ">
 																	<?php echo $mor_normal->staff?>
-																</label>
+																</div>
 															</td>
 														</tr>
 
@@ -307,9 +299,9 @@
 																<label class="label-bold">Shift</label>
 															</td>
 															<td>
-																<label class="num ">
+																<div class="gap col-md-12  ">
 																	<?php echo $mor_normal->shift?>
-																</label>
+																</div>
 															</td>
 														</tr>
 														
@@ -318,20 +310,20 @@
 																<label class="label-bold">Workstations</label>
 															</td>
 															<td>
-																<label class="num ">
+																<div class="gap col-md-12  ">
 																	<?php echo $mor_normal->work_station?>
-																</label>
+																</div>
 															</td>
 														</tr>
 																
-														<tr>
+														<tr class="tr-gap">
 															<td class="td-label">
 																<label class="label-bold">PC/Notebook</label>
 															</td>
 															<td>
-																<label class="num ">
+																<div class="gap col-md-12  ">
 																	<?php echo $mor_normal->pc?>
-																</label>
+																</div>
 															</td>
 														</tr>
 														
@@ -385,46 +377,41 @@
 																<div class="gap col-md-12  ">
 																	<div class="gap col-md-2 ">
 																		<label class="gap-narrow"> < 4-hour  </label>
-																		<label class="num ">
+																		<div class="gap col-md-12  ">
 																			<?php echo $mor_normal->s_less_4h?>
-																		</label>
+																		</div>
 																	</div>
 																	<div class="gap col-md-2 ">
 																		<label class="gap-narrow">< 1-day </label>
-																		<label class="num ">
+																		<div class="gap col-md-12  ">
 																			<?php echo $mor_normal->s_less_1d?>
-																		</label>
+																		</div>
 																	</div>
 																	<div class="gap col-md-2 ">
 																		<label class="gap-narrow">< 2-day  </label>
-																		<label class="num ">
+																		<div class="gap col-md-12  ">
 																			<?php echo $mor_normal->s_less_2d?>
-																		</label>
+																		</div>
 																	</div>
-																	<div class="gap col-md-2 ">
-																		<label class="gap-narrow"> < 3-day  </label>
-																		<label class="num ">
-																			<?php echo $mor_normal->s_less_3d?>
-																		</label>
-																	</div>
+																	
 																	<div class="gap col-md-2 ">
 																		<label class="gap-narrow"> < 7-day  </label>
-																		<label class="num ">
+																		<div class="gap col-md-12  ">
 																			<?php echo $mor_normal->s_less_7d?>
-																		</label>
+																		</div>
 																	</div>
 																				
 																	<div class="gap col-md-2 ">
 																		<label class="gap-narrow"> > 7-day  </label>
-																		<label class="num ">
+																		<div class="gap col-md-12  ">
 																			<?php echo $mor_normal->s_more_7d?>
-																		</label>
+																		</div>
 																	</div>
 																</div>
 															</td>
 														</tr>
 																	
-														<tr>
+														<tr class="tr-gap">
 															<td class="td-label">
 																<label class="label-bold">Work Area Recovery</label>
 															</td>
@@ -432,44 +419,38 @@
 																<div class="gap col-md-12  ">
 																<div class="gap col-md-2 ">
 																	<label class="gap-narrow"> < 4-hour  </label>
-																	<label class="num ">
+																	<div class="gap col-md-12  ">
 																			<?php echo $mor_normal->war_less_4h?>
-																		</label>
+																	</div>
 																</div>
 																				
 																<div class="gap col-md-2 ">
 																	<label class="gap-narrow"> < 1-day </label>
-																	<label class="num ">
+																	<div class="gap col-md-12  ">
 																			<?php echo $mor_normal->war_less_1d?>
-																		</label>
+																	</div>
 																</div>
 																					
 																<div class="gap col-md-2 ">
 																	<label class="gap-narrow"> < 2-day  </label>
-																	<label class="num ">
+																	<div class="gap col-md-12  ">
 																			<?php echo $mor_normal->war_less_2d?>
-																		</label>
+																	</div>
 																</div>
 																					
-																<div class="gap col-md-2 ">
-																	<label class="gap-narrow"> < 3-day  </label>
-																	<label class="num ">
-																			<?php echo $mor_normal->war_less_3d?>
-																		</label>
-																</div>
-																			
+																																	
 																<div class="gap col-md-2 ">
 																	<label class="gap-narrow">< 7-day  </label>
-																		<label class="num ">
+																		<div class="gap col-md-12  ">
 																			<?php echo $mor_normal->war_less_7d?>
-																		</label>
+																		</div>
 																</div>
 																		
 																<div class="gap col-md-2 ">
 																	<label class="gap-narrow">> 7-day  </label>
-																		<label class="num ">
+																		<div class="gap col-md-12  ">
 																			<?php echo $mor_normal->war_more_7d?>
-																		</label>
+																		</div>
 																</div>
 																				
 																</div>
@@ -483,44 +464,38 @@
 																<div class="gap col-md-12  ">
 																<div class="gap col-md-2 ">
 																	<label class="gap-narrow"> < 4-hour  </label>
-																	<label class="num ">
+																	<div class="gap col-md-12  ">
 																			<?php echo $mor_normal->p_less_4h?>
-																		</label>
+																	</div>
 																</div>
 																				
 																<div class="gap col-md-2 ">
 																	<label class="gap-narrow"> < 1-day </label>
-																	<label class="num ">
+																	<div class="gap col-md-12  ">
 																			<?php echo $mor_normal->p_less_1d?>
-																		</label>
+																	</div>
 																</div>
 																					
 																<div class="gap col-md-2 ">
 																	<label class="gap-narrow"> < 2-day  </label>
-																	<label class="num ">
+																	<div class="gap col-md-12  ">
 																			<?php echo $mor_normal->p_less_2d?>
-																		</label>
+																	</div>
 																</div>
-																					
-																<div class="gap col-md-2 ">
-																	<label class="gap-narrow"> < 3-day  </label>
-																	<label class="num ">
-																			<?php echo $mor_normal->p_less_3d?>
-																		</label>
-																</div>
+																
 																			
 																<div class="gap col-md-2 ">
 																	<label class="gap-narrow">< 7-day  </label>
-																		<label class="num ">
+																	<div class="gap col-md-12  ">
 																			<?php echo $mor_normal->p_less_7d?>
-																		</label>
+																	</div>
 																</div>
 																		
 																<div class="gap col-md-2 ">
 																	<label class="gap-narrow">> 7-day  </label>
-																		<label class="num ">
+																	<div class="gap col-md-12  ">
 																			<?php echo $mor_normal->p_more_7d?>
-																		</label>
+																	</div>
 																</div>
 																				
 																</div>
@@ -539,7 +514,7 @@
 									<div class="panel panel-default">	
 										<div class="panel-heading">
 											Software Requirements
-										</div>										
+										</div>											
 										<div class="panel-body">
 											
 											<div class="row">
@@ -549,7 +524,7 @@
 															<table  class="bia-detail">
 															<?php foreach ($mor_software_bas as $mor_software_ba) :?>
 
-															<tr class="tr-gap" >
+															<tr  >
 																<td class="td-label">
 																	<label class="label-bold"></br><?php echo $mor_software->where('id',$mor_software_ba->mor_software_id)->get()->name?></label>
 																</td>
@@ -603,7 +578,7 @@
 															<table  class="bia-detail">
 															<?php foreach ($mor_hardware_bas as $mor_hardware_ba) :?>
 
-																<tr class="tr-gap">
+																<tr >
 																<td class="td-label">
 																</br>
 																	<label class="label-bold"><?php echo $mor_hardware->where('id',$mor_hardware_ba->mor_hardware_id)->get()->name?></label>

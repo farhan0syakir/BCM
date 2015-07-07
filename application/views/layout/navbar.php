@@ -14,6 +14,14 @@
 		<?php if(!empty($this->session->userdata('logged_in'))){ ?>
 		
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-left dropdown">
+				<li class="status">
+					Business Unit: TCM
+				</li>
+				<li class="status">
+					Version: 1.1
+				</li>
+			</ul>
 			<ul class="nav navbar-nav navbar-right dropdown">
 				<div class="top-padding-narrow btn-group">
 				<li class="no-padding" data-toggle="dropdown" data-target="#approval" >

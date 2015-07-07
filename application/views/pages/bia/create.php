@@ -501,11 +501,9 @@
 													
 														<table>
 															<tr class="gap col-md-12">
-																<td class="gap col-md-3">
 																<td class="gap col-md-4">
 																	<label class="gap-narrow">Hardware</label>
 																</td>
-																<td class="gap col-md-3">
 																<td class="gap col-md-4">
 																	<label class="gap-narrow">RTO</label>
 																</td>		
@@ -518,7 +516,6 @@
 															</tr>
 															<?php for($i=0;$i<count($mor_hardware);$i++):?>
 															<tr class="gap col-md-12 ">
-																<td class="gap col-md-3"><input id="checkBoxHardware<?php echo $mor_hardware[$i]->id?>"type="checkbox" value="<?php echo $mor_hardware[$i]->id?>" name="hardware_id[]" onClick="checkingTableWithRadio('Hardware','checkBoxHardware<?php echo $mor_hardware[$i]->id?>')"><?php echo $mor_hardware[$i]->name?></td>
 																<td class="gap col-md-4"><input id="checkBoxHardware<?php echo $mor_hardware[$i]->id?>"type="checkbox" value="<?php echo $mor_hardware[$i]->id?>" name="hardware_id[]" onClick="checkingTableWithRadio('Hardware','checkBoxHardware<?php echo $mor_hardware[$i]->id?>')"><?php echo $mor_hardware[$i]->name?></td>
 																<td class="gap col-md-3"><input  disabled="true" id="rtoHardwareId<?php echo $mor_hardware[$i]->id?>"class="num" name="hardware_rto[]"></td>		
 																<td class="gap col-md-3"><input  disabled="true" id="quantityHardware<?php echo $mor_hardware[$i]->id?>" class="num" name="hardware_quantity[]" ></td>
@@ -530,8 +527,6 @@
 															<?php endfor;?>
 															
 														</table>
-													</div>
-													<div class="form-group">
 													</div>
 												
 												</td>

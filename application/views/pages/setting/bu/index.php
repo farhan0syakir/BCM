@@ -43,6 +43,7 @@
                               <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                             </a>
                             <a class="delete-button-gap crud" href="#" data-target="#modalDeleteId" data-toggle="modal" onClick="changeDeleteId(<?php echo $setting_bu[$i]->id?>,'<?php echo $setting_bu[$i]->name?>')">
+                            <a class="left-gap-narrow delete-button-gap crud" href="#" data-target="#modalDeleteId" data-toggle="modal" onClick="changeDeleteId(<?php echo $setting_bu[$i]->id?>,'<?php echo $setting_bu[$i]->name?>')">
                               <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                             </a>
                           </td>

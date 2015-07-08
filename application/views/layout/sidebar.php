@@ -6,6 +6,7 @@
         <div id="sidebar-wrapper" class="sidebar-fixed">
                 <ul class="sidebar-nav">
                     <li class="ganjil" >
+                    <li class="ganjil active" >
                         <a class="link-sidebar" href="<?php echo base_url('home1')?>"><img class="menu" src="<?php echo base_url('assets/images/home.png')?>">HOME</a>
                     </li>
                     <li class="ganjil" >

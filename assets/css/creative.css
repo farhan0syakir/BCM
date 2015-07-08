@@ -2064,9 +2064,15 @@ li.ganjil
 
 .bia-detail
 {
-	min-width:960px;
+	min-width: 700px !important;
+    max-width:960px !important;
 }
 
+table.bia-detail
+{
+    width: 20% !important;
+    width:960px !important;
+}
 .td-label
 {
 	width:300px;
@@ -2191,6 +2197,8 @@ tr.top-padding
 {
     margin-left:15px !important;
 }
+
+
 
 .left-gap-narrow
 {

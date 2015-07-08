@@ -12,10 +12,21 @@
 ?>
 <div class="row top-space" >
 	<div  class="content-wrapper">
-		<h3 class="title title-header">
-		<a class="back-button-gap" href="<?php echo base_url('bia') ?>">
-		<span class="glyphicon glyphicon-chevron-left" aria-hidden="true">
-		</span></a><?php echo $ba->name?></h3>
+
+		<div class="row">
+	  			<div class="col-lg-6 text-left">
+	  			         <h3 class="title title-header">
+						<a class="back-button-gap" href="<?php echo base_url('bia') ?>">
+						<span class="glyphicon glyphicon-chevron-left" aria-hidden="true">
+						</span></a><?php echo $ba->name?></h3>
+				</div>
+				<div class="top-gap col-lg-6 text-right">
+						<a class="right-gap-medium edit-button-gap crud" href="<?php echo base_url('bia/edit/1');?>">
+						Edit <span class="left-gap-narrow glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+				</div>
+		</div>
+
+		
 		<div class="col-lg-12">
 			<div class="panel panel-default">										
 				<div class="panel-body">
@@ -193,7 +204,7 @@
 								<?php for ($i = 0; $i<2;$i++) :?>
 								<div class="col-lg-12">
 									<div class="panel panel-default">	
-										<div class="panel-heading">
+										<div class="uppercase panel-heading">
 											<?php echo $i==0?"Upstream":"Downstream"?>
 										</div>									
 										<div class="panel-body">
@@ -265,7 +276,7 @@
 							<div id="norm" class="tab-pane fade">
 								<div class="col-lg-12">
 									<div class="panel panel-default">	
-										<div class="panel-heading">
+										<div class="uppercase panel-heading">
 											Normal
 										</div>										
 										<div class="panel-body">
@@ -341,7 +352,7 @@
 															</td>
 														</tr>
 																
-														<tr class="tr-gap">
+														<tr >
 															<td class="td-label">
 																<label class="label-bold">Skill Set/Designation</label>
 															</td>
@@ -359,7 +370,7 @@
 										</div>
 									</div>
 										<div class="panel panel-default">
-											<div class="panel-heading">
+											<div class="uppercase panel-heading">
 												Minimum Operating Requirements ( MOR )
 											</div>								
 										<div class="panel-body">
@@ -512,7 +523,7 @@
 							<div id="it" class="tab-pane fade">
 								<div class="col-lg-12">
 									<div class="panel panel-default">	
-										<div class="panel-heading">
+										<div class="uppercase panel-heading">
 											Software Requirements
 										</div>											
 										<div class="panel-body">
@@ -526,7 +537,7 @@
 
 															<tr  >
 																<td class="td-label">
-																	<label class="label-bold"></br><?php echo $mor_software->where('id',$mor_software_ba->mor_software_id)->get()->name?></label>
+																	<label class="uppercase label-bold"></br><?php echo $mor_software->where('id',$mor_software_ba->mor_software_id)->get()->name?></label>
 																</td>
 															</tr>
 																		
@@ -552,9 +563,9 @@
 																	<label class="label-bold">Alt Manual Methods</label>
 																</td>
 																<td>
-																	<div class="gap col-md-12  ">
+																	<label class="num ">
 																		<?php echo $mor_software_ba->alternative_manual_method?>
-																	</div>
+																	</label>
 																</td>
 															</tr>
 															<?php endforeach;?>	
@@ -567,7 +578,7 @@
 										</div>
 									</div>
 									<div class="panel panel-default">	
-										<div class="panel-heading">
+										<div class="uppercase panel-heading">
 												Hardware Requirements
 											</div>										
 										<div class="panel-body">	
@@ -581,7 +592,7 @@
 																<tr >
 																<td class="td-label">
 																</br>
-																	<label class="label-bold"><?php echo $mor_hardware->where('id',$mor_hardware_ba->mor_hardware_id)->get()->name?></label>
+																	<label class="uppercase label-bold"><?php echo $mor_hardware->where('id',$mor_hardware_ba->mor_hardware_id)->get()->name?></label>
 																</td>
 																<td>
 																</td>
@@ -634,13 +645,13 @@
 												<?php foreach ($mor_non_it_bas as $mor_non_it_ba ):?> 
 												<table  class="bia-detail">
 													<tr >
-														<td class="td-label">
+														<!--td class="td-label">
 															<label class="label-bold">Equipment</label>
-														</td>
+														</td-->
 														<td>
-															<div class="gap col-md-12  ">
+															<label class="uppercase label-bold">
 																<?php echo $mor_non_it->where('id',$mor_non_it_ba->mor_non_it_id)->get()->equipment?>
-															</div>
+															</label>
 														</td>
 													</tr>
 																
@@ -688,13 +699,13 @@
 												<?php foreach ($mor_record_bas as $mor_record_ba): ?>
 												<table  class="bia-detail">
 													<tr >
-														<td class="td-label">
+														<!--td class="td-label">
 															<label class="label-bold">Equipment</label>
-														</td>
-														<td>
-															<div class="gap col-md-12  ">
+														</td-->
+														<td class="td-label">
+															<label class="uppercase label-bold">
 																<?php echo $mor_record->where('id',$mor_record_ba->mor_record_id)->get()->name?>
-															</div>
+															</label>
 														</td>
 													</tr>
 																
@@ -734,7 +745,7 @@
 														</td>
 													</tr>
 
-													<tr >
+													<tr class="tr-gap" >
 														<td class="td-label">
 															<label class="label-bold">ownership</label>
 														</td>

@@ -18,10 +18,10 @@
                         <a class="link-sidebar" href="#"><img class="menu" src="<?php echo base_url('assets/images/dm.png')?>">DISASTER MANAGEMENT</a>
                     </li>
                     
-                    <li class="ganjil" >
-                        <a class="link-sidebar" href="<?php echo base_url('company')?>"><img class="menu" src="<?php echo base_url('assets/images/role.png')?>">SETTING</a>
+                    <li class="dropdown ganjil" >
+                        <a class="dropdown-toggle link-sidebar" data-toggle="dropdown" href="#" ><img class="menu" src="<?php echo base_url('assets/images/role.png')?>">SETTING<span class="top-gap-very-narrow left-gap-large caret"></span></a>
                         
-                        <ul class="nested">
+                        <ul class="dropdown-menu nested" role="menu">
                             <li class="ganjil"><a class="link-sidebar" href="<?php echo base_url('company')?>"><span class="glyph-pad glyphicon glyphicon-home" aria-hidden="true"></span>  COMPANY</a></li>
                             <li class="ganjil"><a class="link-sidebar" href="<?php echo base_url('bu')?>"><span class="glyph-pad glyphicon-class glyphicon glyphicon-object-align-vertical"></span>  BUSINESS UNITS</a></li>
                             <li class="ganjil"><a class="link-sidebar" href="<?php echo base_url('user')?>"><span class="glyph-pad glyphicon glyphicon-user" aria-hidden="true"></span> USERS</a></li>

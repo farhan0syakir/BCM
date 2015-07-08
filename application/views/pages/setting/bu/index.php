@@ -37,7 +37,7 @@
                           for ($i = 0; $i < count($setting_bu); $i++ )  : ?>
     									   <tr class="tr-gap-upper">
     									     <td><?php echo $setting_bu[$i]->bu_code ?></td>
-    									     <td><a href="<?php echo base_url('bu/view/').'/'.$setting_bu[$i]->id;?>" ><?php echo $setting_bu[$i]->name;?></a></td>
+    									     <td class="td-title"><a class="link-list" href="<?php echo base_url('bu/view/').'/'.$setting_bu[$i]->id;?>" ><?php echo $setting_bu[$i]->name;?></a></td>
                           <td  class="td-button text-right">
                             <a class="edit-button-gap crud" href="<?php echo base_url('bu/edit/').'/'.$setting_bu[$i]->id;?>">
                               <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>

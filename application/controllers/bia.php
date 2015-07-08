@@ -29,6 +29,8 @@ class Bia extends MY_Controller {
 		$mor_record = new Mor_Record_Model();
 		$mor_record_ba = new Mor_Record_BA_Model();
 
+		$bu = new BU_Model();
+
 		$data['ba'] = $ba->where('id',$id)->get();
 		$data['ba_impact'] = $ba_impact->getAll();
 		$data['alternative_method'] = $alternative_method->where('ba_id',$ba->id)->get();
@@ -48,6 +50,8 @@ class Bia extends MY_Controller {
 		$data['mor_record'] = $mor_record->get();
 		$data['mor_record_bas'] = $mor_record_ba->where('ba_id',$ba->id)->get();
 
+		$bu = new BU_Model();
+		$data['bu'] = $bu->where('name','default')->get();
 		$this->load->template('pages/bia/view',$data);
 	}
 
@@ -81,6 +85,19 @@ class Bia extends MY_Controller {
 		$mor_record = new Mor_Record_Model();
 		$data['mor_record'] = $mor_record->getAll();
 
+		$bu = new BU_Model();
+		$data['bu'] = $bu->where('name','default')->get();
+		$data['impact_parameter'][1] = $bu->impact_parameter;
+		$data['impact_parameter'][2] = $bu->impact_parameter_2;
+		$data['impact_parameter'][3] = $bu->impact_parameter_3;
+		$data['impact_parameter'][4] = $bu->impact_parameter_4;
+		$data['impact_parameter'][5] = $bu->impact_parameter_5;
+
+		$data['impact_parameter_type'][1] = $bu->impact_parameter_type;
+		$data['impact_parameter_type'][2] = $bu->impact_parameter_type_2;
+		$data['impact_parameter_type'][3] = $bu->impact_parameter_type_3;
+		$data['impact_parameter_type'][4] = $bu->impact_parameter_type_4;
+		$data['impact_parameter_type'][5] = $bu->impact_parameter_type_5;
 		$this->load->template('pages/bia/create',$data);
 	}
 

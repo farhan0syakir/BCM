@@ -10,8 +10,9 @@
 						</a>View Business Unit</h3>
 						</div>
 						<div class="top-gap col-lg-6 text-right">
-						<a class="right-gap-medium edit-button-gap crud" href="<?php echo base_url('bu/edit/1');?>">
-						Edit <span class="left-gap-narrow glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+						<a class="edit-button-gap crud" href="<?php echo base_url('bu/edit/')."/".$bu->id;?>">Edit
+							<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+						</a>
 						</div>
 					</div> 
 							  <div class="col-lg-12">
@@ -27,7 +28,7 @@
 															</td>
 															<td>
 															<div class="gap col-md-12  ">
-															TCM															
+															<?php echo $bu->bu_code?>														
 															</div>
 															</td>
 														</tr>
@@ -38,7 +39,7 @@
 															<td>
 															<div class="gap col-md-12  ">
 
-															Treasury and Capital Management 	
+															<?php echo $bu->name?>
 															</div>
 															</td>
 														</tr>
@@ -48,7 +49,7 @@
 															</td>
 															<td>
 															<div class="gap col-md-12  ">
-															8 days
+															<?php echo $bu->mtpd." ".unserialize(type_label_bu)[$bu->mtpd_type]?> 
 															</div>
 															</td>
 														</tr>
@@ -60,23 +61,32 @@
 															<div class="gap col-md-12  ">
 																<div class="gap col-md-12  ">
 																	<div class="gap col-md-2 ">
-																		<label class="gap-narrow"> < 4 hours  </label>
+																		<label class="gap-narrow"> 
+																			<?php echo $bu->impact_parameter." ".unserialize(type_label_bu)[$bu->impact_parameter_type]?>  </label>
 																		
 																	</div>
 																	<div class="gap col-md-2 ">
-																		<label class="gap-narrow">< 1 day </label>
+																		<label class="gap-narrow">
+																			<?php echo $bu->impact_parameter_2." ".unserialize(type_label_bu)[$bu->impact_parameter_type_2]?>  </label>
+																		</label>
 																		
 																	</div>
 																	<div class="gap col-md-2 ">
-																		<label class="gap-narrow">< 4 days  </label>
+																		<label class="gap-narrow">
+																			<?php echo $bu->impact_parameter_3." ".unserialize(type_label_bu)[$bu->impact_parameter_type_3]?>  </label>
+																		</label>
 																		
 																	</div>
 																	<div class="gap col-md-2 ">
-																		<label class="gap-narrow"> < 8 days  </label>
+																		<label class="gap-narrow">
+																			<?php echo $bu->impact_parameter_4." ".unserialize(type_label_bu)[$bu->impact_parameter_type_4]?>  </label>
+																		</label>
 																		
 																	</div>
 																	<div class="gap col-md-2 ">
-																		<label class="gap-narrow"> > 8 days  </label>
+																		<label class="gap-narrow">
+																			<?php echo $bu->impact_parameter_5." ".unserialize(type_label_bu)[$bu->impact_parameter_type_5]?>  </label>
+																		</label>
 																		
 																	</div>
 																				
@@ -113,7 +123,7 @@
 				                                           	<th class=" text-right">
 				                                            <a data-toggle="modal" data-target="#assign" class="button-gap crud">
 															Assign New Role 
-															<span class="left-gap-narrow glyphicon glyphicon-plus" aria-hidden="true"></span></a></th>
+															<span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></th>
 				                                        </tr>
 				                                    </thead>
 

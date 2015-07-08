@@ -9,7 +9,12 @@ class Bu extends MY_Controller {
 
 	public function view($id)
 	{
-		$this->load->template('pages/setting/bu/view',$id);
+		$bu = new BU_Model();
+
+		$data['bu'] = $bu->where('id',$id)->get();
+		// print_r($data["bu"]->id); 
+		// die();
+		$this->load->template('pages/setting/bu/view',$data);
 	}
 
 	public function edit($id)

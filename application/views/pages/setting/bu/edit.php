@@ -1,8 +1,4 @@
-<?php
-	$type_label=array(
-		"hour(s)","day(s)","month(s)"
-	);
-?>
+
             <div class="row top-space" >
 				<div  class="content-wrapper">
 				        <h3 class="title title-header">	
@@ -41,7 +37,7 @@
 																					<?php if ($i==$bu->mtpd_type) {
 																						echo "selected";
 																					}?>
-																				><?php echo $type_label[$i]?></option>
+																				><?php echo unserialize(type_label_bu)[$i]?></option>
 																			<?php endfor?>
 																		</select>
 																	</div>
@@ -61,9 +57,9 @@
 																			<?php for ($i=0; $i <3 ; $i++): ?> 
 																			<option value="<?php echo $i?>"
 																					<?php if ($i==$bu->impact_parameter_type) {
-																						echo "selected";
+																								echo "selected";
 																					}?>
-																				><?php echo $type_label[$i]?></option>
+																				><?php echo unserialize(type_label_bu)[$i]?></option>
 																			<?php endfor?>
 																		</select>
 																	</div>
@@ -77,7 +73,7 @@
 																					<?php if ($i==$bu->impact_parameter_type_2) {
 																						echo "selected";
 																					}?>
-																				><?php echo $type_label[$i]?></option>
+																				><?php echo unserialize(type_label_bu)[$i]?></option>
 																			<?php endfor?>
 																		</select>
 																	</div>
@@ -91,7 +87,7 @@
 																					<?php if ($i==$bu->impact_parameter_type_3) {
 																						echo "selected";
 																					}?>
-																				><?php echo $type_label[$i]?></option>
+																				><?php echo unserialize(type_label_bu)[$i]?></option>
 																			<?php endfor?>
 																		</select>
 																	</div>
@@ -109,7 +105,7 @@
 																					<?php if ($i==$bu->impact_parameter_type_4) {
 																						echo "selected";
 																					}?>
-																				><?php echo $type_label[$i]?></option>
+																				><?php echo unserialize(type_label_bu)[$i]?></option>
 																			<?php endfor?>
 																		</select>
 																	</div>
@@ -123,7 +119,7 @@
 																					<?php if ($i==$bu->impact_parameter_type_5) {
 																						echo "selected";
 																					}?>
-																				><?php echo $type_label[$i]?></option>
+																				><?php echo unserialize(type_label_bu)[$i]?></option>
 																			<?php endfor?>
 																		</select>
 																	</div>

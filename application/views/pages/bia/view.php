@@ -10,12 +10,38 @@
 	);
 	
 ?>
+
+				<div class="row">
+	  			         <div class="col-lg-6 text-left">
+	  			         <h3 class="title title-header">	
+						 <a class="back-button-gap" href="<?php echo base_url('bu') ?>">
+						<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+						</a>View Business Unit</h3>
+						</div>
+						<div class="top-gap col-lg-6 text-right">
+						<a class="edit-button-gap crud" href="<?php echo base_url('bu/edit/')."/".$bu->id;?>">Edit
+							<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+						</a>
+						</div>
+				</div> 
+
 <div class="row top-space" >
 	<div  class="content-wrapper">
-		<h3 class="title title-header">
-		<a class="back-button-gap" href="<?php echo base_url('bia') ?>">
-		<span class="glyphicon glyphicon-chevron-left" aria-hidden="true">
-		</span></a><?php echo $ba->name?></h3>
+
+		<div class="row">
+	         <div class="col-lg-6 text-left">
+	         <h3 class="title title-header">	
+			 <a class="back-button-gap" href="<?php echo base_url('bu') ?>">
+			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+			</a><?php echo $ba->name?></h3>
+			</div>
+			<div class="top-gap col-lg-6 text-right">
+			<a class="edit-button-gap crud" href="<?php echo base_url('bia/edit/')."/".$bia->id;?>">Edit
+				<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+			</a>
+			</div>
+		</div> 
+
 		<div class="col-lg-12">
 			<div class="panel panel-default">										
 				<div class="panel-body">

@@ -3,6 +3,7 @@
 class BA_Alternative_Model extends DataMapper {
 
     var $table = 'alternative_method';
+    var $has_one = array('ba_model');
 
     function __construct($id = NULL){
         parent::__construct($id);

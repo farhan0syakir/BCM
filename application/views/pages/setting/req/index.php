@@ -18,66 +18,27 @@
                         <tr class="tr-gap">
                             <h4 class="label-bold"> Software Requirements</h4>
                              <table class="table table-striped">
+                            <div id="softwareRequirementId">
+                                <?php foreach ($software as $key) :?>
                                 <tr class="tr-gap">
                                     <td class="col-md-6">
-                                        <label>Email</label>
+                                        <label><?php echo $key->name?></label>
                                     </td>
-                                    <td class="col-md-4 text-right"><a class="edit-button-gap crud"  data-toggle="modal" data-target="#modalDeleteId" href="#">
+                               <td  class="td-button text-right">
+                                        <a class="edit-button-gap crud" href="">
                                         <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-                                        <a class="delete-button-gap crud" data-toggle="modal" data-target="#del-soft-email" href="#">
+                                        <a class="delete-button-gap crud" data-toggle="modal" data-target="#modalDeleteId" href="#" >
                                         <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
-                                        <div class="modal fade" id="del-soft-email">
-                                            <div class="top-padding modal-dialog">
-                                                <div class="top-gap modal-content">
-                                                    <div class="modal-header">
-                                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                                        <h4 class="modal-title text-center">Delete Version</h4>
-                                                    </div>
-                                                    <div class="text-center left-gap right-gap modal-body">
-                                                        <h5>Are you sure want to delete 'Email' from List of Software Requirements? </h5>
-                                                    </div>
-                                                    <div class="top-gap-narrow bottom-gap-narrow modal-footer text-center">
-                                                        <a data-dismiss="modal" href="#" class="delete-button-gap">Cancel</a>
-                                                        <a data-dismiss="modal" href="#" class="button-gap">Delete</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </td>
                                 </tr>
+                                <?php endforeach?>
+                            </div>
+                               
                                 <tr class="tr-gap">
                                     <td class="col-md-6">
-                                        <label>Database</label>
+                                        <input type="Add" id="inputRequirement" class="form-control" placeholder="Name of Software">
                                     </td>
-                                    
-                                    <td class="col-md-4 text-right"><a class="edit-button-gap crud"  data-toggle="modal" data-target="#modalDeleteId" href="#">
-                                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-                                        <a class="delete-button-gap crud" data-toggle="modal" data-target="#del-soft-email" href="#">
-                                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
-                                        <div class="modal fade" id="del-soft-email">
-                                            <div class="top-padding modal-dialog">
-                                                <div class="top-gap modal-content">
-                                                    <div class="modal-header">
-                                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                                        <h4 class="modal-title text-center">Delete Version</h4>
-                                                    </div>
-                                                    <div class="text-center left-gap right-gap modal-body">
-                                                        <h5>Are you sure want to delete 'Email' from List of Software Requirements? </h5>
-                                                    </div>
-                                                    <div class="top-gap-narrow bottom-gap-narrow modal-footer text-center">
-                                                        <a data-dismiss="modal" href="#" class="delete-button-gap">Cancel</a>
-                                                        <a data-dismiss="modal" href="#" class="button-gap">Delete</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="tr-gap">
-                                    <td class="col-md-6">
-                                        <input type="Add" class="form-control" placeholder="Name of Software">
-                                    </td>
-                                     <td class="col-md-3 text-right"> <a class="button-gap">
+                                     <td class="col-md-3 text-right"> <a class="button-gap" onClick="addDirectly('softwareRequirementId')">
                                         <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
                                     </td>
                                 </tr>
@@ -87,60 +48,45 @@
                         <tr class="tr-gap">
                             <h4 class="label-bold"> Hardware Requirements</h4>
                              <table class="table table-striped">
+                                <?php foreach ($hardware as $key) :?>
                                 <tr class="tr-gap">
                                     <td class="col-md-6">
-                                        <label>PC</label>
+                                        <label><?php echo $key->name?></label>
                                     </td>
-                                    <td class="col-md-4 text-right"><a class="edit-button-gap crud"  data-toggle="modal" data-target="#modalDeleteId" href="#">
+                               <td  class="td-button text-right">
+                                        <a class="edit-button-gap crud" href="">
                                         <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-                                        <a class="delete-button-gap crud" data-toggle="modal" data-target="#del-soft-email" href="#">
+                                        <a class="delete-button-gap crud" data-toggle="modal" data-target="#modalDeleteId" href="#" onClick="">
                                         <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
-                                        <div class="modal fade" id="del-soft-email">
-                                            <div class="top-padding modal-dialog">
-                                                <div class="top-gap modal-content">
-                                                    <div class="modal-header">
-                                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                                        <h4 class="modal-title text-center">Delete Version</h4>
-                                                    </div>
-                                                    <div class="text-center left-gap right-gap modal-body">
-                                                        <h5>Are you sure want to delete 'Email' from List of Software Requirements? </h5>
-                                                    </div>
-                                                    <div class="top-gap-narrow bottom-gap-narrow modal-footer text-center">
-                                                        <a data-dismiss="modal" href="#" class="delete-button-gap">Cancel</a>
-                                                        <a data-dismiss="modal" href="#" class="button-gap">Delete</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </td>
                                 </tr>
+                                <?php endforeach?>
                                 <tr class="tr-gap">
                                     <td class="col-md-6">
-                                        <label>Server</label>
+                                        <input type="Add" class="form-control" placeholder="Name of Hardware">
                                     </td>
-                                    <td class="col-md-4 text-right"><a class="edit-button-gap crud"  data-toggle="modal" data-target="#modalDeleteId" href="#">
-                                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-                                        <a class="delete-button-gap crud" data-toggle="modal" data-target="#del-soft-email" href="#">
-                                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
-                                        <div class="modal fade" id="del-soft-email">
-                                            <div class="top-padding modal-dialog">
-                                                <div class="top-gap modal-content">
-                                                    <div class="modal-header">
-                                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                                        <h4 class="modal-title text-center">Delete Version</h4>
-                                                    </div>
-                                                    <div class="text-center left-gap right-gap modal-body">
-                                                        <h5>Are you sure want to delete 'Email' from List of Software Requirements? </h5>
-                                                    </div>
-                                                    <div class="top-gap-narrow bottom-gap-narrow modal-footer text-center">
-                                                        <a data-dismiss="modal" href="#" class="delete-button-gap">Cancel</a>
-                                                        <a data-dismiss="modal" href="#" class="button-gap">Delete</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                   <td class="col-md-3 text-right"> <a class="button-gap">
+                                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
                                     </td>
                                 </tr>
+                            </table>
+                        </tr>
+                        <tr class="tr-gap">
+                            <h4 class="label-bold"> Equipment Requirements</h4>
+                             <table class="table table-striped">
+                                <?php foreach ($equipment as $key) :?>
+                                <tr class="tr-gap">
+                                    <td class="col-md-6">
+                                        <label><?php echo $key->equipment?></label>
+                                    </td>
+                               <td  class="td-button text-right">
+                                        <a class="edit-button-gap crud" href="">
+                                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
+                                        <a class="delete-button-gap crud" data-toggle="modal" data-target="#modalDeleteId" href="#" onClick="">
+                                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+                                    </td>
+                                </tr>
+                                <?php endforeach?>
                                 <tr class="tr-gap">
                                     <td class="col-md-6">
                                         <input type="Add" class="form-control" placeholder="Name of Hardware">
@@ -152,141 +98,31 @@
                             </table>
                         </tr>
                          <tr class="tr-gap">
-                            <h4 class="label-bold">Equipment Requirements</h4>
-                             <table class="table table-striped">
-                                <tr class="tr-gap">
-                                    <td class="col-md-6">
-                                        <label>Note</label>
-                                    </td>
-                                    <td class="col-md-4 text-right"><a class="edit-button-gap crud"  data-toggle="modal" data-target="#modalDeleteId" href="#">
-                                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-                                        <a class="delete-button-gap crud" data-toggle="modal" data-target="#del-soft-email" href="#">
-                                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
-                                        <div class="modal fade" id="del-soft-email">
-                                            <div class="top-padding modal-dialog">
-                                                <div class="top-gap modal-content">
-                                                    <div class="modal-header">
-                                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                                        <h4 class="modal-title text-center">Delete Version</h4>
-                                                    </div>
-                                                    <div class="text-center left-gap right-gap modal-body">
-                                                        <h5>Are you sure want to delete 'Email' from List of Software Requirements? </h5>
-                                                    </div>
-                                                    <div class="top-gap-narrow bottom-gap-narrow modal-footer text-center">
-                                                        <a data-dismiss="modal" href="#" class="delete-button-gap">Cancel</a>
-                                                        <a data-dismiss="modal" href="#" class="button-gap">Delete</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="tr-gap">
-                                    <td class="col-md-6">
-                                        <label>Freezer</label>
-                                    </td>
-                                    
-                                    <td class="col-md-4 text-right"><a class="edit-button-gap crud"  data-toggle="modal" data-target="#modalDeleteId" href="#">
-                                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-                                        <a class="delete-button-gap crud" data-toggle="modal" data-target="#del-soft-email" href="#">
-                                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
-                                        <div class="modal fade" id="del-soft-email">
-                                            <div class="top-padding modal-dialog">
-                                                <div class="top-gap modal-content">
-                                                    <div class="modal-header">
-                                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                                        <h4 class="modal-title text-center">Delete Version</h4>
-                                                    </div>
-                                                    <div class="text-center left-gap right-gap modal-body">
-                                                        <h5>Are you sure want to delete 'Email' from List of Software Requirements? </h5>
-                                                    </div>
-                                                    <div class="top-gap-narrow bottom-gap-narrow modal-footer text-center">
-                                                        <a data-dismiss="modal" href="#" class="delete-button-gap">Cancel</a>
-                                                        <a data-dismiss="modal" href="#" class="button-gap">Delete</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="tr-gap">
-                                    <td class="col-md-6">
-                                        <input type="Add" class="form-control" placeholder="Name of Equipment">
-                                    </td>
-                                    
-                                    <td class="col-md-3 text-right"> <a class="button-gap">
-                                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
-                                    </td>
-                                </tr>
-                            </table>
-                        </tr>
-                         <tr class="tr-gap">
                             <h4 class="label-bold"> Record, Item, Clerical Requirements</h4>
                              <table class="table table-striped">
+                                <?php foreach ($record as $key) :?>
                                 <tr class="tr-gap">
                                     <td class="col-md-6">
-                                        <label>Document No.123</label>
+                                        <label><?php echo $key->name?></label>
                                     </td>
-                                    <td class="col-md-4 text-right"><a class="edit-button-gap crud"  data-toggle="modal" data-target="#modalDeleteId" href="#">
+                               <td  class="td-button text-right">
+                                        <a class="edit-button-gap crud" href="">
                                         <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-                                        <a class="delete-button-gap crud" data-toggle="modal" data-target="#del-soft-email" href="#">
+                                        <a class="delete-button-gap crud" data-toggle="modal" data-target="#modalDeleteId" href="#" onClick="">
                                         <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
-                                        <div class="modal fade" id="del-soft-email">
-                                            <div class="top-padding modal-dialog">
-                                                <div class="top-gap modal-content">
-                                                    <div class="modal-header">
-                                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                                        <h4 class="modal-title text-center">Delete Version</h4>
-                                                    </div>
-                                                    <div class="text-center left-gap right-gap modal-body">
-                                                        <h5>Are you sure want to delete 'Email' from List of Software Requirements? </h5>
-                                                    </div>
-                                                    <div class="top-gap-narrow bottom-gap-narrow modal-footer text-center">
-                                                        <a data-dismiss="modal" href="#" class="delete-button-gap">Cancel</a>
-                                                        <a data-dismiss="modal" href="#" class="button-gap">Delete</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </td>
                                 </tr>
+                                <?php endforeach?>
                                 <tr class="tr-gap">
                                     <td class="col-md-6">
-                                        <label>Document No.123</label>
+                                        <input type="Add" class="form-control" placeholder="Name of Hardware">
                                     </td>
-                                    <td class="col-md-4 text-right"><a class="edit-button-gap crud"  data-toggle="modal" data-target="#modalDeleteId" href="#">
-                                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-                                        <a class="delete-button-gap crud" data-toggle="modal" data-target="#del-soft-email" href="#">
-                                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
-                                        <div class="modal fade" id="del-soft-email">
-                                            <div class="top-padding modal-dialog">
-                                                <div class="top-gap modal-content">
-                                                    <div class="modal-header">
-                                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                                        <h4 class="modal-title text-center">Delete Version</h4>
-                                                    </div>
-                                                    <div class="text-center left-gap right-gap modal-body">
-                                                        <h5>Are you sure want to delete 'Email' from List of Software Requirements? </h5>
-                                                    </div>
-                                                    <div class="top-gap-narrow bottom-gap-narrow modal-footer text-center">
-                                                        <a data-dismiss="modal" href="#" class="delete-button-gap">Cancel</a>
-                                                        <a data-dismiss="modal" href="#" class="button-gap">Delete</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr >
-                                    <td class="col-md-6">
-                                        <input type="Add" class="form-control" placeholder="Name of  Record, Item, Clerical">
-                                    </td>
-                                    <td class="col-md-3 text-right"> <a class="button-gap">
+                                   <td class="col-md-3 text-right"> <a class="button-gap">
                                         <span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a>
                                     </td>
                                 </tr>
                             </table>
-                        </tr>
+                        </tr>  
                     </table>
                 <div>
             </div>
@@ -296,3 +132,5 @@
 </div>
 </div>
 </div>
+
+<?php $this->load->view('pages/general/modalDelete');?>

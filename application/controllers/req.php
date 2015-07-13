@@ -3,7 +3,14 @@ class Req extends MY_Controller {
 
 	public function index()
 	{
-		$data['bia'] = $this->get();
+		$software = new Mor_Software_Model();
+		$hardware = new Mor_Hardware_Model();
+		$equipment = new Mor_Non_It_Model();
+		$record= new Mor_Record_Model();
+		$data['record'] = $record->get(); 
+		$data['software'] = $software->get();
+		$data['hardware'] = $hardware->get(); 
+		$data['equipment'] =$equipment->get(); 
 		$this->load->template('pages/setting/req/index',$data);
 	}
 

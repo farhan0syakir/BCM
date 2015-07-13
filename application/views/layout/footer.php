@@ -236,6 +236,12 @@ $(document).ready(function() {
       }
     }
 
-   
+   function addDirectly(divName){
+      var newdiv = document.createElement('div');
+      var myValue = $('#inputRequirement').value;
+      newdiv.innerHTML = " <br>"+myValue+"<input class='form-control' placeholder='' >";
+      document.getElementById(divName).appendChild(newdiv);
+      addInputCounter++;
+    };
 
 </script>
